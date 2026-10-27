@@ -20,7 +20,7 @@ def main():
     (out / "records.json").write_text(json.dumps(state["papers"], indent=2))
     (out / "scores.json").write_text(json.dumps(state["scores"], indent=2))
     for pid, text in state.get("drafts", {}).items():
-        (out / "drafts" / f"{pid.replace('/', '_')}.md").write_text(text)
+        (out / "drafts" / f"{pid.replace('/', '_').replace(':', '_')}.md").write_text(text)
     rel = sum(s["relevant"] for s in state["scores"].values())
     print(f"{len(state['papers'])} papers, {rel} relevant, {len(state.get('drafts', {}))} drafts -> {out}")
 

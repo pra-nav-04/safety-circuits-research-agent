@@ -5,7 +5,7 @@ from langgraph.graph import END, StateGraph
 
 from agent import rag, records, scrape
 from agent.draft import draft_outreach
-from agent.score import score_paper
+from agent.score import score_paper, validate_score
 
 
 class State(TypedDict, total=False):
@@ -20,14 +20,15 @@ class State(TypedDict, total=False):
 # ---- Scout agent nodes ----
 def scrape_node(state: State) -> dict:
     items = [p for p in scrape.scrape_listing() if scrape.looks_relevant(p)]
-    return {"scraped": items}
+    blog = [p for p in scrape.scrape_blog() if scrape.looks_relevant(p)][:5]
+    return {"scraped": items + blog}
 
 
 def fetch_node(state: State) -> dict:
     """arXiv API: official metadata for scraped ids + recent keyword-search hits, merged by id."""
     n = state["max_papers"]
     by_id = {p["id"]: p for p in state.get("scraped", [])}
-    for p in records.fetch_by_ids(list(by_id)):          # API record wins (clean authors/date)
+    for p in records.fetch_by_ids([i for i in by_id if not i.startswith("blog:")]):          # API record wins (clean authors/date)
         by_id[p["id"]] = {**by_id[p["id"]], **p} if p["id"] in by_id else p
     for p in records.search_recent(n):
         by_id.setdefault(p["id"], p)
@@ -41,6 +42,11 @@ def retrieve_node(state: State) -> dict:
 
 def score_node(state: State) -> dict:
     return {"scores": {p["id"]: score_paper(p, state["chunks"][p["id"]]) for p in state["papers"]}}
+
+
+def validate_node(state: State) -> dict:
+    by_id = {p["id"]: p for p in state["papers"]}
+    return {"scores": {i: validate_score(by_id[i], state["chunks"][i], sc) for i, sc in state["scores"].items()}}
 
 
 def route(state: State) -> str:
@@ -59,11 +65,11 @@ def draft_node(state: State) -> dict:
 
 def build_scout():
     g = StateGraph(State)
-    for name, fn in [("scrape", scrape_node), ("fetch", fetch_node), ("retrieve", retrieve_node), ("score", score_node)]:
+    for name, fn in [("scrape", scrape_node), ("fetch", fetch_node), ("retrieve", retrieve_node), ("score", score_node), ("validate", validate_node)]:
         g.add_node(name, fn)
     g.set_entry_point("scrape")
     g.add_edge("scrape", "fetch"); g.add_edge("fetch", "retrieve"); g.add_edge("retrieve", "score")
-    g.add_edge("score", END)
+    g.add_edge("score", "validate"); g.add_edge("validate", END)
     return g.compile()
 
 

@@ -13,6 +13,8 @@ class Score(BaseModel):
     relevant: bool
     matched_hypothesis: HypKey
     reason: str
+    evidence_quote: str = ""   # verbatim from the retrieved project excerpts
+    abstract_quote: str = ""   # verbatim from the paper title/abstract
 
 
 PROMPT = """You pre-qualify new arXiv papers for a research project on attention heads that cause
@@ -32,6 +34,9 @@ Decide if the paper bears directly on ONE open hypothesis. Rules:
 - relevant=true only if the abstract itself supports the link; do not guess.
 - matched_hypothesis is one key above, or "none" when relevant=false.
 - Only use the descriptions above; do not invent project plans (e.g. do not claim the project studies languages, topics or methods not listed).
+- evidence_quote: one sentence copied VERBATIM from the project excerpts above that supports the match.
+- abstract_quote: one sentence copied VERBATIM from the paper abstract that supports the match.
+  Both quotes must be empty when relevant=false.
 - reason: 1-2 sentences citing what in the abstract and what in the excerpts connect."""
 
 
@@ -52,3 +57,24 @@ def score_paper(paper: dict, chunks: list[dict], llm=None) -> dict:
         return s.model_dump()
     except (ValidationError, ValueError, Exception) as e:  # noqa: BLE001 - keep the run alive
         return {"relevant": False, "matched_hypothesis": "none", "reason": "scoring failed", "error": str(e)[:200]}
+
+
+def _norm(t: str) -> str:
+    return " ".join(t.lower().split())
+
+
+def validate_score(paper: dict, chunks: list[dict], score: dict) -> dict:
+    """Grounding check, no LLM: a 'relevant' verdict must quote real text from both sides."""
+    if not score["relevant"]:
+        return {**score, "validation": "skipped (not relevant)"}
+    source = _norm(paper["title"] + " " + paper["abstract"])
+    corpus = _norm(" ".join(c["text"] for c in chunks))
+    checks = [
+        ("abstract_quote not in abstract", _norm(score.get("abstract_quote", "")) in source and score.get("abstract_quote")),
+        ("evidence_quote not in retrieved chunks", _norm(score.get("evidence_quote", "")) in corpus and score.get("evidence_quote")),
+        ("unknown hypothesis", score["matched_hypothesis"] in OPEN_HYPOTHESES),
+    ]
+    for msg, ok in checks:
+        if not ok:
+            return {**score, "relevant": False, "validation": f"rejected: {msg}"}
+    return {**score, "validation": "ok"}

@@ -25,6 +25,6 @@ def draft_outreach(paper: dict, score: dict, chunks: list[dict], llm=None) -> st
     msg = llm.invoke(PROMPT.format(
         key=score["matched_hypothesis"], hyp=OPEN_HYPOTHESES[score["matched_hypothesis"]],
         reason=score["reason"], chunk=chunks[0]["text"][:800] if chunks else "",
-        title=paper["title"], authors=", ".join(paper["authors"][:4]), abstract=paper["abstract"],
+        title=paper["title"], authors=", ".join(paper["authors"][:4]) or "(blog post, no named authors: address the team)", abstract=paper["abstract"],
     ))
     return msg.text if hasattr(msg, "text") and isinstance(msg.text, str) else str(msg.content)
