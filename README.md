@@ -13,7 +13,7 @@ uv venv --python 3.12 && uv pip install -r <(grep '"' pyproject.toml | tr -d ' "
 cp .env.example .env            # fill in VLLM_API_KEY
 python -m agent.run --max-papers 15      # -> runs/<timestamp>/{records.json,scores.json,drafts/*.md,digest.md}
 python -m agent.run --no-validate        # optional: skip the quote check (recall 0.93 but precision 0.48, see Evaluation)
-pytest -q
+python -m pytest -q
 ```
 Needs the research repo checked out next to this one (or `SAFETY_CIRCUITS_DIR`) as RAG source.
 A committed sample is in `runs/2026-10-27_222646/` (default settings: wide prompt + validation; 30 papers, 8 flagged relevant, 8 drafts, 6 more verdicts rejected by validation). Expect false positives (here, for example, a content-moderation paper and a vision-language pricing paper passed with real quotes): measured precision is about 0.6, so the digest and drafts are for human review.
@@ -88,10 +88,10 @@ The plist has absolute paths for this machine: edit `WorkingDirectory` and `Prog
 ## What broke (full log in `NOTES.md`)
 
 - First full run printed "0 relevant" but 12/15 calls had hit a 429 quota; a catch-all in `score` hid it as "not relevant". Fix: failures carry an `error` field and are distinguishable in `scores.json`.
-- The model once invented a "planned cross-lingual extension" of ours to justify a match. Prompts now say to describe the project only from supplied text. Remaining weakness (note #10): thin matches still pass; a validation node would check the reason against retrieved chunks.
+- The model once invented a "planned cross-lingual extension" of ours to justify a match. Prompts now say to describe the project only from supplied text. A validation node now rejects verdicts whose quotes are not in the abstract and the retrieved project text (NOTES #12); thin matches with real quotes still pass (#18), which is why drafts go through human review.
 
 ## Sales mapping
 
 scout = lead research, score = pre-qualification, draft = personalised outreach.
 
-No accuracy numbers are claimed: the sample run is 15 papers, unlabelled. LLM: an OpenAI-compatible vLLM endpoint. Abstracts and metadata only; nothing is sent to anyone.
+The only accuracy numbers are the small labelled-set results under Evaluation; the sample run itself is unlabelled. LLM: an OpenAI-compatible vLLM endpoint. Abstracts and metadata only; nothing is sent to anyone.
