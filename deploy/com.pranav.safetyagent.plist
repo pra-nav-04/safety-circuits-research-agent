@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.pranav.safetyagent</string>
+  <key>WorkingDirectory</key>
+  <string>/Users/pranavyadav/Desktop/Personal Projects/Uni Bonn/Course/XAI Lab/safety-circuits-research-agent</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/pranavyadav/Desktop/Personal Projects/Uni Bonn/Course/XAI Lab/safety-circuits-research-agent/.venv/bin/python</string>
+    <string>-m</string><string>agent.run</string>
+    <string>--max-papers</string><string>15</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>8</integer><key>Minute</key><integer>0</integer></dict>
+  <key>StandardOutPath</key><string>state/launchd.log</string>
+  <key>StandardErrorPath</key><string>state/launchd.log</string>
+</dict>
+</plist>
