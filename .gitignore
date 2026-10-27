@@ -4,3 +4,6 @@ chroma_db/
 __pycache__/
 .pytest_cache/
 .claude/
+BUILD_PROMPT.md
+BUILD_CONTRACT.md
+SETUP_PROMPT.md
