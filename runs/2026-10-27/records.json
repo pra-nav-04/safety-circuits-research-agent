@@ -1,0 +1,214 @@
+[
+  {
+    "id": "2610.33258",
+    "title": "Two Uncertainties Are Not One: Disagreement versus Decision-Risk in Cheap Structured Content Moderation",
+    "authors": [
+      "Karan Yadav"
+    ],
+    "abstract": "Content moderation compresses a graded, contested human judgment into a binary act (leave up / take down) over billions of items, at a scale where running a frontier LLM on every post is uneconomical. A new class of frozen \"System One\" models returns typed, calibrated decisions instead of text at ~USD 0.000025 per call and ~100 ms. We run the first independent audit of one such model on 142,658 human-labeled comments, and benchmark it against 14 frontier reasoning models (the GPT-5.x, Claude, Gemini 3, and Grok families) on a shared probe set. Two findings stand out. First, the cheap model is accuracy-competitive: its zero-shot classification AUROC (0.83) is not statistically separable (paired bootstrap, n=56; a failure to reject parity, not proof of equivalence) from 13 of the 14 frontier systems while costing 1-3 orders of magnitude less, and it is no worse calibrated than several of them. Second, \"confidence\" conflates two uncertainties that come apart: human disagreement (where annotators split on satire and coded language) and decision risk (where the automatic action is costly-wrong). Under an asymmetric moderation loss these call for opposite escalation signals, so no single confidence number serves both. Because the model prices extra questions at nearly zero, decomposing the judgment into parallel sub-questions and reading their spread recovers a human-disagreement signal that the model's native confidence misses -- but this remedy is specific: it helps the weakest, disagreement-blind models and only when the decomposition aligns with the sources of disagreement; a specialist toxicity model and the strongest LLMs do not need it, and the effect is distribution-sensitive. We will release the instrument, the cached runs, and the analysis.",
+    "url": "http://arxiv.org/abs/2610.33258v1",
+    "published": "2026-10-23T20:08:04Z"
+  },
+  {
+    "id": "2610.33279",
+    "title": "Multi-Agent Retrieval-Augmented Causality Assessment (MARCA) of Individual Case Safety Reports in Pharmacovigilance",
+    "authors": [
+      "Daisy Rae Lopez",
+      "Angela Boccia",
+      "Maurizio Sessa"
+    ],
+    "abstract": "Introduction: Increasing volumes of individual case safety reports (ICSRs) challenge expert-led causality assessment in pharmacovigilance. We developed MARCA (Multi-Agent Retrieval-Augmented Causality Assessment), a four-agent framework for Naranjo-based assessment, and evaluated agreement with human experts and exploratory differences between non-RAG and RAG-labelled scores. Methods: MARCA combined scientific literature retrieval, drug-label assessment, objective-evidence classification, and clinical causality reasoning using Gemini 2.5 Pro and DeepSeek-V3.2. Agent-generated rationales informed human-assisted scoring. A consensus expert reference standard covered 215 ICSRs and 1,562 drug-event combinations (DECs) from FAERS (Q1-Q2 2025). Agreement was measured using percentage agreement and Cohen's kappa. Results: Question-level agreement was 96.8% for Naranjo Q2 (kappa = 0.491; 95% CI 0.265-0.663), 85.4% for Q5 (kappa = 0.269; 95% CI 0.180-0.340), and 96.8% for Q10 (kappa = 0.922; 95% CI 0.885-0.951). Final causality classification agreement was 79.4% (95% CI 71.8-85.3; kappa = 0.587, 95% CI 0.450-0.690). In a retrospective subset of 60 DECs, agreement was higher for RAG-labelled than non-RAG scores for Q5 (83.3% vs 65.0%) and Q10 (100.0% vs 18.3%). Discussion: MARCA-assisted assessment showed substantial variation in agreement across Naranjo questions, with lower concordance for alternative causes. Retrospective RAG comparisons are exploratory and do not establish prospective effectiveness.",
+    "url": "http://arxiv.org/abs/2610.33279v1",
+    "published": "2026-10-23T20:43:29Z"
+  },
+  {
+    "id": "2610.33299",
+    "title": "The Emergence and Sparsification of a Syntactic Circuit",
+    "authors": [
+      "Qing Yao",
+      "Sasha Boguraev",
+      "Tiago Pimentel",
+      "Kyle Mahowald"
+    ],
+    "abstract": "To understand the emergence of grammatical behavior in language models, we track circuits for subject-verb number agreement in pythia-1b and ten seeds of pythia-410m across training. We find that subject-verb agreement is learned early, and is initially handled by a diffuse collection of neurons. However, after agreement behavior has stabilized, the mechanisms responsible for it continue to reorganize. The attention heads which mediate agreement often shift during training: in the case of pythia-1b, behavior is controlled by two heads early in training but by a third (different) head later. Furthermore, the circuit shrinks over training, with pythia-1b's final circuit being strikingly sparse. We take these results to be informative about how linguistic knowledge emerges and is represented in a language model.",
+    "url": "http://arxiv.org/abs/2610.33299v1",
+    "published": "2026-10-23T21:10:54Z"
+  },
+  {
+    "id": "2610.33441",
+    "title": "Quantifying Meaning with SCAPE-T: Semantic Complexity from Encoder-Only Transformer Attention",
+    "authors": [
+      "Maxim Khovansky",
+      "Lev Mukhanov"
+    ],
+    "abstract": "Automated semantic complexity estimation remains underexplored in NLP, despite important applications in linguistics and interpretability. This paper defines semantic complexity as the code length required to uniquely specify a text's semantic meaning, and operationalises it via SCAPE-T, an attention-derived metric based on encoder-only transformers. Existing measures either model reader effort (readability, lexical difficulty), which correlates with surface features (word length, syntax), or quantify surface features directly (type-token ratio, word frequency). SCAPE-T targets semantic integration directly by combining three submetrics: (i) inverse-weighted self-focus (token-to-self), (ii) CLS focus (token-to-CLS), and (iii) inter-head redundancy (cosine similarity across heads), using layer-weighted aggregation; data-driven learning is confined to hyperparameter tuning for calibration. Development uses philosophical prose vs. MCTest stories; evaluation is on children's stories vs. technical Wikipedia articles, with pairwise accuracy on contrasts as the primary criterion. Baselines include readability, syntactic/lexical, and LLM-derived measures. SCAPE-T substantially outperforms all tested baselines under word-length control, with a pairwise accuracy of 78.5% (95% bootstrap CI: 76.1-80.4, N=10k pairwise comparisons; +12.7 percentage points over the strongest baseline); without that control, readability heuristics overtake, consistent with their reliance on surface features. On a short-terms abstractness dataset, SCAPE-T also leads. Ablations show each submetric contributes materially. Overall, the results show SCAPE-T isolates conceptual structure from lexical/syntactic confounds better than existing methods, and generalises across two held-out domains.",
+    "url": "http://arxiv.org/abs/2610.33441v1",
+    "published": "2026-10-24T04:34:28Z"
+  },
+  {
+    "id": "2610.33495",
+    "title": "Five Architectures, One Shared Space Cross-Model Representational Alignment Without Weight Merging",
+    "authors": [
+      "Oladimeji Anthonio",
+      "Dimeji Olawuyi",
+      "Oloruntoba Ajayi",
+      "Temilola Aderemi"
+    ],
+    "abstract": "Combining language models is usually done by averaging weights, which works only when the models share a common starting point. We ask whether five frozen, independently trained models with different internal designs (four transformers from four organizations and one state-space model) can be related through their activations alone, with no weight merging. Using permutation tests, an independent replication probe set, depth sweeps, pooling ablations and confound checks, we find statistically robust correspondence between how the five models organize the same text. It is strongest at each model's final layer and weaker for the state-space model, whose weakest pairing is still 35-43 times chance. We use this to build a shared space with Generalized Procrustes Analysis, in which no model is a fixed reference. At the final layer, mean held-out retrieval accuracy over the twenty ordered model pairs is 0.91 to 0.93 on two probe sets (chance 0.03), beating pairwise linear maps (0.82 to 0.85), but the space is worse than those maps in the middle layers. It transfers to ordinary English of unfamiliar grammatical form and fails on mathematical and logical notation. We then test whether the space supports a router that picks among the five models on gradeable tasks. Across four task types we find no case where routing beats always using the strongest model, and we report this as a negative result. A correctness signal that looked strong turned out to be category membership in disguise. All experiments ran on one laptop without a GPU.",
+    "url": "http://arxiv.org/abs/2610.33495v1",
+    "published": "2026-10-24T06:52:49Z"
+  },
+  {
+    "id": "2610.33542",
+    "title": "SEDATE: Do Large Language Models Share an Aggression Circuit Across Languages?",
+    "authors": [
+      "Sagnik Basu",
+      "Sayan Das",
+      "Somnath Banerjee",
+      "Animesh Mukherjee"
+    ],
+    "abstract": "As the applications of AI continue to expand across various multimodal and multilingual domains, ensuring safe and responsible deployment of these systems has become an important concern. A wide-range of interventions have been proposed to make AI responses safer and more reliable. They often incur substantial computational or annotation costs, or cannot be extended to multilingual settings. In this work, we propose Selective Detection And Targeted Editing (SEDATE), a training-free approach based on detect-edit-verify strategy. SEDATE first detects the responsible neurons, edits them as and when necessary and finally verifies the model responses; all without any additional model training. We evaluate SEDATE across 7 languages and 4 model families. We further evaluate its effectiveness across 4 out-of-distribution languages and 4 additional datasets. We show that SEDATE achieves substantially superior safety scores across all languages and models over the best-performing baseline while retaining the general capabilities and incurring negligible overhead. Our results are robust, with the trends remaining similar for out-of-distribution languages and datasets.",
+    "url": "http://arxiv.org/abs/2610.33542v1",
+    "published": "2026-10-24T08:38:52Z"
+  },
+  {
+    "id": "2610.33586",
+    "title": "Words Are the Voice of the Mind: Depression Severity Estimation from Social Traces via Mental-Guided Evidence Reasoning",
+    "authors": [
+      "Nada Xu",
+      "Xueqin Chen",
+      "Qiang Gao",
+      "Hongru Liang",
+      "Wenqiang Lei"
+    ],
+    "abstract": "Depression severity estimation is crucial for mental health assessment and intervention, yet traditional approaches depend on clinical interviews or self-report questionnaires that require users' active participation. With the widespread use of online social media, users leave rich social traces that may reflect their mental states, motivating the task of social media-based depression severity estimation. Existing efforts have progressed from textual-feature-based classification to LLM-based questionnaire completion over standardized scale items, yet they still fall short in user-specific mental priors modeling, diversified semantic retrieval, and fine-grained reasoning over mental evidence. To address these limitations, we propose UMer, a user-specific mental evidence reasoning framework for social traces-based depression severity estimation. UMer first distills a user-specific mental prior from historical social traces to capture the user's psychological tendencies, behavioral patterns, and self-expression style. It then performs scale-guided multi-query retrieval to construct evidence memories from item-relevant posts. Finally, it conducts coarse-to-fine evidence-aware reasoning to distinguish direct and indirect evidence and predict item-level scores with interpretable rationales. Extensive experiments on real-world benchmarks demonstrate that UMer not only achieves competitive performance over existing baselines, but also provides evidence-grounded interpretability and generalizes to other scale-based tasks.",
+    "url": "http://arxiv.org/abs/2610.33586v1",
+    "published": "2026-10-24T10:28:49Z"
+  },
+  {
+    "id": "2610.33624",
+    "title": "RSI Arena: Towards Recursive Self-Improvement with Human Feedback",
+    "authors": [
+      "Yue Huang",
+      "Yanbo Wang",
+      "Lichi Li",
+      "Yuanyuan Chen",
+      "Andreas Haupt",
+      "Xiaonan Luo",
+      "Zheyuan Liu",
+      "Jihye Choi",
+      "Felix Juefei-Xu",
+      "Xiangliang Zhang",
+      "Radha Poovendran",
+      "Misha Sra",
+      "Ying Liu",
+      "Ben Burtenshaw",
+      "Thomas Wolf",
+      "Alex Pentland",
+      "Zichen Chen",
+      "Zhangchen Xu"
+    ],
+    "abstract": "Can AI agents autonomously train useful language models and improve them using feedback from users? We introduce RSI Arena, a two-stage study of autonomous post-training as a step toward recursive self-improvement. Ten frontier models act as training agents, each starting from NVIDIA Nemotron 3.5 Lightning 30B-A3B Base. During a six-day first stage, each agent has 1,000 GPU-hours and $300 in API credit on a shared 64-GPU cluster, independently selecting data, implementing training procedures, and choosing checkpoints. We evaluate their models on 20 benchmarks and through blind human evaluations. All ten agents produce working assistants, with the strongest model, trained by GPT-6 Astra, closing a median of 76% of the base-to-Instruct gap across 12 capability benchmarks. Its human-preference rating is also close to NVIDIA Instruct after statistical adjustment for answer length and formatting. In Stage 2, each agent receives the comparison records and votes involving its Stage 1 model and is given three additional days for further training. Using NVIDIA Instruct as a common reference across the two evaluation rounds, we observe an improvement from Stage 1 to Stage 2 in the style-adjusted relative rating of eight of the ten models. We show that benchmark gains were modest, with no clear link to preference gains, while some agents encouraged longer responses and one model showed increased harmful compliance on StrongREJECT. RSI Arena provides an auditable setting for studying how human feedback can guide autonomous model development. It takes a step toward recursive self-improvement with human feedback (RSIHF), in which people help define what improvement means for the AI systems they use.",
+    "url": "http://arxiv.org/abs/2610.33624v1",
+    "published": "2026-10-24T11:54:45Z"
+  },
+  {
+    "id": "2610.33697",
+    "title": "Gender Associations in LLM-Mediated ADHD Self-Diagnosis",
+    "authors": [
+      "Matilde Elene Hansen",
+      "Ross Deans Kristensen-McLachlan"
+    ],
+    "abstract": "Large Language Models (LLMs) are increasingly used for medical self-diagnosis. However, the way demographic cues shape outputs in these interactions remains poorly understood. This is particularly consequential for diagnoses like ADHD, where persistent gender disparities are not fully aligned with the clinical evidence. We adapt the Context Association Test (CAT) to evaluate whether GPT-4o responds to gendered ADHD associations in a zero-shot, self-diagnostic setting. We show that explicit cueing consistently amplifies certain ADHD subtype associations while implicit cueing produces near proxy-aligned distributions. These divergences suggest that explicit demographic cues may activate bias-mitigation mechanisms that over-correct rather than eliminate bias, whereas implicit cues appear to reflect the model's default behavior. Our results demonstrate that evaluating gendered bias in LLM-mediated self-diagnosis requires careful attention to the demographic associations a model encodes.",
+    "url": "http://arxiv.org/abs/2610.33697v1",
+    "published": "2026-10-24T14:24:11Z"
+  },
+  {
+    "id": "2610.33765",
+    "title": "RoleHear: Pseudo-Labeling for Semi-Supervised Role-Attributed Streaming Speech Recognition",
+    "authors": [
+      "Zefang Liu",
+      "Chenyang Zhu",
+      "Sangwoo Cho",
+      "Xujun Peng",
+      "Rongqing Huang",
+      "Shi-Xiong Zhang",
+      "Sambit Sahu"
+    ],
+    "abstract": "Streaming automatic speech recognition transcribes at low latency but produces an unattributed word stream, while real-time applications such as customer-service analytics need each word tied to a speaker role. Role attribution is usually a separate stage, either an offline or streaming speaker-diarization model aligned to the words or a text-based large language model applied to the transcript, and role labels for training are scarce. We present RoleHear, a semi-supervised pipeline that makes a single cache-aware streaming transducer emit roles inline through lightweight in-vocabulary role tokens: a fast turn-boundary marker followed by a per-role token a few words later. An offline transducer teacher, fine-tuned into a role-attributed recognizer, relabels unlabeled audio, and a multimodal large language model supplies silver role labels where gold annotations are unavailable. The streaming student is fine-tuned on the mixture in a single pass. Across customer-service calls with gold roles and earnings calls with silver roles, RoleHear attributes roles accurately while preserving transcription quality and narrowing the gap to the offline teacher.",
+    "url": "http://arxiv.org/abs/2610.33765v1",
+    "published": "2026-10-24T16:17:15Z"
+  },
+  {
+    "id": "2610.33813",
+    "title": "Task Format as a Factor in Adaptation: A Controlled Comparison of LoRA and Full Fine-Tuning for Prompt-Safety Classification",
+    "authors": [
+      "John Alderete",
+      "Srirakshith Betageri",
+      "Jennifer Flynn",
+      "Alex Greenhalgh",
+      "Josh Rubin",
+      "Yoshita Varma Annam"
+    ],
+    "abstract": "Fine-tuning a language model for classification involves many design decisions. Comparisons of low-rank adaptation (LoRA) with full fine-tuning are common but often confounded, and task format is rarely studied. We compare both regimes on prompt-safety classification with a matched 400M encoder-decoder pair (Ettin) across three task formats, with up to 15 seeds per cell and pre-specified analyses. At the pre-specified learning rates, full fine-tuning leads LoRA by 2-3 pp in every architecture and format trained on the label alone. On the encoder, the gap closes once both rates are chosen by the same search. Training LoRA to write a reason after its verdict adds 4.0 pp and closes the gap, but a content-free sentence of equal length does not. Trained models score above a prompted 8B in domain but fall behind it on two of three out-of-distribution corpora, trailing by 8-23 pp on adversarial jailbreaks and flagging 27-66% of benign but harmful-looking prompts as unsafe, against the 8B's 2-3%. Together, the results suggest that the adaptation regime matters less than how each model is trained, its learning rate, and training target, and that in-domain accuracy alone is an incomplete guide to robustness.",
+    "url": "http://arxiv.org/abs/2610.33813v1",
+    "published": "2026-10-24T17:24:54Z"
+  },
+  {
+    "id": "2610.33899",
+    "title": "When Personas Become Harmful: Guiding LLMs with Global Citizenship Values Alignment",
+    "authors": [
+      "Siqi Shen",
+      "Lajanugen Logeswaran",
+      "Moontae Lee",
+      "Honglak Lee",
+      "Rada Mihalcea"
+    ],
+    "abstract": "LLMs are increasingly being used by users from diverse demographics with pluralistic values and distinct backgrounds. Maintaining safety while respecting value-laden personas is uniquely challenging because persona-conditioned requests are often not overtly malicious, unlike those in existing safety benchmarks. Alignment methods aimed at adversarial requests therefore may miss the harm that emerges from persona use, leaving models to either refuse legitimate value expression or blindly follow unsafe personas. We construct a dataset of 11k controversial topics paired with value-based personas mapping to value dimensions from the Schwartz Value Survey. Through an agentic pipeline that iteratively refines the topic and persona, we surface and collect harmful responses from well-aligned commercial LLMs with a more than 47% success rate. We use UNESCO's global citizenship principles as a minimal common ground for distinguishing valid value expressions from harmful behaviors, and introduce a controllable alignment model that lets users balance persona adherence and safety at inference time. The resulting model is safer and more persona-adherent than baselines on most samples.",
+    "url": "http://arxiv.org/abs/2610.33899v1",
+    "published": "2026-10-24T20:18:51Z"
+  },
+  {
+    "id": "2610.33962",
+    "title": "Beyond Belief: Evaluating and Mitigating LLM Susceptibility to Misinformation",
+    "authors": [
+      "Emran Kanaan",
+      "Jiho Lee",
+      "Ibrahim Odat",
+      "Soroush Vosoughi",
+      "Weicheng Ma"
+    ],
+    "abstract": "Tool-using large language models (LLMs) must decide whether external information warrants action. We investigate whether their expressed credibility judgments reliably indicate behavioral resistance to misinformation. We evaluate five LLMs on 196 constructed false notices paired with legitimate counterparts and 204 archived attacks adapted to simulated tool use. When asked to act on the constructed notices, models issue harmful tool calls in 27%--99% of cases they have rated untrustworthy. Removing the preliminary rating step increases harmful execution by 15 percentage points on average, showing that credibility elicitation itself changes the behavior being evaluated. Interventions that improve credibility discrimination do not consistently yield safer actions. A simple forewarning significantly reduces harmful execution in four of five models, but neither tested generated-example prebunk outperforms it in the main evaluation. These reductions can also compromise legitimate task completion. Supervised fine-tuning on generated false notices reduces harmful execution on held-out archived attacks under the rating-first protocol, with model-dependent utility costs and weaker protection without rating elicitation. Our findings motivate evaluating misinformation defenses through both harmful actions and legitimate task completion, while accounting for the behavioral effects of the evaluation protocol.",
+    "url": "http://arxiv.org/abs/2610.33962v1",
+    "published": "2026-10-25T00:26:14Z"
+  },
+  {
+    "id": "2610.34013",
+    "title": "The Patient Is Always Right? Evaluating Sycophancy in Medical Diagnosis with Graded Patient Beliefs",
+    "authors": [
+      "Viswonathan Manoranjan",
+      "Andrea Mock",
+      "Myra Cheng",
+      "Lujain Ibrahim",
+      "Andrew Coyne",
+      "Junyi Jessy Li",
+      "Desmond C. Ong"
+    ],
+    "abstract": "More people are seeking out general-purpose AI models for medical advice, including diagnosis. Yet, AI models are susceptible to sycophancy, like validating users' beliefs even when they are untrue, which could lead to false positive diagnoses. Here, we evaluate how nine AI models change their diagnostic decision when a patient presents a belief that they have a specific (but incorrect) medical condition. We vary how close the user belief is to the clinical evidence presented. Models sycophantically adopt the patient's belief on average 23.2\\% of the time---sometimes even when the patient proposes a fictional, made-up condition. We also varied different personas, including a Rare Disease Claimer that got models to accept their belief 43.0\\% of the time. Additional analyses find that medical fine-tuning and model scale makes models less susceptible to changing their diagnoses. Sycophantic bias in medical diagnosis raises implications for safety, especially as more people are using AI for health support.",
+    "url": "http://arxiv.org/abs/2610.34013v1",
+    "published": "2026-10-25T02:54:42Z"
+  },
+  {
+    "id": "2610.34074",
+    "title": "Identically Trained Language Models Break on Different Jailbreaks",
+    "authors": [
+      "Chi-Wei Chang",
+      "Mu-Tien Kuo",
+      "Kuan-Wei Lee",
+      "Meng-Hsun Tsai"
+    ],
+    "abstract": "Jailbreak benchmarks test one checkpoint and treat which jailbreaks break it as a property of its pretraining data and safety training. We ask whether another pretraining run of the same data, given the same safety training, would break on the same jailbreaks. For each of 25 pretraining data recipes, we take 1B base models from 3 pretraining seeds and give each the same safety post-training with 2 post-training seeds, for 150 models in all. We then collect 20 responses from every model to a shared set of jailbreak prompts and correlate the per-prompt non-refusal rates between every pair of models. On average, two post-trained copies of the same pretraining run have per-prompt non-refusal rates that correlate at 0.984. A different pretraining seed lowers the correlation to 0.811, and a different data recipe lowers it only slightly further, to 0.779. These results indicate that which jailbreaks break a checkpoint depends much more on its pretraining run than on its data, a pattern that holds in all 25 data recipes and at 150M and 300M parameters. In practice, the best of 91 attack templates found on one checkpoint stays the best after a new pretraining seed in only 27% of model pairs, against 67% after a new post-training seed. Each pretraining run also leaves a fingerprint: across 3,211 prompts, a model's per-prompt non-refusal rates identify its pretraining run among all 75 runs every time, and a random subset of 50 prompts still does so 98% of the time.",
+    "url": "http://arxiv.org/abs/2610.34074v1",
+    "published": "2026-10-25T05:30:02Z"
+  }
+]

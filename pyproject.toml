@@ -7,7 +7,7 @@ dependencies = [
   "feedparser==6.0.14",
   "langchain==1.4.7",
   "langchain-chroma==1.1.0",
-  "langchain-google-genai==4.4.2",
+  "langchain-openai==1.7.3",
   "langgraph==1.2.18",
   "playwright==1.64.1",
   "pydantic==2.14.1",

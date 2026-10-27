@@ -26,3 +26,13 @@
    3.5-flash-lite, 3.5-flash, 3.6-flash). Each has a small per-model quota (3.8-flash: 20/day); the lite
    model scored all 15 papers but called all 0 relevant, other models 429'd mid-run. Best run so far
    (3 relevant, 3 drafts) was before the prompt fix in #6, so it is not committed as the sample run.
+9. **Quota blocker resolved by switching LLM backend.** Moved all LLM calls to the an OpenAI-compatible Qwen3.6-35B
+   vLLM endpoint (OpenAI-compatible, via `langchain-openai`). Note #8's model list no longer applies.
+   Two gotchas from the runbook: vLLM port 8000 is loopback-only (use the public HTTPS URL; my first attempt
+   against `IP:8000` timed out for ~15 minutes of debugging), and Qwen "thinking" is on by default, so
+   `enable_thinking=false` is passed and `max_tokens=2048`, else content can come back empty.
+10. **Weak match in the committed sample run.** The sycophancy-in-medical-diagnosis paper was matched to
+    "EXT" with a reason that merges two unrelated things ("benign substance unlock" and sycophancy). Our
+    plan does mention sycophancy (RESEARCH_PLAN.md l.356, multi-axis safety), so the link is real but
+    thin and the reason is sloppy. Not fixed: shows why a human reviews drafts before anything is sent, and
+    where a validation node (check the reason's quotes against retrieved chunks) would go.

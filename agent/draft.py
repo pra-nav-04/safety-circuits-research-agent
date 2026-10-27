@@ -1,5 +1,5 @@
 """Draft node: personalised outreach note. Writes text only; nothing is ever sent."""
-from agent.llm import DRAFT_MODEL, get_llm
+from agent.llm import get_llm
 from agent.rag import OPEN_HYPOTHESES
 
 PROMPT = """Write a short (90-130 words) friendly email DRAFT from Pranav Yadav (MSc student, University of Bonn)
@@ -21,7 +21,7 @@ Output only the email body, starting with a greeting."""
 
 
 def draft_outreach(paper: dict, score: dict, chunks: list[dict], llm=None) -> str:
-    llm = llm or get_llm(0.5, DRAFT_MODEL)
+    llm = llm or get_llm(0.5)
     msg = llm.invoke(PROMPT.format(
         key=score["matched_hypothesis"], hyp=OPEN_HYPOTHESES[score["matched_hypothesis"]],
         reason=score["reason"], chunk=chunks[0]["text"][:800] if chunks else "",

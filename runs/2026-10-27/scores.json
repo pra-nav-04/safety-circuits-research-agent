@@ -1,0 +1,77 @@
+{
+  "2610.33258": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper focuses on auditing cheap, frozen 'System One' models for content moderation and analyzing confidence metrics, which is unrelated to the project's investigation of causal circuits, attention head ablation, or LoRA editing in instruct LLMs. None of the project's hypotheses (H3, H3b, H4, F1-F3, EXT) concern the economic efficiency, calibration, or disagreement signals of low-cost moderation classifiers."
+  },
+  "2610.33279": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper focuses on pharmacovigilance causality assessment using multi-agent LLMs, which is entirely unrelated to the project's scope of mechanistic interpretability, attention head ablation, and refusal circuits in instruct LLMs. No concepts from the abstract (ICSRs, Naranjo scale, FAERS) connect to the provided hypotheses (H3, H4, F1-F3, EXT) regarding safety head editing or generational circuit migration."
+  },
+  "2610.33299": {
+    "relevant": true,
+    "matched_hypothesis": "H4",
+    "reason": "The abstract explicitly states that attention heads mediating specific behaviors 'shift during training' and that the circuit 'reorganizes,' which directly supports H4's claim that circuit location migrates across generations. This aligns with the project's finding that the refusal circuit's location is not static but changes as models evolve."
+  },
+  "2610.33441": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The new paper proposes SCAPE-T, a metric for semantic complexity in encoder-only transformers, which is methodologically distinct from the project's focus on decoder-based instruct LLMs and causal ablation of specific attention heads. The abstract does not mention refusal mechanisms, safety editing, or the specific circuit structures (H3, H4) or findings (F1, F3) central to the project's hypotheses."
+  },
+  "2610.33495": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper focuses on cross-model representational alignment and routing using frozen models, whereas the project's hypotheses concern the causal editability and ablation of specific attention heads within single models to control refusal behavior. There is no mention in the abstract of head-level interventions, refusal circuits, or safety editing, which are the core subjects of the listed hypotheses."
+  },
+  "2610.33542": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a training-free neuron editing method (SEDATE) but does not mention attention heads, head ablation, or the specific refusal circuits targeted by hypotheses H3, H3b, or H4. Furthermore, the project's defined scope explicitly excludes cross-lingual analysis, making the paper's multilingual focus irrelevant to the listed hypotheses."
+  },
+  "2610.33586": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a framework for estimating depression severity from social media traces using mental evidence reasoning, which is unrelated to the project's focus on attention heads, refusal circuits, or safety edits in LLMs. None of the provided excerpts or hypotheses mention mental health assessment, social traces, or depression-related tasks."
+  },
+  "2610.33624": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a study on autonomous post-training and recursive self-improvement using human feedback, which does not address the localization, ablation, or editing of specific attention heads responsible for refusal. The project's hypotheses focus on the causal structure of refusal circuits in existing instruct models, whereas this paper focuses on the process of training new models from base checkpoints."
+  },
+  "2610.33697": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The new paper investigates gender bias in medical self-diagnosis using GPT-4o, which is unrelated to the project's focus on attention heads, refusal circuits, or small instruct LLMs (Qwen/Gemma/Llama). None of the listed hypotheses (H3, H3b, H4, F1-F3, EXT) address demographic bias, medical diagnosis, or GPT-4o."
+  },
+  "2610.33765": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a speech recognition system for speaker role attribution, which is entirely unrelated to the project's focus on LLM attention heads, refusal circuits, or safety patching. No concepts from the abstract (streaming ASR, diarization, role tokens) map to any of the listed hypotheses (H3, H4, F1-F3, EXT) regarding harmful prompt refusal in instruct LLMs."
+  },
+  "2610.33813": {
+    "relevant": true,
+    "matched_hypothesis": "F1",
+    "reason": "The new paper directly investigates the efficacy of Low-Rank Adaptation (LoRA) for a safety-related task (prompt-safety classification), which aligns with F1's focus on editing refusal via head-restricted LoRA. The abstract's finding that adaptation regime and training targets (like learning rate and target length) critically determine performance supports the project's observation that the specific LoRA edit parameters (e.g., target length) dictate whether the edit results in mere opener-stopping or substantive content transfer. "
+  },
+  "2610.33899": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper focuses on persona-conditioned value alignment and introduces a controllable alignment model using UNESCO principles, which does not address the causal mechanisms, head ablation, or activation patching of refusal circuits described in the hypotheses. The project's hypotheses concern the structural modularity of refusal heads and content-transfer via benign editing, whereas the paper proposes a different inference-time balancing method without investigating the internal circuitry or causal edits of refusal."
+  },
+  "2610.33962": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The new paper focuses on misinformation susceptibility and tool-use behavior in the context of credibility judgments, which is distinct from the project's focus on refusal circuits and harmful prompt compliance in instruct LLMs. None of the provided excerpts discuss misinformation, tool-use, or credibility ratings, so no direct link to the listed hypotheses can be established from the abstract alone."
+  },
+  "2610.34013": {
+    "relevant": true,
+    "matched_hypothesis": "EXT",
+    "reason": "The abstract explicitly identifies 'sycophancy' as a susceptibility where models validate false patient beliefs, which directly maps to the 'benign substance unlock' and 'sycophancy' listed under the EXT (Ongoing extensions) hypothesis. The project's method notes further confirm that 'sycophancy' is a target for future multi-axis safety analysis alongside deception and bias."
+  },
+  "2610.34074": {
+    "relevant": true,
+    "matched_hypothesis": "F2",
+    "reason": "The abstract demonstrates that jailbreak susceptibility is highly sensitive to specific pretraining seeds (correlation drops from 0.984 to 0.811), which directly informs the generational sweep (F2) by suggesting that the 'migration' of refusal circuits across model generations may be driven by stochastic pretraining variations rather than just architectural depth. This supports the investigation into how circuit location changes across generations by highlighting the role of pretraining identity in determining which specific prompts break safety filters."
+  }
+}
