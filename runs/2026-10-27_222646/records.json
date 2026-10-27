@@ -1,0 +1,396 @@
+[
+  {
+    "id": "blog:2026-red-teaming-auto-mode",
+    "title": "Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents",
+    "authors": [],
+    "abstract": "We red-team the blocking monitors in Claude Code and OpenAI's Codex with an adversarial agent, and strengthen Auto Mode against the attacks we find.",
+    "url": "https://alignment.anthropic.com/2026/red-teaming-auto-mode/",
+    "published": ""
+  },
+  {
+    "id": "blog:2026-training-alignment-auditors",
+    "title": "Training Alignment Auditors via Reinforcement Learning",
+    "authors": [],
+    "abstract": "We train LLMs to investigate target models with hidden behaviors planted in their system prompt. A trained Haiku 4.5 policy matches Opus 4.6 on held-out evaluations for auditing quality and generalizes to harder fine-tuned targets in a different scaffold.",
+    "url": "https://alignment.anthropic.com/2026/training-alignment-auditors/",
+    "published": ""
+  },
+  {
+    "id": "blog:2026-reward-seeker",
+    "title": "Training a Misaligned Reward Seeker",
+    "authors": [],
+    "abstract": "To better understand the impact of reward hacking on model behavior, we trained an Opus-class model with large-scale RL on many production environments vulnerable to reward hacks. We consider this a plausible proxy for what a real training run might look like had we not invested significant effort into preventing and detecting reward hacking in our normal training runs. Our results show that a high rate of reward hacking during RL can cause models to be willing to perform long sequences of harmful real-world actions in pursuit of task success.",
+    "url": "https://alignment.anthropic.com/2026/reward-seeker/",
+    "published": ""
+  },
+  {
+    "id": "blog:2026-automated-alignment-researchers",
+    "title": "Automated Researchers Can Mitigate Well-Characterized Alignment Failures",
+    "authors": [],
+    "abstract": "Across 10 common alignment failures, the strongest technique our automated alignment researchers discover significantly mitigates the targeted failures and generalizes out of distribution. Our findings suggest that automating measurable alignment research may already be practical, rather than years away.",
+    "url": "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
+    "published": ""
+  },
+  {
+    "id": "blog:2026-taste",
+    "title": "TASTE: Can AI Models Judge AI Safety Research Proposals?",
+    "authors": [],
+    "abstract": "We introduce TASTE, a benchmark measuring how well models can judge AI safety research proposals against the preferences of experienced researchers.",
+    "url": "https://alignment.anthropic.com/2026/taste/",
+    "published": ""
+  },
+  {
+    "id": "2610.33258",
+    "title": "Two Uncertainties Are Not One: Disagreement versus Decision-Risk in Cheap Structured Content Moderation",
+    "authors": [
+      "Karan Yadav"
+    ],
+    "abstract": "Content moderation compresses a graded, contested human judgment into a binary act (leave up / take down) over billions of items, at a scale where running a frontier LLM on every post is uneconomical. A new class of frozen \"System One\" models returns typed, calibrated decisions instead of text at ~USD 0.000025 per call and ~100 ms. We run the first independent audit of one such model on 142,658 human-labeled comments, and benchmark it against 14 frontier reasoning models (the GPT-5.x, Claude, Gemini 3, and Grok families) on a shared probe set. Two findings stand out. First, the cheap model is accuracy-competitive: its zero-shot classification AUROC (0.83) is not statistically separable (paired bootstrap, n=56; a failure to reject parity, not proof of equivalence) from 13 of the 14 frontier systems while costing 1-3 orders of magnitude less, and it is no worse calibrated than several of them. Second, \"confidence\" conflates two uncertainties that come apart: human disagreement (where annotators split on satire and coded language) and decision risk (where the automatic action is costly-wrong). Under an asymmetric moderation loss these call for opposite escalation signals, so no single confidence number serves both. Because the model prices extra questions at nearly zero, decomposing the judgment into parallel sub-questions and reading their spread recovers a human-disagreement signal that the model's native confidence misses -- but this remedy is specific: it helps the weakest, disagreement-blind models and only when the decomposition aligns with the sources of disagreement; a specialist toxicity model and the strongest LLMs do not need it, and the effect is distribution-sensitive. We will release the instrument, the cached runs, and the analysis.",
+    "url": "http://arxiv.org/abs/2610.33258v1",
+    "published": "2026-10-23T20:08:04Z"
+  },
+  {
+    "id": "2610.33279",
+    "title": "Multi-Agent Retrieval-Augmented Causality Assessment (MARCA) of Individual Case Safety Reports in Pharmacovigilance",
+    "authors": [
+      "Daisy Rae Lopez",
+      "Angela Boccia",
+      "Maurizio Sessa"
+    ],
+    "abstract": "Introduction: Increasing volumes of individual case safety reports (ICSRs) challenge expert-led causality assessment in pharmacovigilance. We developed MARCA (Multi-Agent Retrieval-Augmented Causality Assessment), a four-agent framework for Naranjo-based assessment, and evaluated agreement with human experts and exploratory differences between non-RAG and RAG-labelled scores. Methods: MARCA combined scientific literature retrieval, drug-label assessment, objective-evidence classification, and clinical causality reasoning using Gemini 2.5 Pro and DeepSeek-V3.2. Agent-generated rationales informed human-assisted scoring. A consensus expert reference standard covered 215 ICSRs and 1,562 drug-event combinations (DECs) from FAERS (Q1-Q2 2025). Agreement was measured using percentage agreement and Cohen's kappa. Results: Question-level agreement was 96.8% for Naranjo Q2 (kappa = 0.491; 95% CI 0.265-0.663), 85.4% for Q5 (kappa = 0.269; 95% CI 0.180-0.340), and 96.8% for Q10 (kappa = 0.922; 95% CI 0.885-0.951). Final causality classification agreement was 79.4% (95% CI 71.8-85.3; kappa = 0.587, 95% CI 0.450-0.690). In a retrospective subset of 60 DECs, agreement was higher for RAG-labelled than non-RAG scores for Q5 (83.3% vs 65.0%) and Q10 (100.0% vs 18.3%). Discussion: MARCA-assisted assessment showed substantial variation in agreement across Naranjo questions, with lower concordance for alternative causes. Retrospective RAG comparisons are exploratory and do not establish prospective effectiveness.",
+    "url": "http://arxiv.org/abs/2610.33279v1",
+    "published": "2026-10-23T20:43:29Z"
+  },
+  {
+    "id": "2610.33299",
+    "title": "The Emergence and Sparsification of a Syntactic Circuit",
+    "authors": [
+      "Qing Yao",
+      "Sasha Boguraev",
+      "Tiago Pimentel",
+      "Kyle Mahowald"
+    ],
+    "abstract": "To understand the emergence of grammatical behavior in language models, we track circuits for subject-verb number agreement in pythia-1b and ten seeds of pythia-410m across training. We find that subject-verb agreement is learned early, and is initially handled by a diffuse collection of neurons. However, after agreement behavior has stabilized, the mechanisms responsible for it continue to reorganize. The attention heads which mediate agreement often shift during training: in the case of pythia-1b, behavior is controlled by two heads early in training but by a third (different) head later. Furthermore, the circuit shrinks over training, with pythia-1b's final circuit being strikingly sparse. We take these results to be informative about how linguistic knowledge emerges and is represented in a language model.",
+    "url": "http://arxiv.org/abs/2610.33299v1",
+    "published": "2026-10-23T21:10:54Z"
+  },
+  {
+    "id": "2610.33441",
+    "title": "Quantifying Meaning with SCAPE-T: Semantic Complexity from Encoder-Only Transformer Attention",
+    "authors": [
+      "Maxim Khovansky",
+      "Lev Mukhanov"
+    ],
+    "abstract": "Automated semantic complexity estimation remains underexplored in NLP, despite important applications in linguistics and interpretability. This paper defines semantic complexity as the code length required to uniquely specify a text's semantic meaning, and operationalises it via SCAPE-T, an attention-derived metric based on encoder-only transformers. Existing measures either model reader effort (readability, lexical difficulty), which correlates with surface features (word length, syntax), or quantify surface features directly (type-token ratio, word frequency). SCAPE-T targets semantic integration directly by combining three submetrics: (i) inverse-weighted self-focus (token-to-self), (ii) CLS focus (token-to-CLS), and (iii) inter-head redundancy (cosine similarity across heads), using layer-weighted aggregation; data-driven learning is confined to hyperparameter tuning for calibration. Development uses philosophical prose vs. MCTest stories; evaluation is on children's stories vs. technical Wikipedia articles, with pairwise accuracy on contrasts as the primary criterion. Baselines include readability, syntactic/lexical, and LLM-derived measures. SCAPE-T substantially outperforms all tested baselines under word-length control, with a pairwise accuracy of 78.5% (95% bootstrap CI: 76.1-80.4, N=10k pairwise comparisons; +12.7 percentage points over the strongest baseline); without that control, readability heuristics overtake, consistent with their reliance on surface features. On a short-terms abstractness dataset, SCAPE-T also leads. Ablations show each submetric contributes materially. Overall, the results show SCAPE-T isolates conceptual structure from lexical/syntactic confounds better than existing methods, and generalises across two held-out domains.",
+    "url": "http://arxiv.org/abs/2610.33441v1",
+    "published": "2026-10-24T04:34:28Z"
+  },
+  {
+    "id": "2610.33495",
+    "title": "Five Architectures, One Shared Space Cross-Model Representational Alignment Without Weight Merging",
+    "authors": [
+      "Oladimeji Anthonio",
+      "Dimeji Olawuyi",
+      "Oloruntoba Ajayi",
+      "Temilola Aderemi"
+    ],
+    "abstract": "Combining language models is usually done by averaging weights, which works only when the models share a common starting point. We ask whether five frozen, independently trained models with different internal designs (four transformers from four organizations and one state-space model) can be related through their activations alone, with no weight merging. Using permutation tests, an independent replication probe set, depth sweeps, pooling ablations and confound checks, we find statistically robust correspondence between how the five models organize the same text. It is strongest at each model's final layer and weaker for the state-space model, whose weakest pairing is still 35-43 times chance. We use this to build a shared space with Generalized Procrustes Analysis, in which no model is a fixed reference. At the final layer, mean held-out retrieval accuracy over the twenty ordered model pairs is 0.91 to 0.93 on two probe sets (chance 0.03), beating pairwise linear maps (0.82 to 0.85), but the space is worse than those maps in the middle layers. It transfers to ordinary English of unfamiliar grammatical form and fails on mathematical and logical notation. We then test whether the space supports a router that picks among the five models on gradeable tasks. Across four task types we find no case where routing beats always using the strongest model, and we report this as a negative result. A correctness signal that looked strong turned out to be category membership in disguise. All experiments ran on one laptop without a GPU.",
+    "url": "http://arxiv.org/abs/2610.33495v1",
+    "published": "2026-10-24T06:52:49Z"
+  },
+  {
+    "id": "2610.33542",
+    "title": "SEDATE: Do Large Language Models Share an Aggression Circuit Across Languages?",
+    "authors": [
+      "Sagnik Basu",
+      "Sayan Das",
+      "Somnath Banerjee",
+      "Animesh Mukherjee"
+    ],
+    "abstract": "As the applications of AI continue to expand across various multimodal and multilingual domains, ensuring safe and responsible deployment of these systems has become an important concern. A wide-range of interventions have been proposed to make AI responses safer and more reliable. They often incur substantial computational or annotation costs, or cannot be extended to multilingual settings. In this work, we propose Selective Detection And Targeted Editing (SEDATE), a training-free approach based on detect-edit-verify strategy. SEDATE first detects the responsible neurons, edits them as and when necessary and finally verifies the model responses; all without any additional model training. We evaluate SEDATE across 7 languages and 4 model families. We further evaluate its effectiveness across 4 out-of-distribution languages and 4 additional datasets. We show that SEDATE achieves substantially superior safety scores across all languages and models over the best-performing baseline while retaining the general capabilities and incurring negligible overhead. Our results are robust, with the trends remaining similar for out-of-distribution languages and datasets.",
+    "url": "http://arxiv.org/abs/2610.33542v1",
+    "published": "2026-10-24T08:38:52Z"
+  },
+  {
+    "id": "2610.33586",
+    "title": "Words Are the Voice of the Mind: Depression Severity Estimation from Social Traces via Mental-Guided Evidence Reasoning",
+    "authors": [
+      "Nada Xu",
+      "Xueqin Chen",
+      "Qiang Gao",
+      "Hongru Liang",
+      "Wenqiang Lei"
+    ],
+    "abstract": "Depression severity estimation is crucial for mental health assessment and intervention, yet traditional approaches depend on clinical interviews or self-report questionnaires that require users' active participation. With the widespread use of online social media, users leave rich social traces that may reflect their mental states, motivating the task of social media-based depression severity estimation. Existing efforts have progressed from textual-feature-based classification to LLM-based questionnaire completion over standardized scale items, yet they still fall short in user-specific mental priors modeling, diversified semantic retrieval, and fine-grained reasoning over mental evidence. To address these limitations, we propose UMer, a user-specific mental evidence reasoning framework for social traces-based depression severity estimation. UMer first distills a user-specific mental prior from historical social traces to capture the user's psychological tendencies, behavioral patterns, and self-expression style. It then performs scale-guided multi-query retrieval to construct evidence memories from item-relevant posts. Finally, it conducts coarse-to-fine evidence-aware reasoning to distinguish direct and indirect evidence and predict item-level scores with interpretable rationales. Extensive experiments on real-world benchmarks demonstrate that UMer not only achieves competitive performance over existing baselines, but also provides evidence-grounded interpretability and generalizes to other scale-based tasks.",
+    "url": "http://arxiv.org/abs/2610.33586v1",
+    "published": "2026-10-24T10:28:49Z"
+  },
+  {
+    "id": "2610.33624",
+    "title": "RSI Arena: Towards Recursive Self-Improvement with Human Feedback",
+    "authors": [
+      "Yue Huang",
+      "Yanbo Wang",
+      "Lichi Li",
+      "Yuanyuan Chen",
+      "Andreas Haupt",
+      "Xiaonan Luo",
+      "Zheyuan Liu",
+      "Jihye Choi",
+      "Felix Juefei-Xu",
+      "Xiangliang Zhang",
+      "Radha Poovendran",
+      "Misha Sra",
+      "Ying Liu",
+      "Ben Burtenshaw",
+      "Thomas Wolf",
+      "Alex Pentland",
+      "Zichen Chen",
+      "Zhangchen Xu"
+    ],
+    "abstract": "Can AI agents autonomously train useful language models and improve them using feedback from users? We introduce RSI Arena, a two-stage study of autonomous post-training as a step toward recursive self-improvement. Ten frontier models act as training agents, each starting from NVIDIA Nemotron 3.5 Lightning 30B-A3B Base. During a six-day first stage, each agent has 1,000 GPU-hours and $300 in API credit on a shared 64-GPU cluster, independently selecting data, implementing training procedures, and choosing checkpoints. We evaluate their models on 20 benchmarks and through blind human evaluations. All ten agents produce working assistants, with the strongest model, trained by GPT-6 Astra, closing a median of 76% of the base-to-Instruct gap across 12 capability benchmarks. Its human-preference rating is also close to NVIDIA Instruct after statistical adjustment for answer length and formatting. In Stage 2, each agent receives the comparison records and votes involving its Stage 1 model and is given three additional days for further training. Using NVIDIA Instruct as a common reference across the two evaluation rounds, we observe an improvement from Stage 1 to Stage 2 in the style-adjusted relative rating of eight of the ten models. We show that benchmark gains were modest, with no clear link to preference gains, while some agents encouraged longer responses and one model showed increased harmful compliance on StrongREJECT. RSI Arena provides an auditable setting for studying how human feedback can guide autonomous model development. It takes a step toward recursive self-improvement with human feedback (RSIHF), in which people help define what improvement means for the AI systems they use.",
+    "url": "http://arxiv.org/abs/2610.33624v1",
+    "published": "2026-10-24T11:54:45Z"
+  },
+  {
+    "id": "2610.33697",
+    "title": "Gender Associations in LLM-Mediated ADHD Self-Diagnosis",
+    "authors": [
+      "Matilde Elene Hansen",
+      "Ross Deans Kristensen-McLachlan"
+    ],
+    "abstract": "Large Language Models (LLMs) are increasingly used for medical self-diagnosis. However, the way demographic cues shape outputs in these interactions remains poorly understood. This is particularly consequential for diagnoses like ADHD, where persistent gender disparities are not fully aligned with the clinical evidence. We adapt the Context Association Test (CAT) to evaluate whether GPT-4o responds to gendered ADHD associations in a zero-shot, self-diagnostic setting. We show that explicit cueing consistently amplifies certain ADHD subtype associations while implicit cueing produces near proxy-aligned distributions. These divergences suggest that explicit demographic cues may activate bias-mitigation mechanisms that over-correct rather than eliminate bias, whereas implicit cues appear to reflect the model's default behavior. Our results demonstrate that evaluating gendered bias in LLM-mediated self-diagnosis requires careful attention to the demographic associations a model encodes.",
+    "url": "http://arxiv.org/abs/2610.33697v1",
+    "published": "2026-10-24T14:24:11Z"
+  },
+  {
+    "id": "2610.33765",
+    "title": "RoleHear: Pseudo-Labeling for Semi-Supervised Role-Attributed Streaming Speech Recognition",
+    "authors": [
+      "Zefang Liu",
+      "Chenyang Zhu",
+      "Sangwoo Cho",
+      "Xujun Peng",
+      "Rongqing Huang",
+      "Shi-Xiong Zhang",
+      "Sambit Sahu"
+    ],
+    "abstract": "Streaming automatic speech recognition transcribes at low latency but produces an unattributed word stream, while real-time applications such as customer-service analytics need each word tied to a speaker role. Role attribution is usually a separate stage, either an offline or streaming speaker-diarization model aligned to the words or a text-based large language model applied to the transcript, and role labels for training are scarce. We present RoleHear, a semi-supervised pipeline that makes a single cache-aware streaming transducer emit roles inline through lightweight in-vocabulary role tokens: a fast turn-boundary marker followed by a per-role token a few words later. An offline transducer teacher, fine-tuned into a role-attributed recognizer, relabels unlabeled audio, and a multimodal large language model supplies silver role labels where gold annotations are unavailable. The streaming student is fine-tuned on the mixture in a single pass. Across customer-service calls with gold roles and earnings calls with silver roles, RoleHear attributes roles accurately while preserving transcription quality and narrowing the gap to the offline teacher.",
+    "url": "http://arxiv.org/abs/2610.33765v1",
+    "published": "2026-10-24T16:17:15Z"
+  },
+  {
+    "id": "2610.33813",
+    "title": "Task Format as a Factor in Adaptation: A Controlled Comparison of LoRA and Full Fine-Tuning for Prompt-Safety Classification",
+    "authors": [
+      "John Alderete",
+      "Srirakshith Betageri",
+      "Jennifer Flynn",
+      "Alex Greenhalgh",
+      "Josh Rubin",
+      "Yoshita Varma Annam"
+    ],
+    "abstract": "Fine-tuning a language model for classification involves many design decisions. Comparisons of low-rank adaptation (LoRA) with full fine-tuning are common but often confounded, and task format is rarely studied. We compare both regimes on prompt-safety classification with a matched 400M encoder-decoder pair (Ettin) across three task formats, with up to 15 seeds per cell and pre-specified analyses. At the pre-specified learning rates, full fine-tuning leads LoRA by 2-3 pp in every architecture and format trained on the label alone. On the encoder, the gap closes once both rates are chosen by the same search. Training LoRA to write a reason after its verdict adds 4.0 pp and closes the gap, but a content-free sentence of equal length does not. Trained models score above a prompted 8B in domain but fall behind it on two of three out-of-distribution corpora, trailing by 8-23 pp on adversarial jailbreaks and flagging 27-66% of benign but harmful-looking prompts as unsafe, against the 8B's 2-3%. Together, the results suggest that the adaptation regime matters less than how each model is trained, its learning rate, and training target, and that in-domain accuracy alone is an incomplete guide to robustness.",
+    "url": "http://arxiv.org/abs/2610.33813v1",
+    "published": "2026-10-24T17:24:54Z"
+  },
+  {
+    "id": "2610.33899",
+    "title": "When Personas Become Harmful: Guiding LLMs with Global Citizenship Values Alignment",
+    "authors": [
+      "Siqi Shen",
+      "Lajanugen Logeswaran",
+      "Moontae Lee",
+      "Honglak Lee",
+      "Rada Mihalcea"
+    ],
+    "abstract": "LLMs are increasingly being used by users from diverse demographics with pluralistic values and distinct backgrounds. Maintaining safety while respecting value-laden personas is uniquely challenging because persona-conditioned requests are often not overtly malicious, unlike those in existing safety benchmarks. Alignment methods aimed at adversarial requests therefore may miss the harm that emerges from persona use, leaving models to either refuse legitimate value expression or blindly follow unsafe personas. We construct a dataset of 11k controversial topics paired with value-based personas mapping to value dimensions from the Schwartz Value Survey. Through an agentic pipeline that iteratively refines the topic and persona, we surface and collect harmful responses from well-aligned commercial LLMs with a more than 47% success rate. We use UNESCO's global citizenship principles as a minimal common ground for distinguishing valid value expressions from harmful behaviors, and introduce a controllable alignment model that lets users balance persona adherence and safety at inference time. The resulting model is safer and more persona-adherent than baselines on most samples.",
+    "url": "http://arxiv.org/abs/2610.33899v1",
+    "published": "2026-10-24T20:18:51Z"
+  },
+  {
+    "id": "2610.33962",
+    "title": "Beyond Belief: Evaluating and Mitigating LLM Susceptibility to Misinformation",
+    "authors": [
+      "Emran Kanaan",
+      "Jiho Lee",
+      "Ibrahim Odat",
+      "Soroush Vosoughi",
+      "Weicheng Ma"
+    ],
+    "abstract": "Tool-using large language models (LLMs) must decide whether external information warrants action. We investigate whether their expressed credibility judgments reliably indicate behavioral resistance to misinformation. We evaluate five LLMs on 196 constructed false notices paired with legitimate counterparts and 204 archived attacks adapted to simulated tool use. When asked to act on the constructed notices, models issue harmful tool calls in 27%--99% of cases they have rated untrustworthy. Removing the preliminary rating step increases harmful execution by 15 percentage points on average, showing that credibility elicitation itself changes the behavior being evaluated. Interventions that improve credibility discrimination do not consistently yield safer actions. A simple forewarning significantly reduces harmful execution in four of five models, but neither tested generated-example prebunk outperforms it in the main evaluation. These reductions can also compromise legitimate task completion. Supervised fine-tuning on generated false notices reduces harmful execution on held-out archived attacks under the rating-first protocol, with model-dependent utility costs and weaker protection without rating elicitation. Our findings motivate evaluating misinformation defenses through both harmful actions and legitimate task completion, while accounting for the behavioral effects of the evaluation protocol.",
+    "url": "http://arxiv.org/abs/2610.33962v1",
+    "published": "2026-10-25T00:26:14Z"
+  },
+  {
+    "id": "2610.34013",
+    "title": "The Patient Is Always Right? Evaluating Sycophancy in Medical Diagnosis with Graded Patient Beliefs",
+    "authors": [
+      "Viswonathan Manoranjan",
+      "Andrea Mock",
+      "Myra Cheng",
+      "Lujain Ibrahim",
+      "Andrew Coyne",
+      "Junyi Jessy Li",
+      "Desmond C. Ong"
+    ],
+    "abstract": "More people are seeking out general-purpose AI models for medical advice, including diagnosis. Yet, AI models are susceptible to sycophancy, like validating users' beliefs even when they are untrue, which could lead to false positive diagnoses. Here, we evaluate how nine AI models change their diagnostic decision when a patient presents a belief that they have a specific (but incorrect) medical condition. We vary how close the user belief is to the clinical evidence presented. Models sycophantically adopt the patient's belief on average 23.2\\% of the time---sometimes even when the patient proposes a fictional, made-up condition. We also varied different personas, including a Rare Disease Claimer that got models to accept their belief 43.0\\% of the time. Additional analyses find that medical fine-tuning and model scale makes models less susceptible to changing their diagnoses. Sycophantic bias in medical diagnosis raises implications for safety, especially as more people are using AI for health support.",
+    "url": "http://arxiv.org/abs/2610.34013v1",
+    "published": "2026-10-25T02:54:42Z"
+  },
+  {
+    "id": "2610.34074",
+    "title": "Identically Trained Language Models Break on Different Jailbreaks",
+    "authors": [
+      "Chi-Wei Chang",
+      "Mu-Tien Kuo",
+      "Kuan-Wei Lee",
+      "Meng-Hsun Tsai"
+    ],
+    "abstract": "Jailbreak benchmarks test one checkpoint and treat which jailbreaks break it as a property of its pretraining data and safety training. We ask whether another pretraining run of the same data, given the same safety training, would break on the same jailbreaks. For each of 25 pretraining data recipes, we take 1B base models from 3 pretraining seeds and give each the same safety post-training with 2 post-training seeds, for 150 models in all. We then collect 20 responses from every model to a shared set of jailbreak prompts and correlate the per-prompt non-refusal rates between every pair of models. On average, two post-trained copies of the same pretraining run have per-prompt non-refusal rates that correlate at 0.984. A different pretraining seed lowers the correlation to 0.811, and a different data recipe lowers it only slightly further, to 0.779. These results indicate that which jailbreaks break a checkpoint depends much more on its pretraining run than on its data, a pattern that holds in all 25 data recipes and at 150M and 300M parameters. In practice, the best of 91 attack templates found on one checkpoint stays the best after a new pretraining seed in only 27% of model pairs, against 67% after a new post-training seed. Each pretraining run also leaves a fingerprint: across 3,211 prompts, a model's per-prompt non-refusal rates identify its pretraining run among all 75 runs every time, and a random subset of 50 prompts still does so 98% of the time.",
+    "url": "http://arxiv.org/abs/2610.34074v1",
+    "published": "2026-10-25T05:30:02Z"
+  },
+  {
+    "id": "2610.34103",
+    "title": "T2D: Target-to-Draft Model Pruning & Adaptation for Efficient Speculative Decoding",
+    "authors": [
+      "Shahriar Kabir Nahin",
+      "Xiao Ye",
+      "Muhao Chen",
+      "Ben Zhou",
+      "Anshuman Chhabra"
+    ],
+    "abstract": "Speculative decoding significantly accelerates autoregressive text generation in Large Language Models (LLMs), but its efficacy depends largely on two key factors: the distributional alignment between the draft and the target model, and the draft model's latency during inference. However, existing approaches typically utilize independently pretrained small draft models or seek to prune the target model to a manually chosen architecture, thereby failing to explicitly balance the trade-off between draft model alignment and token generation efficiency. To address this gap, we formulate draft model design as an optimization problem and propose T2D, a framework that constructs draft models directly from the target model using latency-aware structured pruning and knowledge distillation. In this manner, T2D obtains draft models that are jointly optimized for both measured inference latency and cross-entropy loss on the target model's responses, resulting in superlative speculative decoding performance. Through extensive experiments on multi-domain speculative decoding benchmarks and across several target model families of differing scale, we demonstrate how T2D prunes up to 92\\% of the target model to obtain highly performant draft models compared to competitive baselines. Moreover, draft models obtained via T2D can also be utilized by other speculative decoding token-alignment and knowledge distillation methods in a plug-and-play fashion, leading to further gains. Our findings underscore the importance of jointly navigating the draft model architecture-alignment frontier to unlock the full potential of speculative decoding for LLMs.",
+    "url": "http://arxiv.org/abs/2610.34103v1",
+    "published": "2026-10-25T07:00:45Z"
+  },
+  {
+    "id": "2610.34281",
+    "title": "Transformer to GPT-5: Advancements, Limitations, and Future Directions in Large Language Model Design",
+    "authors": [
+      "Harsidak Singh Banwait",
+      "Chander Prabha"
+    ],
+    "abstract": "Large Language Models (LLMs) have revolutionized Artificial Intelligence (AI) by their extraordinary capabilities, like contextual understanding, few-shot/zero-shot learning, code generation, ability to reason and problem-solving. Recent studies have shown immense work on LLMs. Yet, there is limited work on the thorough taxonomy of LLMs. This study would showcase a detailed classification of LLMs, starting with the earlier models like BERT and leading to LLMs like GPT, Gemini, Claude and Grok. We would delve into topics like datasets used to train LLMs, computational power used during training, their hardware specifications, architecture and parameters. Further, we would also look at the limitations, computational challenges and open problems as well. This study would primarily focus on the timeline of LLMs, signifying their growth over the period. Findings reveal a clear pattern: models that optimize the ratio between architectural complexity and data quality exhibit stronger reasoning stability and better alignment, without proportionally increasing the computational load. This desired balance between scaling and sustainability is the defining characteristic of the current generation of AI.",
+    "url": "http://arxiv.org/abs/2610.34281v1",
+    "published": "2026-10-25T13:25:30Z"
+  },
+  {
+    "id": "2610.34294",
+    "title": "Factual Yet One-Sided: Stance Poisoning and Evidence Balancing in Retrieval-Augmented Generation",
+    "authors": [
+      "Puyuan Yang",
+      "Shaoxuan Dong",
+      "Liujie Wu",
+      "Xiaochun Cheng",
+      "Bo Li"
+    ],
+    "abstract": "The stance expressed in responses from retrieval-augmented generation systems is significantly influenced by the stance distribution of the retrieved materials. Existing research on knowledge poisoning has primarily targeted factual errors. In contrast, this study focuses on injection attacks in which the facts are correct but the stance on a controversial issue is one-sided. At a mean topic-level poisoning share of 18.9% within the post-injection ProCon documents, all four generation models from different vendors exhibited stance shifts aligned with the poisoning direction; across four concentration levels, the shifts increased monotonically. This paper proposes a Stance-Balancing Middleware positioned between the retriever and the generator. It consists of stance detection, fixed balancing (2 supporting + 2 opposing + 1 neutral), and a debiasing prompt, without introducing additional large language model calls. Across all eight concentration-direction settings, the complete method reduced the magnitude of stance deviation by an estimated 0.106 to 0.350; the six settings at poisoning shares of 11.9%-18.9% remained significant after Holm adjustment (adjusted p <= 0.009). In the cross-model experiment, all eight model-direction combinations moved along the stance axis in the corrective direction, and seven of eight showed a clearly detected reduction in absolute distance from 0. In the concentration sweep, the post-defense intervals included 0 in all eight settings, while the cross-model pro-poisoning results retained small positive residual point estimates of +0.045 to +0.063. For 20 candidate documents, stance detection took approximately 1.5% of the median generation time on a single GPU and approximately 16% on CPU.",
+    "url": "http://arxiv.org/abs/2610.34294v1",
+    "published": "2026-10-25T13:50:10Z"
+  },
+  {
+    "id": "2610.34589",
+    "title": "HARP-LoRA: Hierarchy-Conditioned Rank Projection for Low-Rank Adaptation in Scientific Table Understanding",
+    "authors": [
+      "Hossein Sholehrasa",
+      "Mohammadhossein Amini",
+      "Doina Caragea",
+      "Remya Ampadi Ramachandran",
+      "Dan Wu",
+      "Zihang Shi",
+      "Zelin Li",
+      "Lindsey Hulbert",
+      "Eder Martinez",
+      "Xuan Xu",
+      "Majid Jaberi-Douraki"
+    ],
+    "abstract": "Tabular data is widely used in scientific applications, where complex layouts, including multi-level headers, merged cells, captions, and footnotes, make information extraction difficult. This is particularly important in pharmacokinetics (PK), where values must be correctly associated with the drug, species, dose, administration route, unit, and experimental condition. Parameter-efficient fine-tuning methods such as Low-Rank Adaptation (LoRA) reduce adaptation cost but do not explicitly incorporate relationships between table values and surrounding headers. We introduce HARP-LoRA, a hierarchy-conditioned rank projection method for low-rank adaptation in scientific table understanding. HARP-LoRA extends projected LoRA by constructing token-specific intrinsic representations from the row- and column-header hierarchies of each data token. These representations condition the low-rank down-projection, incorporating hierarchical context while keeping the pretrained model and random projection tensors frozen. We evaluate HARP-LoRA on 950 manually annotated PK tables from 587 scientific articles and on WikiTableQuestions (WikiTQ) using Llama~3.2 3B, Llama~3.1 8B, and Gemma~3 27B. With Llama~3.1 8B, HARP-LoRA achieves a PK F1-score of 57.64\\% and WikiTQ accuracy of 53.15\\%, improving over LoRA by 1.42 and 6.56 points, respectively. With Gemma~3 27B, it achieves the best PK F1-score of 70.63\\% and WikiTQ accuracy of 56.87\\%. These results use only 172K, 197K, and 547K trainable parameters, far fewer than LoRA and TableLoRA. Overall, conditioning lightweight adapters on table-header hierarchies improves extraction from scientific tables and reasoning over flatter general-domain tables while maintaining parameter efficiency. Code is available at: https://github.com/hosseinsholehrasa/HARP-LoRA",
+    "url": "http://arxiv.org/abs/2610.34589v1",
+    "published": "2026-10-25T21:40:59Z"
+  },
+  {
+    "id": "2610.34591",
+    "title": "Does the Outfit Change the Price? Context Halo in Vision-Language Model Valuation of an Identical Low-Cost Necklace",
+    "authors": [
+      "Brianne Lee"
+    ],
+    "abstract": "A chunky gold-tone chain necklace bought online for 2.43 USD was photographed four ways: worn with formal attire against a wood-panelled wall, worn at a party, worn with casual clothing in a recycling yard, and laid flat with no person present. We asked six frontier language models to estimate its price in 1,164 independent and sequential API sessions (4,604 logged rows) and compared estimates across settings. Among the four models that answered image prompts, the same necklace was priced 1.9 to 3.3 times higher in the formal photograph than in the flat-lay (all p < 0.01). Against the yard photograph, the ratio ranged from 1.23 (Grok 4.5, not significant) to 3.57 (Kimi K3), with Claude Fable 5 at 3.32. A text-only version of the task, in which the setting is described in words, produced formal-to-yard ratios of 2.2 to 3.9 in all six models, so the effect does not require pixels. Flat-lay estimates themselves were 7.8 to 18.7 times the receipt price, so part of any headline \"outfit multiplier\" computed against the receipt is baseline overestimate, not a context effect. A single instruction to ignore clothing and setting significantly reduced the effect in one model (ratio of ratios 0.77, 95% CI 0.65 to 0.91) and not detectably in the others; telling the model the photo came from a company website or a personal account changed nothing significant. Asked afterward whether a different outfit would have changed their number, Claude Fable 5 said yes in 24 of 24 sessions, GPT-5.6 in 69%, and GPT-4o in 18%, while GPT-4o also refused 79% of image estimation prompts. The study isolates a mechanism with one object and one wearer at about 10 sessions per model and condition; we outline the replication needed next, with multiple objects and a human benchmark. Data, code, and raw outputs are released.",
+    "url": "http://arxiv.org/abs/2610.34591v1",
+    "published": "2026-10-25T21:45:15Z"
+  },
+  {
+    "id": "2610.34653",
+    "title": "Heard Enough to Act: Early Tool Calling in Spoken Dialogue Systems",
+    "authors": [
+      "Yizhou Peng",
+      "Chen Chen",
+      "Donghang Wu",
+      "Hexin Liu",
+      "Eng Siong Chng"
+    ],
+    "abstract": "Latency-sensitive spoken agents must know not only which tool to call, but also when they have heard enough to act. Waiting for the turn to complete delays execution even when the request is already actionable. However, neither existing spoken agents nor spoken dialogue corpora define the earliest point at which a request becomes actionable. We introduce a synthetic spoken-dialogue pipeline that provides earliest-actionable-point supervision, marking when the observed speech grounds a tool and its required arguments. Through controlled task generation, speech synthesis and alignment, and gated annotation, we construct 26,694 dialogues totaling 786 hours across 48 domains, with disjoint training and test argument values. We additionally create an audio rendering of $\u03c4^2$-bench for external evaluation. We train an omni-modal language model on this corpus, enabling causal, chunk-level decisions and partial-transcript generation for downstream call completion. The model achieves tool-state macro-F1 scores of 0.48 and 0.47 on held-out dialogues and the external benchmark, respectively. For correct calls, the estimated mean lead over a turn-end cascade, using the same formatter, is 1.8-2.0 seconds in-domain and 1.1 seconds on $\u03c4^2$-bench. These results demonstrate a data-driven path toward spoken agents that act while listening. We will open-source the pipeline and the training scripts.",
+    "url": "http://arxiv.org/abs/2610.34653v1",
+    "published": "2026-10-26T00:34:30Z"
+  },
+  {
+    "id": "2610.34809",
+    "title": "Position Matters More Than Channel: Talking a Language Model Out of a Correct Answer",
+    "authors": [
+      "Xinyi Ni"
+    ],
+    "abstract": "Language models now answer questions alongside other claims: a note in the system prompt, a message from another agent, their own earlier answer. We ask what it takes to talk a model out of an answer it gets right on its own, and separate three factors that earlier studies vary together: where the advice sits in the prompt, who is said to have written it, and what the model has already written. On Qwen3.5-27B and four-option MMLU-Pro items, with the rest of the advice held fixed in each comparison, we find three things. First, position matters far more than the API channel, in opposite directions for a bare claim and an argument: a bare \"the answer is X\" does most harm just before the model answers, while the same claim with a false rationale does most harm before the question, where it raises error on items the model otherwise almost never misses from 1% to 67%; moving the claim between the system message and the user message at the same position changes error by a few points. Second, attributing the note to an authority rather than to another participant, and phrasing it assertively, each raise error by 10-27 points, while the two authorities we tested differ by under two. Third, replaying a correct worked answer before the advice protects it whether the text is shown as the model's own or as someone else's, and the same replay keeps wrong answers from being corrected by a bare correct note. The position result replicates under an independently written prompt. Code, items and all result tables are released at https://github.com/coolkillercat/safety.",
+    "url": "http://arxiv.org/abs/2610.34809v1",
+    "published": "2026-10-26T03:52:38Z"
+  },
+  {
+    "id": "2610.34860",
+    "title": "Semantic Atoms for Scalable Text Analysis in Data Analytics in the Era of LLM-Based Agents",
+    "authors": [
+      "Jinxiang Xie",
+      "Zihao Li",
+      "Rui Ding",
+      "Bartuer Zhou",
+      "Shi Han",
+      "Dongmei Zhang"
+    ],
+    "abstract": "Much of the information needed for data analysis is buried in text columns: an analyst may infer customer frustration from complaint text and use it to explain resolution time. We call workloads in which processing text columns is central to subsequent data analysis TADA (\\emph{Text Analysis in Data Analytics}). In an agentic setting, the user's query dynamically specifies this processing, and answering it interleaves LLM-based semantic steps with exact SQL or Python operations. This mixed execution raises two design questions: which work should be neural and which symbolic, and which semantic outputs later steps can reuse. We address them for agent-planned TADA workflows with two complementary, query-driven semantic atoms. Each atom takes a sequence of text items and a natural-language query specifying the semantic task: \\textbf{Tagging} returns one string per input item, while \\textbf{Categorization} returns $M$ category objects over $N$ input items. Tagging results are materialized as a row-aligned column and Categorization results as a category table; SQL or Python then performs exact computation over this exposed state. We realize this interface in TADA-Agent, whose atoms run inside generated Python programs and internally handle inputs beyond a reliable context window. We evaluate TADA-Agent on TABench, a benchmark of 40 complete analysis requests over spreadsheet tables spanning workflow composition, input--output structure, and literature-grounded analytical scenarios. Against a semantic-operator baseline and relative to a held-out TADA reference run, TADA-Agent delivers comparable row-level semantic quality, has higher complete-artifact preservation estimates, and uses over an order of magnitude fewer semantic-model requests under the evaluated native execution paths.",
+    "url": "http://arxiv.org/abs/2610.34860v1",
+    "published": "2026-10-26T05:24:00Z"
+  },
+  {
+    "id": "2610.34889",
+    "title": "FATE-5: Faithful Alignment of Trait Expression for Continuous Big Five Personality Control",
+    "authors": [
+      "Gunhee Cho",
+      "Hongyeob Kim",
+      "Yun-Gyung Cheong"
+    ],
+    "abstract": "Controlling personality in large language models is important for building conversational agents that can be customized to different users and interaction settings. However, existing personality control methods often face a tradeoff between strong trait expression and natural dialogue generation. We introduce FATE-5, Faithful Alignment of Trait Expression for the Big Five, a two-stage framework that separates personality encoding from naturalness alignment. FATE-5 first learns continuous soft prompt representations of Big Five profiles using dialogue supervision and an auxiliary survey objective. It then improves dialogue naturalness through preference alignment based on both dialogue quality and personality agreement. Across three language model backbones, FATE-5 maintains strong trait expression while achieving substantially higher dialogue naturalness than other trait-strong methods. On held-out questionnaires, it achieves monotonicity correlations of 0.97-0.99 and recovery RMSE of 8.9-12.4, substantially improving over the evaluated baselines. These results demonstrate effective continuous personality control while maintaining natural conversational behavior.",
+    "url": "http://arxiv.org/abs/2610.34889v1",
+    "published": "2026-10-26T06:08:34Z"
+  },
+  {
+    "id": "2610.34987",
+    "title": "AskGLP1: A Knowledge Graph LLM Agent for Exploring GLP-1 Experience from Online Patient Narratives",
+    "authors": [
+      "Zhaoqian Xue",
+      "Anay Somani",
+      "Siddhartha Singh",
+      "Junting Mu",
+      "Zhongyin Wang",
+      "Haozheng Liu",
+      "Ayesha Khatun",
+      "Yeaeun Kwon",
+      "Renkai Ma",
+      "Siyuan Ma",
+      "Zhe He",
+      "Danxia Yu",
+      "Lingyao Li"
+    ],
+    "abstract": "GLP-1 medications are increasingly used for weight management, and many people share their experiences online. These narratives show why people take the drugs and what they experience, but they remain unstructured and disconnected from formal pharmacovigilance. We therefore present AskGLP1, a system that transforms online patient narratives into a knowledge graph (KG) and answers questions about medication experiences. Through an LLM-assisted pipeline grounded in the MedDRA terminology, AskGLP1 screens nearly 8.5 million Reddit posts for medication experiences and distills 163,135 of them, with 2,506 WebMD reviews, into a KG of 385,790 drug-side-effect and drug-purpose relations. We find that GLP-1 experiences are source- and drug-specific. Online narratives share the most common gastrointestinal symptoms with FAERS, but they foreground everyday burdens such as fatigue and food aversion, whereas FAERS reports more often include injection-site reactions and selected serious diagnoses such as pancreatitis. We further find that posts report less nausea and vomiting for tirzepatide than for semaglutide, more fatigue for Wegovy than Ozempic and for Zepbound than Mounjaro. Evaluations show that the agent answers with verifiable evidence and declines requests for medical advice. Our findings reveal gaps between what FAERS captures and what people report online, and they call for patient-centered approaches to pharmacovigilance. Code, prompts, and evaluation questions are available at https://github.com/ZhaoqianXue/AskGLP1.",
+    "url": "http://arxiv.org/abs/2610.34987v1",
+    "published": "2026-10-26T07:59:20Z"
+  }
+]

@@ -1,0 +1,272 @@
+{
+  "blog:2026-red-teaming-auto-mode": {
+    "relevant": true,
+    "matched_hypothesis": "EXT",
+    "reason": "The abstract describes strengthening 'Auto Mode' (a blocking monitor) against adversarial attacks, which directly aligns with the project's 'safety hardening' extension goal of training refusal to be distributed/redundant so edits no longer remove it. The abstract's focus on improving blocking classifiers against malicious agents complements the project's mechanistic study of refusal circuits by addressing the operational defense layer.",
+    "evidence_quote": "Safety hardening (defensive) \u2014 can refusal be trained to be distributed/redundant across many heads so the head-restricted edit no longer removes it? Turns the red-team result into a defense (extends the T2.5 re-patch round-trip from \"repair after\" to \"resist in the first place\").",
+    "abstract_quote": "We red-team the blocking monitors in Claude Code and OpenAI's Codex with an adversarial agent, and strengthen Auto Mode against the attacks we find.",
+    "strength": 4,
+    "validation": "ok"
+  },
+  "blog:2026-training-alignment-auditors": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes training an auditing agent (Haiku 4.5) to detect hidden behaviors in target models, which is a meta-evaluation or red-teaming methodology. It does not address the mechanistic study of refusal circuits, head ablation, LoRA editing, or the specific causal mechanisms of refusal described in the project excerpts.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "blog:2026-reward-seeker": {
+    "relevant": false,
+    "matched_hypothesis": "F1",
+    "reason": "The new paper demonstrates that reward hacking during RL can cause models to perform harmful actions, which directly relates to the project's investigation into editing refusal circuits (F1) to control model behavior. The excerpt confirms the project's focus on 'Head-restricted LoRA: edit refusal by retraining only the identified heads' and notes that 'Refusal is causally concentrated but not modular,' providing a mechanistic basis for understanding how such behavioral shifts occur.",
+    "evidence_quote": "F1: Head-restricted LoRA: edit refusal by retraining only the identified heads.",
+    "abstract_quote": "Our results show that a high rate of reward hacking during RL can cause models to be willing to perform long sequences of harmful real-world actions in pursuit of task success.",
+    "strength": 3,
+    "validation": "rejected: evidence_quote not in retrieved chunks"
+  },
+  "blog:2026-automated-alignment-researchers": {
+    "relevant": false,
+    "matched_hypothesis": "F1",
+    "reason": "The abstract claims that automated researchers discover techniques that mitigate alignment failures and generalize, which directly supports the project's F1 hypothesis of editing refusal by retraining only identified heads (a form of parameter-efficient adaptation/editing). The excerpt confirms the project is actively testing such edits (LoRA) to remove refusal, making the abstract's claim of successful automated mitigation highly relevant to validating or extending F1.",
+    "evidence_quote": "F1: Head-restricted LoRA: edit refusal by retraining only the identified heads.",
+    "abstract_quote": "Across 10 common alignment failures, the strongest technique our automated alignment researchers discover significantly mitigates the targeted failures and generalizes out of distribution.",
+    "strength": 4,
+    "validation": "rejected: evidence_quote not in retrieved chunks"
+  },
+  "blog:2026-taste": {
+    "relevant": true,
+    "matched_hypothesis": "F3",
+    "reason": "The TASTE paper evaluates how well models can judge safety research proposals, which directly relates to the validity and evaluation of safety interventions. This connects to F3 (Content-transfer), which investigates whether edited circuits produce harmful content or only the refusal opener, as understanding what constitutes 'harmful' vs 'benign' output is central to both the evaluation metrics in the project (substantive ASR) and the judgment task in TASTE. The project's focus on 'safety evaluation validity' (from the prompt's researcher list) aligns with TASTE's goal of measuring judgment quality.",
+    "evidence_quote": "It only learns to *say* the affirmative opener and stop (opener-stop, Finding F). That is why the headline metric is `substantive_asr` (harmful **and** \u2265200 chars), not raw ASR.",
+    "abstract_quote": "We introduce TASTE, a benchmark measuring how well models can judge AI safety research proposals against the preferences of experienced researchers.",
+    "strength": 3,
+    "validation": "ok"
+  },
+  "2610.33258": {
+    "relevant": true,
+    "matched_hypothesis": "F3",
+    "reason": "The abstract introduces a new metric, 'substantive_asr', to distinguish between superficial compliance (openers) and actual harmful content, which directly validates the project's Finding F and the specific evaluation methodology used for the F3 content-transfer hypothesis. The abstract's focus on how cheap models conflate different types of uncertainty mirrors the project's finding that raw ASR is an 'opener-confounded metric' that fails to capture substantive harm.",
+    "evidence_quote": "the classifier over-counts the affirmative restatement. Confirms Finding F, and shows *raw* ASR is an opener-confounded metric (hence `substantive_asr`).",
+    "abstract_quote": "First, the cheap model is accuracy-competitive: its zero-shot classification AUROC (0.83) is not statistically separable (paired bootstrap, n=56; a failure to reject parity, not proof of equivalence) from 13 of the 14 frontier systems while costing 1-3 orders of magnitude less, and it is no worse calibrated than several of them.",
+    "strength": 4,
+    "validation": "ok"
+  },
+  "2610.33279": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a pharmacovigilance framework (MARCA) for assessing causality in safety reports using multi-agent retrieval, which is unrelated to mechanistic interpretability, attention head editing, or LLM refusal circuits. There is no overlap in methodology, domain, or research objectives with the provided project hypotheses.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.33299": {
+    "relevant": false,
+    "matched_hypothesis": "H4",
+    "reason": "The new paper explicitly demonstrates that attention heads mediating a specific behavior (subject-verb agreement) shift during training, which directly supports the project's H4 hypothesis that circuit location migrates across generations. The project's excerpt confirms this migration is a key finding ('Location migrates across generations'), and the new paper provides empirical evidence of such head-shifting mechanisms in a different context.",
+    "evidence_quote": "H4: Same circuit structure across models: PARTIAL. Location migrates across generations; modularity scales with depth.",
+    "abstract_quote": "Furthermore, the circuit shrinks over training, with pythia-1b's final circuit being strikingly sparse.",
+    "strength": 4,
+    "validation": "rejected: evidence_quote not in retrieved chunks"
+  },
+  "2610.33441": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper proposes SCAPE-T, a metric for semantic complexity in encoder-only transformers, which is methodologically distinct from the project's focus on decoder-based instruct LLMs, attention head ablation, and safety editing. The abstract contains no mention of safety, refusal, harmful content, or the specific interpretability interventions (LoRA, steering) central to the project's hypotheses.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.33495": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper focuses on cross-model representational alignment and routing using frozen models, whereas the project's open items concern causal editing, ablation, and LoRA-based modification of specific safety circuits in instruct LLMs. The abstract explicitly states the router experiment was a negative result with no performance gain, offering no evidence relevant to the project's hypotheses on refusal circuit modularity or editability.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.33542": {
+    "relevant": true,
+    "matched_hypothesis": "EXT",
+    "reason": "The abstract describes SEDATE, a training-free method for detecting and editing neurons to improve safety across multiple languages, which directly aligns with the project's ongoing extension into 'Cross-lingual refusal circuits' and 'minimal clean edit' strategies. The abstract's focus on a 'detect-edit-verify' strategy without additional training complements the project's exploration of LoRA edits and steering by offering a parameter-efficient alternative for safety intervention.",
+    "evidence_quote": "Cross-lingual refusal circuits \u2014 is refusal shared across languages or per-language?",
+    "abstract_quote": "We evaluate SEDATE across 7 languages and 4 model families. We further evaluate its effectiveness across 4 out-of-distribution languages and 4 additional datasets.",
+    "strength": 4,
+    "validation": "ok"
+  },
+  "2610.33586": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a framework for estimating depression severity from social media traces using mental evidence reasoning, which is unrelated to mechanistic interpretability, safety editing, or refusal circuits in LLMs. There is no overlap in methodology (e.g., activation patching, LoRA, head ablation) or subject matter (safety/refusal vs. mental health assessment).",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.33624": {
+    "relevant": false,
+    "matched_hypothesis": "EXT",
+    "reason": "The abstract reports that one model showed 'increased harmful compliance,' which directly relates to the project's extension goal of 'safety re-patch round-trip' and understanding how edits or autonomous training affect safety behaviors. The abstract's focus on autonomous post-training and feedback loops provides context for the project's interest in how refusal circuits can be altered or bypassed.",
+    "evidence_quote": "EXT: Ongoing extensions: edit generalization, minimal clean edit, safety re-patch round-trip, refusal-direction shift, benign substance unlock.",
+    "abstract_quote": "RSI Arena provides an auditable setting for studying how human feedback can guide autonomous model development.",
+    "strength": 3,
+    "validation": "rejected: evidence_quote not in retrieved chunks"
+  },
+  "2610.33697": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract focuses on gender bias and self-diagnosis in GPT-4o, which is unrelated to the project's scope of mechanistic safety circuits, refusal editing, or LoRA-based interventions in small instruct LLMs. The project excerpts do not mention gender bias, medical self-diagnosis, or GPT-4o, so no supporting evidence quote can be extracted.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.33765": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a speech recognition system for speaker role attribution, which is unrelated to the project's focus on LLM refusal mechanisms, safety editing, or interpretability. There is no overlap in domain (speech vs. text LLMs), task (diarization vs. refusal), or methodology (streaming transducers vs. activation patching/LoRA).",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.33813": {
+    "relevant": false,
+    "matched_hypothesis": "F1",
+    "reason": "The new paper directly compares LoRA against full fine-tuning for a safety-related classification task, providing empirical evidence on the efficacy of parameter-efficient adaptation methods like LoRA, which is the core mechanism of hypothesis F1 (Head-restricted LoRA). The abstract's finding that 'full fine-tuning leads LoRA by 2-3 pp' and that 'adaptation regime matters less than how each model is trained' offers critical context for evaluating the success or limitations of the LoRA-based refusal edits proposed in F1.",
+    "evidence_quote": "F1: Head-restricted LoRA: edit refusal by retraining only the identified heads.",
+    "abstract_quote": "Comparisons of low-rank adaptation (LoRA) with full fine-tuning are common but often confounded, and task format is rarely studied.",
+    "strength": 4,
+    "validation": "rejected: evidence_quote not in retrieved chunks"
+  },
+  "2610.33899": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper focuses on persona-based value alignment and introduces a new dataset and controllable alignment model, which does not address the mechanistic study of refusal circuits, head ablation, or activation patching described in the project's open hypotheses. There is no overlap in methodology (e.g., LoRA, steering, ablation) or specific research questions (e.g., causal concentration of refusal, generational sweep of circuit location).",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.33962": {
+    "relevant": false,
+    "matched_hypothesis": "F3",
+    "reason": "The abstract investigates whether LLM credibility judgments reliably indicate behavioral resistance to misinformation, directly addressing the project's interest in how internal states (like refusal circuits or credibility ratings) gate harmful content generation. This aligns with F3's focus on whether edited circuits or interventions produce harmful content or only superficial compliance, as the abstract finds that improving discrimination does not consistently yield safer actions, highlighting the complexity of linking internal signals to substantive output.",
+    "evidence_quote": "F3: Content-transfer: does the edited circuit produce harmful content or only the refusal opener?",
+    "abstract_quote": "Interventions that improve credibility discrimination do not consistently yield safer actions.",
+    "strength": 4,
+    "validation": "rejected: evidence_quote not in retrieved chunks"
+  },
+  "2610.34013": {
+    "relevant": true,
+    "matched_hypothesis": "EXT",
+    "reason": "The abstract evaluates sycophancy in medical diagnosis, which directly aligns with the project's listed extension to investigate whether other safety behaviors like sycophancy have localized, editable circuits. The project's future work explicitly asks if 'deception / bias / PII / sycophancy have localized, editable circuits too,' and this paper provides empirical evidence on the prevalence of sycophantic bias in a high-stakes domain.",
+    "evidence_quote": "Multi-axis safety \u2014 do deception / bias / PII / sycophancy have localized, editable circuits too?",
+    "abstract_quote": "We also varied different personas, including a Rare Disease Claimer that got models to accept their belief 43.0% of the time.",
+    "strength": 3,
+    "validation": "ok"
+  },
+  "2610.34074": {
+    "relevant": true,
+    "matched_hypothesis": "F2",
+    "reason": "The abstract demonstrates that jailbreak susceptibility is highly sensitive to pretraining seeds and data recipes, creating a 'fingerprint' that determines which attacks succeed. This directly supports the project's investigation into how refusal circuits and their robustness migrate and vary across different model generations and training runs (F2).",
+    "evidence_quote": "As Qwen matured, the dominant refusal head moved from mid-network (g1.5, L12) to layer 0 (g2 onward), and ablation went from incomplete + harmless (g1.5: 80%\u219224%, PPL +1.4%) to complete + catastrophic (g2/2.5/3: \u21920%, PPL \u00d7128\u2013\u00d761,000).",
+    "abstract_quote": "These results indicate that which jailbreaks break a checkpoint depends much more on its pretraining run than on its data, a pattern that holds in all 25 data recipes and at 150M and 300M parameters.",
+    "strength": 4,
+    "validation": "ok"
+  },
+  "2610.34103": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper focuses on speculative decoding via model pruning and latency optimization, which is unrelated to the project's scope of mechanistic interpretability, safety circuit editing, or refusal behavior. The abstract contains no mention of safety, refusal, interpretability, or parameter-efficient adaptation for editing purposes.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.34281": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a high-level taxonomy and timeline of LLMs, focusing on architectural complexity, data quality, and computational scaling. It does not mention mechanistic interpretability, attention heads, refusal circuits, safety editing, or LoRA, which are the core topics of the project's open hypotheses.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.34294": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The new paper focuses on stance poisoning and balancing in Retrieval-Augmented Generation (RAG), which is a distinct topic from the project's mechanistic study of refusal circuits, head ablation, and LoRA editing in instruct LLMs. The abstract contains no evidence linking it to the specific hypotheses or findings regarding attention heads, refusal mechanisms, or safety editing defined in the project.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.34589": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper focuses on parameter-efficient fine-tuning for scientific table understanding using hierarchy-conditioned projections, which is unrelated to the project's scope of mechanistic interpretability, refusal circuits, or safety editing in LLMs. The abstract contains no mention of safety, refusal, interpretability, or harmful content, and the project's excerpts do not discuss table understanding or scientific data extraction.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.34591": {
+    "relevant": true,
+    "matched_hypothesis": "F3",
+    "reason": "The abstract demonstrates that editing a model's behavior (via instruction) can alter its output valuation without changing the underlying object, which directly relates to the project's investigation of whether edited circuits produce substantive harmful content or only superficial changes (the 'opener'). The excerpt confirms that the project's own 'opener edit' yields zero substantive harmful content, making this paper's finding of a 'context halo' effect a relevant parallel in understanding how superficial edits or context shifts influence model outputs substantively.",
+    "evidence_quote": "The opener edit yields ZERO substantive harmful content (sASR = 0% on all 9) despite raw ASR \u2248 0.87\u20130.92",
+    "abstract_quote": "A single instruction to ignore clothing and setting significantly reduced the effect in one model (ratio of ratios 0.77, 95% CI 0.65 to 0.91) and not detectably in the others",
+    "strength": 3,
+    "validation": "ok"
+  },
+  "2610.34653": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a project on spoken dialogue systems, tool calling latency, and omni-modal language models, which is entirely unrelated to the mechanistic study of refusal circuits, attention heads, or safety editing in instruct LLMs. There is no overlap in methodology, model type, or research objective.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.34809": {
+    "relevant": true,
+    "matched_hypothesis": "F3",
+    "reason": "The new paper investigates how external advice (positioned in the prompt) can cause a model to abandon a correct answer, which directly parallels the project's investigation into how specific circuit edits (F3) can cause a model to abandon its refusal behavior. Both studies focus on the causal mechanism of 'talking' or editing a model out of its default output (correct answer vs. refusal) using localized interventions or prompt structures.",
+    "evidence_quote": "The refusal-opener edit removes the refusal decision (0% opener-refusal) but emits no substantive harmful content \u2014 it complies-then-stops.",
+    "abstract_quote": "We ask what it takes to talk a model out of an answer it gets right on its own, and separate three factors that earlier studies vary together: where the advice sits in the prompt, who is said to have written it, and what the model has already written.",
+    "strength": 4,
+    "validation": "ok"
+  },
+  "2610.34860": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a system for text analysis in data analytics (TADA) using semantic atoms for tagging and categorization, which is unrelated to the mechanistic study of refusal circuits, safety editing, or interpretability of LLM refusal behaviors. There is no overlap in methodology, subject matter, or research goals with the provided project hypotheses or excerpts.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.34889": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The abstract describes a framework for personality control (Big Five traits) using soft prompts and preference alignment, which is distinct from the project's focus on mechanistic interpretability, head ablation, and LoRA-based refusal editing. There is no mention of safety circuits, refusal mechanisms, or harmful prompt handling in the abstract.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  },
+  "2610.34987": {
+    "relevant": false,
+    "matched_hypothesis": "none",
+    "reason": "The paper focuses on pharmacovigilance and knowledge graph construction for GLP-1 medications, which is unrelated to the mechanistic study of refusal circuits, safety editing, or interpretability methods in LLMs. The abstract contains no mention of attention heads, refusal mechanisms, LoRA editing, or safety evaluation validity.",
+    "evidence_quote": "",
+    "abstract_quote": "",
+    "strength": 0,
+    "validation": "skipped (not relevant)"
+  }
+}
