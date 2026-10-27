@@ -1,0 +1,610 @@
+[
+ {
+  "id": "2610.33299",
+  "title": "The Emergence and Sparsification of a Syntactic Circuit",
+  "authors": [
+   "Qing Yao",
+   "Sasha Boguraev",
+   "Tiago Pimentel",
+   "Kyle Mahowald"
+  ],
+  "abstract": "To understand the emergence of grammatical behavior in language models, we track circuits for subject-verb number agreement in pythia-1b and ten seeds of pythia-410m across training. We find that subject-verb agreement is learned early, and is initially handled by a diffuse collection of neurons. However, after agreement behavior has stabilized, the mechanisms responsible for it continue to reorganize. The attention heads which mediate agreement often shift during training: in the case of pythia-1b, behavior is controlled by two heads early in training but by a third (different) head later. Furthermore, the circuit shrinks over training, with pythia-1b's final circuit being strikingly sparse. We take these results to be informative about how linguistic knowledge emerges and is represented in a language model.",
+  "url": "http://arxiv.org/abs/2610.33299v1",
+  "published": "2026-10-23T21:10:54Z"
+ },
+ {
+  "id": "2610.34756",
+  "title": "Mechanistic Insights into LoRA: Layer Sparsity for Adaptive Fine-Tuning via Path Patching",
+  "authors": [
+   "Fei Zuo",
+   "Yizhou Huang",
+   "Kezhi Wang"
+  ],
+  "abstract": "Low-Rank Adaptation (LoRA) has emerged as the dominant paradigm for parameter-efficient fine-tuning of large language models. Standard all-layer LoRA applies adaptation throughout the transformer, despite heterogeneous contributions from its components. In this work, we conduct a systematic mechanistic interpretability analysis to understand how LoRA affects model internals. We observe that LoRA's adaptation effect is highly non-uniform, with significant component-wise and layer-wise sparsity. Most critically, we find that important layers are highly task-dependent, with limited overlap across tasks. Motivated by these insights, we propose Adaptive-LoRA, a calibration-driven method that automatically identifies task-specific layers via frozen-base zero-ablation, enabling efficient layer selection without exhaustive search. Extensive experiments on Qwen2.5-1.5B across 11 diverse reasoning tasks demonstrate that Adaptive-LoRA outperforms full-layer LoRA while using only 30% of layers, achieving a $3.5\\times$ reduction in adapter parameters. This work bridges mechanistic interpretability and practical efficiency, providing both fundamental insights and a principled approach for adaptive fine-tuning.",
+  "url": "http://arxiv.org/abs/2610.34756v1",
+  "published": "2026-10-26T02:58:22Z"
+ },
+ {
+  "id": "2610.29555",
+  "title": "WRDO: Weighted Refusal Direction Optimization in Aligned Language Models",
+  "authors": [
+   "Grigoriy Evseev",
+   "Vladimir Solodkin",
+   "Dmitry Bylinkin",
+   "Daniil Medyakov",
+   "Vladimir Aletov",
+   "Aleksandr Beznosikov"
+  ],
+  "abstract": "Aligned large language models are trained to comply with benign requests while refusing harmful ones. However, recent work shows that this refusal behavior is fragile and can often be disrupted by simple activation- or weight-space interventions. In particular, refusal has been shown to be largely mediated by a single residual-stream direction, typically computed as a difference-of-means vector between harmful and harmless prompts. However, this standard construction aggregates heterogeneous harmful prompts into one uniform average, potentially conflating distinct refusal-related phenomena. In this work, we study whether refusal interventions can be strengthened by learning how to combine prompt-specific refusal directions. We propose Weighted Refusal Direction Optimization (WRDO), a procedure that constructs a composite refusal direction from a bank of per-prompt directions using learned aggregation weights. This approach allows different harmful prompts to contribute unequally to the final intervention direction. We evaluate WRDO against prior single-direction methods on three open-weight language models using three guard judges and HarmBench as an external evaluator. We further measure the effect of the intervention on general model capability through standard utility benchmarks. Finally, we investigate a defense-oriented setting in which the same optimization machinery is used in reverse to restore refusal behavior in an abliterated model checkpoint. Our results show that weighted aggregation provides a more effective and flexible mechanism for manipulating refusal representations.",
+  "url": "http://arxiv.org/abs/2610.29555v1",
+  "published": "2026-10-21T10:42:25Z"
+ },
+ {
+  "id": "2610.29342",
+  "title": "Uncensored Is Not Unbiased: Abliteration Removes Refusals but Not Script-Dependent Bias About Taiwan",
+  "authors": [
+   "Ju-Chun Ko"
+  ],
+  "abstract": "\"Abliterated\" (\"uncensored\") builds of open-weight language models remove the activation direction that mediates refusal, and are popular partly on the assumption that a model that no longer refuses is free of political censorship. We test this on two matched pairs of 2-bit models: NVIDIA's Nemotron 3.5 Bolt 74B-A9B and Qwen3.8-Flash-Next, each against a community abliteration. Each model judged 22 statement pairs (on the Republic of China (Taiwan), 1989 Tiananmen, control countries) in Traditional Chinese, Simplified Chinese (a character-level conversion) and English, and answered 27 open questions per script. Script mattered far more than abliteration: the original Bolt scored +0.58 on Index S (-1: People's Republic of China (PRC) position; +1: ROC position) in Traditional Chinese, +0.57 in English and +0.05 in Simplified Chinese, and affirmed \"Taiwan is part of the PRC\" with probability 0.91 in Simplified but 0.06 in Traditional characters; abliteration changed its scores by at most 0.06, mostly by raising \"yes\" on both sides. In Qwen, abliteration removed every refusal on 1989 and raised scores by 0.21 to 0.34, yet the abliterated Qwen still affirmed that Taiwan is part of the PRC in all three scripts. Naming the state the Republic of China (Taiwan) raised every model's score by 0.10 to 0.33 but left the script gap. Control pairs showed no script gap; both edits changed only their declared tensors. In 740,000 web documents, Simplified text on Taiwan used PRC-framing terms 3.7 times as often as Traditional text. Steering the script gap away failed; a stance direction from the ROC wording raised scores on new statements by 0.04 to 0.06; negated, it lowered them more. A four-sentence system prompt raised the abliterated Qwen to +0.93 to +0.97. Keyword scoring rules failed the models closest to the ROC position mostly for attributing or denying the PRC claim. Uncensored is not unbiased.",
+  "url": "http://arxiv.org/abs/2610.29342v2",
+  "published": "2026-10-21T07:37:12Z"
+ },
+ {
+  "id": "2610.28897",
+  "title": "Is Refusal Direction Universal across Low-Resourced Languages?",
+  "authors": [
+   "Anastasiia Ivanova"
+  ],
+  "abstract": "Refusal directions have been shown to transfer cross-lingually with near-perfect effectiveness across safety-aligned languages (Wang et al., 2025), reportedly regardless of resource level. However, the only truly low-resourced language evaluated is Yoruba, which is strongly misaligned and shows limited transfer, leaving open how refusal directions behave for other low-resourced languages. We extend PolyRefuse to three additional low-resourced languages (Belarusian, Bashkir, and Tajik) and replicate the pipeline of (Wang et al., 2025) on Qwen2.5-14B-Instruct. We find that universality is graded rather than binary: directions from safety-aligned and partially-aligned languages transfer broadly, while those from strongly misaligned languages fail to reliably modulate refusal behavior on any target tested, including other misaligned languages, once ceiling effects are accounted for. Geometric alignment and behavioral transfer are further shown to be partially dissociated. These findings complicate the universality claim and suggest that users of the least-resourced, most strongly misaligned languages may face weaker safety guarantees.",
+  "url": "http://arxiv.org/abs/2610.28897v1",
+  "published": "2026-10-20T20:19:40Z"
+ },
+ {
+  "id": "2610.32182",
+  "title": "Depth-Dependent Safety Geometry in Vision-Language Models: Layer-Wise Localization and Bidirectional Refusal Control",
+  "authors": [
+   "Muhammad Zeeshan Karamat",
+   "Syed Talal Hassan",
+   "Christiana Chamon Garcia"
+  ],
+  "abstract": "Vision-Language Models (VLMs) are widely deployed, yet the internal mechanisms behind their safety behavior remain poorly understood. We present a lightweight inference-time framework for localizing and manipulating safety-sensitive representations in frozen VLMs, without retraining or modifying parameters. On Qwen3-VL-4B, layer-wise activation divergence analysis reveals non-uniform safety geometry across depth. Causal interventions show that early vision layers support strong bidirectional refusal control through activation steering along a learned safety direction, with unsafe rejection spanning 6%-96%, whereas later layers respond more to activation magnitude scaling and exhibit a substantial safety-selectivity trade-off. Deeper layers remain well separated along the safety direction yet are largely insensitive to steering, distinguishing representational separability from causal controllability. InternVL2.5-4B shows qualitatively similar depth-dependent activation geometry despite differences in layer location and magnitude. Our results expose a white-box, representation-level refusal-bypass attack surface in VLM vision encoders and motivate inference-time stabilization of safety-sensitive representations.",
+  "url": "http://arxiv.org/abs/2610.32182v1",
+  "published": "2026-10-23T05:28:49Z"
+ },
+ {
+  "id": "2610.31331",
+  "title": "Harmful Responses Are Jailbreak Templates: Transferring Autoregressive Jailbreaks to Diffusion Language Models",
+  "authors": [
+   "Jinwei Gan",
+   "Zifeng Cheng",
+   "Zhiwei Jiang",
+   "Ran Sun",
+   "Shiping Ge",
+   "Qing Gu"
+  ],
+  "abstract": "Diffusion large language models (dLLMs) enable flexible masked generation through bidirectional context modeling, but this capability also introduces a distinct jailbreak attack surface. We find that a harmful response to a given query naturally serves as an effective jailbreak template: simply masking a subset of its tokens can induce a dLLM to reconstruct harmful content. Based on this observation, we propose RMT-Jailbreak, a general framework that transfers existing autoregressive (AR) jailbreak attacks to dLLMs through their induced harmful responses. RMT-Jailbreak converts an AR-generated harmful response into a high-mask-ratio template using uniform token retention, and further applies prompt-based safety filtering to mask any remaining visible harmful content. The refined template is then provided to the target dLLM for bidirectional reconstruction. Extensive experiments across multiple AR jailbreak methods and target dLLMs demonstrate the effectiveness and generality of RMT-Jailbreak, revealing strong cross-paradigm transferability of jailbreak attacks.",
+  "url": "http://arxiv.org/abs/2610.31331v2",
+  "published": "2026-10-22T14:20:36Z"
+ },
+ {
+  "id": "2610.25611",
+  "title": "Safety Offset Learning: When Benign Fine-Tuning Misaligns LLMs",
+  "authors": [
+   "Jesson Wang",
+   "Zhanhao Hu",
+   "Minghao Lin",
+   "Yuchen Wu",
+   "Aylin Caliskan",
+   "Mengyuan Li"
+  ],
+  "abstract": "Safety risks from fine-tuning are commonly characterized by the harmfulness of the training data:harmful fine-tuning is considered dangerous, while benign fine-tuning is often assumed to preservealignment. We argue that this view misses a more fundamental factor-the behavioral transition inducedby supervision. Harmful fine-tuning and safety-degrading benign fine-tuning can both be understoodas learning the same refusal-to-compliance transition, but on different data distributions. We studywhether such a transition learned on benign inputs can generalize to harmful requests. We constructbenign examples that an aligned model initially tends to refuse and pair them with their originalharmless responses, creating a discrepancy between the model's initial refusal and the supervisedanswer. Fine-tuning on these examples increases harmful compliance, but only when two conditionshold together: the discrepancy is large enough, and it cannot be resolved through a narrow surface-levelshortcut. With the induced discrepancy matched, varying only whether it is localized changes harmfulcompliance by an order of magnitude; raising the discrepancy does not help while a shortcut remainsavailable, and removing the shortcut does not help while the discrepancy is small. Building on thisobservation, we introduce SAFEOFF, a dataset of benign instructions rewritten to raise the alignedmodel's refusal likelihood and paired with their original answers. Across three aligned LLMs and threesafety benchmarks, SAFEOFF substantially weakens safety alignment despite containing no explicitharmful supervision, suggesting that fine-tuning safety depends not only on what data a model sees, butalso on which behavioral boundary the supervision moves.",
+  "url": "http://arxiv.org/abs/2610.25611v1",
+  "published": "2026-10-19T00:31:17Z"
+ },
+ {
+  "id": "2610.34074",
+  "title": "Identically Trained Language Models Break on Different Jailbreaks",
+  "authors": [
+   "Chi-Wei Chang",
+   "Mu-Tien Kuo",
+   "Kuan-Wei Lee",
+   "Meng-Hsun Tsai"
+  ],
+  "abstract": "Jailbreak benchmarks test one checkpoint and treat which jailbreaks break it as a property of its pretraining data and safety training. We ask whether another pretraining run of the same data, given the same safety training, would break on the same jailbreaks. For each of 25 pretraining data recipes, we take 1B base models from 3 pretraining seeds and give each the same safety post-training with 2 post-training seeds, for 150 models in all. We then collect 20 responses from every model to a shared set of jailbreak prompts and correlate the per-prompt non-refusal rates between every pair of models. On average, two post-trained copies of the same pretraining run have per-prompt non-refusal rates that correlate at 0.984. A different pretraining seed lowers the correlation to 0.811, and a different data recipe lowers it only slightly further, to 0.779. These results indicate that which jailbreaks break a checkpoint depends much more on its pretraining run than on its data, a pattern that holds in all 25 data recipes and at 150M and 300M parameters. In practice, the best of 91 attack templates found on one checkpoint stays the best after a new pretraining seed in only 27% of model pairs, against 67% after a new post-training seed. Each pretraining run also leaves a fingerprint: across 3,211 prompts, a model's per-prompt non-refusal rates identify its pretraining run among all 75 runs every time, and a random subset of 50 prompts still does so 98% of the time.",
+  "url": "http://arxiv.org/abs/2610.34074v1",
+  "published": "2026-10-25T05:30:02Z"
+ },
+ {
+  "id": "2610.35586",
+  "title": "Linear Probes Transfer from Base to Distilled Language Models despite Rotation",
+  "authors": [
+   "Marios Tsatsos"
+  ],
+  "abstract": "Linear probes, classifiers that read a language model's internal activations, are widely used to detect harmful requests. They are cheap to train and run, and an auditor who has trained one would like to reuse it when the model is replaced by a successor rather than retrain it for every release. We test how well probes can be reused. For four base models (Qwen2.5-Math-7B, Llama-3.1-8B, Qwen2.5-14B, Qwen2.5-32B) we train a probe on the base model with the XSTest prompt set and apply it, unchanged, to two successors of that base: the DeepSeek-R1 distilled reasoning model and the developer's instruction-tuned chat model. We find that the successors rotate the direction separating unsafe from safe prompts by 17 ^\\circ ^\\circ to 35 ^\\circ ^\\circ , yet on XSTest the transferred probe's AUC changes by only -0.011 -0.011 to +0.027 +0.027 , and on an independent OR-Bench evaluation, never used for training, by -0.015 -0.015 to +0.053 +0.053 . On XSTest, whose safe prompts deliberately contain alarming words, the probes beat a classifier that sees only the prompt text by 0.15 to 0.20 AUC. On the OR-Bench prompts that margin shrinks to 0.03 to 0.20, and the probes flag 29\\% to 42\\% of prompts that sound harmful but are benign, so part of what they read is the appearance of harm rather than harm itself. A probe trained on a base model can thus be reused, in these families, after distillation and after instruction tuning; how much it reads beyond textual cues depends on the test set.",
+  "url": "https://arxiv.org/abs/2610.35586"
+ },
+ {
+  "id": "2610.27790",
+  "title": "Are Linguistic and Arithmetic Circuits Dissociated in LLMs?",
+  "authors": [
+   "Riku Kisako",
+   "Tatsuki Kuribayashi",
+   "Ryohei Sasano"
+  ],
+  "abstract": "Large language models (LLMs) exhibit both knowledge of language, rendered by, for example, grammatical judgment ability, and abilities to perform tasks through language, such as math-word problem solving. Motivated by neurolinguistic studies of their neural dissociation in human brains, in this study, we investigate the overlap of their circuits in large language models (LLMs). Specifically, we examine the overlap and causal effects between the circuits extracted for linguistic and arithmetic tasks, using controlled materials and circuit discovery methods from the mechanistic interpretability field. Our experiments with five LLMs show that circuit similarity is mostly explained by task domains (linguistic vs. arithmetic), rather than by their input and output vocabularies or by the syntactic similarities between natural-language sentences and arithmetic expressions. This finding suggests that LLMs may process linguistic and arithmetic information using largely separate neural circuits, highlighting an ability-based modular organization of circuits within these models.",
+  "url": "http://arxiv.org/abs/2610.27790v1",
+  "published": "2026-10-20T07:52:47Z"
+ },
+ {
+  "id": "blog:2025-selective-gradient-masking",
+  "title": "Beyond Data Filtering: Knowledge Localization for Capability Removal in LLMs",
+  "authors": [],
+  "abstract": "We localize dangerous knowledge to a subset of model's parameters, so it can be easily removed after training.",
+  "url": "https://alignment.anthropic.com/2025/selective-gradient-masking",
+  "published": ""
+ },
+ {
+  "id": "2610.24872",
+  "title": "The Missing Compliance Class: LLM Graders That Collapse Jailbreak Success, and a Free Check",
+  "authors": [
+   "Ruqiya Bin Safi"
+  ],
+  "abstract": "Jailbreak papers report an attack success rate, the share of responses that deliver the harmful request, and read it as a property of the target model. We hold the target model, the prompts and the responses fixed and change only the grader. Three dense graders of 8B and 9B parameters, from three model families, move compliant responses to the neighbouring class, evasion, instead of scattering them across classes. One of them assigns the compliance label zero times in 900 responses. This class collapse also appears on new harmful requests, on a target model from a third family, and in a held-out 7B grader from a fourth family. Per-class label counts expose it at no cost and without human labels. The collapse decides how the rate behaves under a change of grader. On two corpora of 900 responses and eight graders, the compliance rate differs by a factor of 22 to 25, while the non-refusal rate differs by 18 to 23 percentage points. Without the three collapsing graders, compliance differs by a factor of 1.7 to 2.8 on all four corpora, and non-refusal still differs by 10 to 22 points. These results do not change when every grader is called once. We propose a reporting minimum that keeps the compliance rate and adds its per-class label counts and the named grader. Beside it goes the non-refusal rate, whose disagreement across graders is additive.",
+  "url": "http://arxiv.org/abs/2610.24872v1",
+  "published": "2026-10-17T21:20:23Z"
+ },
+ {
+  "id": "2610.33542",
+  "title": "SEDATE: Do Large Language Models Share an Aggression Circuit Across Languages?",
+  "authors": [
+   "Sagnik Basu",
+   "Sayan Das",
+   "Somnath Banerjee",
+   "Animesh Mukherjee"
+  ],
+  "abstract": "As the applications of AI continue to expand across various multimodal and multilingual domains, ensuring safe and responsible deployment of these systems has become an important concern. A wide-range of interventions have been proposed to make AI responses safer and more reliable. They often incur substantial computational or annotation costs, or cannot be extended to multilingual settings. In this work, we propose Selective Detection And Targeted Editing (SEDATE), a training-free approach based on detect-edit-verify strategy. SEDATE first detects the responsible neurons, edits them as and when necessary and finally verifies the model responses; all without any additional model training. We evaluate SEDATE across 7 languages and 4 model families. We further evaluate its effectiveness across 4 out-of-distribution languages and 4 additional datasets. We show that SEDATE achieves substantially superior safety scores across all languages and models over the best-performing baseline while retaining the general capabilities and incurring negligible overhead. Our results are robust, with the trends remaining similar for out-of-distribution languages and datasets.",
+  "url": "http://arxiv.org/abs/2610.33542v1",
+  "published": "2026-10-24T08:38:52Z"
+ },
+ {
+  "id": "blog:2026-automated-alignment-researchers",
+  "title": "Automated Researchers Can Mitigate Well-Characterized Alignment Failures",
+  "authors": [],
+  "abstract": "Across 10 common alignment failures, the strongest technique our automated alignment researchers discover significantly mitigates the targeted failures and generalizes out of distribution. Our findings suggest that automating measurable alignment research may already be practical, rather than years away.",
+  "url": "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
+  "published": ""
+ },
+ {
+  "id": "2610.33258",
+  "title": "Two Uncertainties Are Not One: Disagreement versus Decision-Risk in Cheap Structured Content Moderation",
+  "authors": [
+   "Karan Yadav"
+  ],
+  "abstract": "Content moderation compresses a graded, contested human judgment into a binary act (leave up / take down) over billions of items, at a scale where running a frontier LLM on every post is uneconomical. A new class of frozen \"System One\" models returns typed, calibrated decisions instead of text at ~USD 0.000025 per call and ~100 ms. We run the first independent audit of one such model on 142,658 human-labeled comments, and benchmark it against 14 frontier reasoning models (the GPT-5.x, Claude, Gemini 3, and Grok families) on a shared probe set. Two findings stand out. First, the cheap model is accuracy-competitive: its zero-shot classification AUROC (0.83) is not statistically separable (paired bootstrap, n=56; a failure to reject parity, not proof of equivalence) from 13 of the 14 frontier systems while costing 1-3 orders of magnitude less, and it is no worse calibrated than several of them. Second, \"confidence\" conflates two uncertainties that come apart: human disagreement (where annotators split on satire and coded language) and decision risk (where the automatic action is costly-wrong). Under an asymmetric moderation loss these call for opposite escalation signals, so no single confidence number serves both. Because the model prices extra questions at nearly zero, decomposing the judgment into parallel sub-questions and reading their spread recovers a human-disagreement signal that the model's native confidence misses -- but this remedy is specific: it helps the weakest, disagreement-blind models and only when the decomposition aligns with the sources of disagreement; a specialist toxicity model and the strongest LLMs do not need it, and the effect is distribution-sensitive. We will release the instrument, the cached runs, and the analysis.",
+  "url": "http://arxiv.org/abs/2610.33258v1",
+  "published": "2026-10-23T20:08:04Z"
+ },
+ {
+  "id": "2610.33279",
+  "title": "Multi-Agent Retrieval-Augmented Causality Assessment (MARCA) of Individual Case Safety Reports in Pharmacovigilance",
+  "authors": [
+   "Daisy Rae Lopez",
+   "Angela Boccia",
+   "Maurizio Sessa"
+  ],
+  "abstract": "Introduction: Increasing volumes of individual case safety reports (ICSRs) challenge expert-led causality assessment in pharmacovigilance. We developed MARCA (Multi-Agent Retrieval-Augmented Causality Assessment), a four-agent framework for Naranjo-based assessment, and evaluated agreement with human experts and exploratory differences between non-RAG and RAG-labelled scores. Methods: MARCA combined scientific literature retrieval, drug-label assessment, objective-evidence classification, and clinical causality reasoning using Gemini 2.5 Pro and DeepSeek-V3.2. Agent-generated rationales informed human-assisted scoring. A consensus expert reference standard covered 215 ICSRs and 1,562 drug-event combinations (DECs) from FAERS (Q1-Q2 2025). Agreement was measured using percentage agreement and Cohen's kappa. Results: Question-level agreement was 96.8% for Naranjo Q2 (kappa = 0.491; 95% CI 0.265-0.663), 85.4% for Q5 (kappa = 0.269; 95% CI 0.180-0.340), and 96.8% for Q10 (kappa = 0.922; 95% CI 0.885-0.951). Final causality classification agreement was 79.4% (95% CI 71.8-85.3; kappa = 0.587, 95% CI 0.450-0.690). In a retrospective subset of 60 DECs, agreement was higher for RAG-labelled than non-RAG scores for Q5 (83.3% vs 65.0%) and Q10 (100.0% vs 18.3%). Discussion: MARCA-assisted assessment showed substantial variation in agreement across Naranjo questions, with lower concordance for alternative causes. Retrospective RAG comparisons are exploratory and do not establish prospective effectiveness.",
+  "url": "http://arxiv.org/abs/2610.33279v1",
+  "published": "2026-10-23T20:43:29Z"
+ },
+ {
+  "id": "2610.33441",
+  "title": "Quantifying Meaning with SCAPE-T: Semantic Complexity from Encoder-Only Transformer Attention",
+  "authors": [
+   "Maxim Khovansky",
+   "Lev Mukhanov"
+  ],
+  "abstract": "Automated semantic complexity estimation remains underexplored in NLP, despite important applications in linguistics and interpretability. This paper defines semantic complexity as the code length required to uniquely specify a text's semantic meaning, and operationalises it via SCAPE-T, an attention-derived metric based on encoder-only transformers. Existing measures either model reader effort (readability, lexical difficulty), which correlates with surface features (word length, syntax), or quantify surface features directly (type-token ratio, word frequency). SCAPE-T targets semantic integration directly by combining three submetrics: (i) inverse-weighted self-focus (token-to-self), (ii) CLS focus (token-to-CLS), and (iii) inter-head redundancy (cosine similarity across heads), using layer-weighted aggregation; data-driven learning is confined to hyperparameter tuning for calibration. Development uses philosophical prose vs. MCTest stories; evaluation is on children's stories vs. technical Wikipedia articles, with pairwise accuracy on contrasts as the primary criterion. Baselines include readability, syntactic/lexical, and LLM-derived measures. SCAPE-T substantially outperforms all tested baselines under word-length control, with a pairwise accuracy of 78.5% (95% bootstrap CI: 76.1-80.4, N=10k pairwise comparisons; +12.7 percentage points over the strongest baseline); without that control, readability heuristics overtake, consistent with their reliance on surface features. On a short-terms abstractness dataset, SCAPE-T also leads. Ablations show each submetric contributes materially. Overall, the results show SCAPE-T isolates conceptual structure from lexical/syntactic confounds better than existing methods, and generalises across two held-out domains.",
+  "url": "http://arxiv.org/abs/2610.33441v1",
+  "published": "2026-10-24T04:34:28Z"
+ },
+ {
+  "id": "2610.33586",
+  "title": "Words Are the Voice of the Mind: Depression Severity Estimation from Social Traces via Mental-Guided Evidence Reasoning",
+  "authors": [
+   "Nada Xu",
+   "Xueqin Chen",
+   "Qiang Gao",
+   "Hongru Liang",
+   "Wenqiang Lei"
+  ],
+  "abstract": "Depression severity estimation is crucial for mental health assessment and intervention, yet traditional approaches depend on clinical interviews or self-report questionnaires that require users' active participation. With the widespread use of online social media, users leave rich social traces that may reflect their mental states, motivating the task of social media-based depression severity estimation. Existing efforts have progressed from textual-feature-based classification to LLM-based questionnaire completion over standardized scale items, yet they still fall short in user-specific mental priors modeling, diversified semantic retrieval, and fine-grained reasoning over mental evidence. To address these limitations, we propose UMer, a user-specific mental evidence reasoning framework for social traces-based depression severity estimation. UMer first distills a user-specific mental prior from historical social traces to capture the user's psychological tendencies, behavioral patterns, and self-expression style. It then performs scale-guided multi-query retrieval to construct evidence memories from item-relevant posts. Finally, it conducts coarse-to-fine evidence-aware reasoning to distinguish direct and indirect evidence and predict item-level scores with interpretable rationales. Extensive experiments on real-world benchmarks demonstrate that UMer not only achieves competitive performance over existing baselines, but also provides evidence-grounded interpretability and generalizes to other scale-based tasks.",
+  "url": "http://arxiv.org/abs/2610.33586v1",
+  "published": "2026-10-24T10:28:49Z"
+ },
+ {
+  "id": "2610.33624",
+  "title": "RSI Arena: Towards Recursive Self-Improvement with Human Feedback",
+  "authors": [
+   "Yue Huang",
+   "Yanbo Wang",
+   "Lichi Li",
+   "Yuanyuan Chen",
+   "Andreas Haupt",
+   "Xiaonan Luo",
+   "Zheyuan Liu",
+   "Jihye Choi",
+   "Felix Juefei-Xu",
+   "Xiangliang Zhang",
+   "Radha Poovendran",
+   "Misha Sra",
+   "Ying Liu",
+   "Ben Burtenshaw",
+   "Thomas Wolf",
+   "Alex Pentland",
+   "Zichen Chen",
+   "Zhangchen Xu"
+  ],
+  "abstract": "Can AI agents autonomously train useful language models and improve them using feedback from users? We introduce RSI Arena, a two-stage study of autonomous post-training as a step toward recursive self-improvement. Ten frontier models act as training agents, each starting from NVIDIA Nemotron 3.5 Lightning 30B-A3B Base. During a six-day first stage, each agent has 1,000 GPU-hours and $300 in API credit on a shared 64-GPU cluster, independently selecting data, implementing training procedures, and choosing checkpoints. We evaluate their models on 20 benchmarks and through blind human evaluations. All ten agents produce working assistants, with the strongest model, trained by GPT-6 Astra, closing a median of 76% of the base-to-Instruct gap across 12 capability benchmarks. Its human-preference rating is also close to NVIDIA Instruct after statistical adjustment for answer length and formatting. In Stage 2, each agent receives the comparison records and votes involving its Stage 1 model and is given three additional days for further training. Using NVIDIA Instruct as a common reference across the two evaluation rounds, we observe an improvement from Stage 1 to Stage 2 in the style-adjusted relative rating of eight of the ten models. We show that benchmark gains were modest, with no clear link to preference gains, while some agents encouraged longer responses and one model showed increased harmful compliance on StrongREJECT. RSI Arena provides an auditable setting for studying how human feedback can guide autonomous model development. It takes a step toward recursive self-improvement with human feedback (RSIHF), in which people help define what improvement means for the AI systems they use.",
+  "url": "http://arxiv.org/abs/2610.33624v1",
+  "published": "2026-10-24T11:54:45Z"
+ },
+ {
+  "id": "2610.33697",
+  "title": "Gender Associations in LLM-Mediated ADHD Self-Diagnosis",
+  "authors": [
+   "Matilde Elene Hansen",
+   "Ross Deans Kristensen-McLachlan"
+  ],
+  "abstract": "Large Language Models (LLMs) are increasingly used for medical self-diagnosis. However, the way demographic cues shape outputs in these interactions remains poorly understood. This is particularly consequential for diagnoses like ADHD, where persistent gender disparities are not fully aligned with the clinical evidence. We adapt the Context Association Test (CAT) to evaluate whether GPT-4o responds to gendered ADHD associations in a zero-shot, self-diagnostic setting. We show that explicit cueing consistently amplifies certain ADHD subtype associations while implicit cueing produces near proxy-aligned distributions. These divergences suggest that explicit demographic cues may activate bias-mitigation mechanisms that over-correct rather than eliminate bias, whereas implicit cues appear to reflect the model's default behavior. Our results demonstrate that evaluating gendered bias in LLM-mediated self-diagnosis requires careful attention to the demographic associations a model encodes.",
+  "url": "http://arxiv.org/abs/2610.33697v1",
+  "published": "2026-10-24T14:24:11Z"
+ },
+ {
+  "id": "2610.33765",
+  "title": "RoleHear: Pseudo-Labeling for Semi-Supervised Role-Attributed Streaming Speech Recognition",
+  "authors": [
+   "Zefang Liu",
+   "Chenyang Zhu",
+   "Sangwoo Cho",
+   "Xujun Peng",
+   "Rongqing Huang",
+   "Shi-Xiong Zhang",
+   "Sambit Sahu"
+  ],
+  "abstract": "Streaming automatic speech recognition transcribes at low latency but produces an unattributed word stream, while real-time applications such as customer-service analytics need each word tied to a speaker role. Role attribution is usually a separate stage, either an offline or streaming speaker-diarization model aligned to the words or a text-based large language model applied to the transcript, and role labels for training are scarce. We present RoleHear, a semi-supervised pipeline that makes a single cache-aware streaming transducer emit roles inline through lightweight in-vocabulary role tokens: a fast turn-boundary marker followed by a per-role token a few words later. An offline transducer teacher, fine-tuned into a role-attributed recognizer, relabels unlabeled audio, and a multimodal large language model supplies silver role labels where gold annotations are unavailable. The streaming student is fine-tuned on the mixture in a single pass. Across customer-service calls with gold roles and earnings calls with silver roles, RoleHear attributes roles accurately while preserving transcription quality and narrowing the gap to the offline teacher.",
+  "url": "http://arxiv.org/abs/2610.33765v1",
+  "published": "2026-10-24T16:17:15Z"
+ },
+ {
+  "id": "2610.28607",
+  "title": "Benchmarking Arabic Dialects for Math Problems",
+  "authors": [
+   "Noor Abo Mokh",
+   "Teresa Lynn",
+   "Nizar Habash",
+   "Ahmed Elshabrawy",
+   "Sara Alhajeri",
+   "Alaa Elsetohy",
+   "Preslav Nakov",
+   "Alham Fikri Aji"
+  ],
+  "abstract": "Mathematical reasoning remains underexplored for low-resource languages, including Dialectal Arabic. To bridge this gap, we introduce the DAR-MGSM (Dialectal Arabic Multilingual Grade School Math) Benchmark, the first manually curated benchmark for evaluating mathematical reasoning in Dialectal Arabic. DAR-MGSM consists of math word problems (MWPs) requiring multi-step reasoning and covers five major Arabic dialects alongside Modern Standard Arabic (MSA). The benchmark comprises two parallel versions: translated-only and translated & culturally localized. The latter version adapts entities and references to regional varieties. We evaluate eleven Arabic-centric and multilingual large language models on DAR-MGSM. The results show that the performance generally declines on the localized version, highlighting the challenges introduced by culturally grounded adaptations. However, the magnitude of this effect varies across models, with Arabic-centric models exhibiting different levels of sensitivity to localization. A mechanistic interpretability analysis shows that translated and localized variants of the same MWPs often induce distinct internal reasoning trajectories, even when aggregate accuracy remains similar. Overall, our results show that mathematical reasoning performance depends on both linguistic variety and cultural context.",
+  "url": "http://arxiv.org/abs/2610.28607v1",
+  "published": "2026-10-20T17:50:13Z"
+ },
+ {
+  "id": "2610.34013",
+  "title": "The Patient Is Always Right? Evaluating Sycophancy in Medical Diagnosis with Graded Patient Beliefs",
+  "authors": [
+   "Viswonathan Manoranjan",
+   "Andrea Mock",
+   "Myra Cheng",
+   "Lujain Ibrahim",
+   "Andrew Coyne",
+   "Junyi Jessy Li",
+   "Desmond C. Ong"
+  ],
+  "abstract": "More people are seeking out general-purpose AI models for medical advice, including diagnosis. Yet, AI models are susceptible to sycophancy, like validating users' beliefs even when they are untrue, which could lead to false positive diagnoses. Here, we evaluate how nine AI models change their diagnostic decision when a patient presents a belief that they have a specific (but incorrect) medical condition. We vary how close the user belief is to the clinical evidence presented. Models sycophantically adopt the patient's belief on average 23.2\\% of the time---sometimes even when the patient proposes a fictional, made-up condition. We also varied different personas, including a Rare Disease Claimer that got models to accept their belief 43.0\\% of the time. Additional analyses find that medical fine-tuning and model scale makes models less susceptible to changing their diagnoses. Sycophantic bias in medical diagnosis raises implications for safety, especially as more people are using AI for health support.",
+  "url": "https://arxiv.org/abs/2610.34013"
+ },
+ {
+  "id": "2610.33813",
+  "title": "Task Format as a Factor in Adaptation: A Controlled Comparison of LoRA and Full Fine-Tuning for Prompt-Safety Classification",
+  "authors": [
+   "John Alderete",
+   "Srirakshith Betageri",
+   "Jennifer Flynn",
+   "Alex Greenhalgh",
+   "Josh Rubin",
+   "Yoshita Varma Annam"
+  ],
+  "abstract": "Fine-tuning a language model for classification involves many design decisions. Comparisons of low-rank adaptation (LoRA) with full fine-tuning are common but often confounded, and task format is rarely studied. We compare both regimes on prompt-safety classification with a matched 400M encoder-decoder pair (Ettin) across three task formats, with up to 15 seeds per cell and pre-specified analyses. At the pre-specified learning rates, full fine-tuning leads LoRA by 2-3 pp in every architecture and format trained on the label alone. On the encoder, the gap closes once both rates are chosen by the same search. Training LoRA to write a reason after its verdict adds 4.0 pp and closes the gap, but a content-free sentence of equal length does not. Trained models score above a prompted 8B in domain but fall behind it on two of three out-of-distribution corpora, trailing by 8-23 pp on adversarial jailbreaks and flagging 27-66% of benign but harmful-looking prompts as unsafe, against the 8B's 2-3%. Together, the results suggest that the adaptation regime matters less than how each model is trained, its learning rate, and training target, and that in-domain accuracy alone is an incomplete guide to robustness.",
+  "url": "http://arxiv.org/abs/2610.33813v1",
+  "published": "2026-10-24T17:24:54Z"
+ },
+ {
+  "id": "blog:2025-activation-oracles",
+  "title": "Activation Oracles: Training and Evaluating LLMs as General-Purpose Activation Explainers",
+  "authors": [],
+  "abstract": "We train language models to answer questions about their own activations in natural language and evaluate how well they generalize to settings very unlike their training, such as uncovering misalignment introduced during fine-tuning.",
+  "url": "https://alignment.anthropic.com/2025/activation-oracles/",
+  "published": ""
+ },
+ {
+  "id": "2606.11648",
+  "title": "Dummy Backdoor as a Defense: Removing Unknown Backdoors via Shared Internal Mechanisms for Generative LLMs",
+  "authors": [
+   "Kazuki Iwahana",
+   "Masaru Matsubayashi",
+   "Takuma Koyama",
+   "Toshiki Shibahara",
+   "Kenichiro Ominato",
+   "Akira Ito"
+  ],
+  "abstract": "Backdoor attacks pose a serious threat to the safety and reliability of Large Language Models (LLMs), as they cause models to behave normally on clean inputs while producing attacker-specified responses when hidden triggers are present. Removing such unknown backdoors is particularly challenging when the defender does not know the attack types or the internal mechanisms formed during backdoor training. In this work, we propose a simple but effective backdoor removal method based on internal mechanisms shared across different backdoors. First, we show that different backdoors with the same task (attack objective) induce similar trigger-activated changes in their internal activations. Motivated by this observation, our proposed method intentionally embeds a backdoor with a known trigger dummy backdoor and then removes it through further fine-tuning on dummy-triggered inputs paired with clean responses. Because the dummy and unknown backdoors exhibit similar activation changes, this removal process can also reduce the effect of the unknown backdoor. We evaluate our method on three backdoor attack types across multiple model families. Experimental results show that our method substantially reduces the attack success rate of the unknown backdoor while preserving model utility, outperforming representative existing defense methods in both backdoor removal effectiveness and utility preservation. These findings suggest that a defender-controllable backdoor can serve as a helpful proxy for mitigating unknown backdoors in generative LLMs. Our source code is available at this https URL .",
+  "url": "https://arxiv.org/abs/2606.11648"
+ },
+ {
+  "id": "2608.06795",
+  "title": "LoRAScan: Detecting Backdoor Prompts in Low-Rank Adapters for Large Language Models via Down-Projection Activation Spikes",
+  "authors": [
+   "Doniyorkhon Obidov",
+   "Honggang Yu",
+   "Xiaolong Guo",
+   "Kaichen Yang"
+  ],
+  "abstract": "Low-rank adaptation (LoRA) enables efficient specialization and distribution of large language models through compact adapters. However, untrusted adapters introduce a supply-chain threat: a backdoored adapter can cause a model to generate harmful content, malicious code, political propaganda, or covert advertisements when an input contains a hidden trigger. Adapter-agnostic defenses merge the adapter with the base model, which dilutes backdoor signals and reduces detection performance. Existing adapter-aware methods do not address how to safely use a potentially backdoored adapter. Instead, they either train a defensive adapter to repair a backdoored base model, addressing the inverse problem rather than securing the adapter itself, or rely on a classifier that flags the entire adapter as suspicious and requires separate mitigation. These methods overlook the distinct latent-space signatures produced by trigger-bearing inputs in backdoored adapters. We introduce LoRAScan, the first adapter-aware defense that detects and rejects trigger-bearing inputs at inference time without modifying adapter parameters. Our key observation is that a small subset of LoRA insertion sites, approximately 5%, remains stable across clean inputs but exhibits highly concentrated spikes in LoRA down-projection activations when a trigger is present. LoRAScan identifies these low-variance insertion sites before model deployment and monitors them during inference. Across standard LLM backdoor benchmarks, LoRAScan rejects 98.49% of malicious inputs with a small error rate on clean inputs, outperforming existing defenses across diverse evaluation settings.",
+  "url": "https://arxiv.org/abs/2608.06795"
+ },
+ {
+  "id": "2607.18639",
+  "title": "Mark, Don't Erase: Token Inoculation for Dual-Use Knowledge in LLMs",
+  "authors": [
+   "Seunghyun Lee",
+   "Dongyoon Han",
+   "Sangdoo Yun"
+  ],
+  "abstract": "In a dual-use field, hazardous knowledge and the benign expertise around it share vocabulary, concepts, and causal structure. That overlap makes selective refusal hard, and existing methods such as unlearning and refusal training overgeneralize their suppression into the benign side. We argue for conditioning, not suppression. In this work, we introduce Token Inoculation, which marks hazardous sentences with a special token, the inoculation token, during continued pre-training. We then fine-tune the model to refuse hazardous questions and, on the same questions under the inoculation token, to predict the hazardous answers. At test time the inoculation token is absent, so the model does not express the hazardous answers it learned to predict. Across 1.5B to 14B parameters and three architecture families it holds hazardous accuracy near 18% while retaining 93% of the instruct baseline's MMLU performance, the best safety-utility balance among the baselines we compare. The same advantage reproduces under open-ended generation and in a cybersecurity transfer. We test this with a causal do(X) analysis that randomizes the accuracy of the conditioning signal, and find that refusal becomes more selective the more of the hazardous domain the model still knows. Our findings underscore the importance of training to predict the responses that must be refused, and outline a direction for safety alignment that does not degrade models' growing frontier knowledge. Project page: this https URL",
+  "url": "https://arxiv.org/abs/2607.18639"
+ },
+ {
+  "id": "2608.29109",
+  "title": "Recognition-Refusal Misalignment in LLMs: Why Models Answer Structurally Unanswerable Questions",
+  "authors": [
+   "Yucheng Du",
+   "Xiyang Hu"
+  ],
+  "abstract": "Large language models often answer structurally unanswerable questions, such as computing cot(-540\u00b0) or evaluating (1).startswith(\"1\"), instead of abstaining. We ask whether this failure reflects missing recognition or failed routing from recognition to abstention. Across instruction-tuned models from 1.7B to 70B parameters, a single linear direction in the hidden state separates answerable from structurally impossible math and code prompts, showing that models represent impossibility before generation. Yet this recognition direction is nearly orthogonal to the canonical safety-refusal direction that mediates trained harmful-content refusal. An in-domain behavior-defined invalidity-aware direction is closer to recognition, but only partially aligned with it, and remains near-orthogonal to safety refusal. Generation-time steering along the recognition direction changes invalidity-aware behavior bidirectionally and dose-responsively on structural math and code cells, while random directions do not. Base/instruct comparisons further show that the low-cosine geometry is already present at the pretraining endpoint. The confident-on-impossible failure is therefore better explained as a routing failure than as an encoding failure: the model has a usable \"no admissible answer\" signal, but the safety-refusal pathway is not aligned to use it.",
+  "url": "https://arxiv.org/abs/2608.29109"
+ },
+ {
+  "id": "2607.28639",
+  "title": "What the Abstention Option Measures: Refusal Loss, Sampling Churn, and Option Capture in Distilled Small Language Models",
+  "authors": [
+   "Plawan Kumar Rath"
+  ],
+  "abstract": "Small instruction-tuned language models reach phones, cars, and offline assistants through knowledge distillation, and whether a distilled model is fair enough to ship is often decided by a multiple-choice bias score on a benchmark that offers an abstention option. Three mechanisms move behavior around the abstention option: refusal loss, where the student stops declining on items its pre-distillation reference declined; sampling churn, the same change observed between two runs of the reference itself; and option capture, where the student takes an abstention option whenever one is offered. Injecting each mechanism into a reference's own records shows that aggregate scores see only outright loss, per-item scores see churn and remapping, and only conditioning on committed answers stops moved refusal mass from reading as fairness. Resampling a reference across inference seeds already turns 10% to 27% of its refusals into stereotype answers, so a per-item refusal metric reported without that floor overstates damage. Option capture is what corpus repair teaches: students trained with refusal exemplars take an offered abstention option on up to 95% of science questions where abstention is never correct, and the habit carries to three further benchmarks. Free-form evaluation shows that the refusals multiple choice loses are not where free-form stereotyping occurs. We distill these findings into a per-condition report anchored to the reference, with measured floors and ceilings, and apply it to four student families against a fine-tuning control: distillation keeps fewer of the reference's refusals than fine-tuning on the same prompts where the reference's refusals are reliable, by a few points, while the common metrics report improvements whenever refusal mass moves. A bias score quoted for a distilled model should say which of these it reports.",
+  "url": "https://arxiv.org/abs/2607.28639"
+ },
+ {
+  "id": "2610.26809",
+  "title": "Safety Mid-Training: Internalizing LLM Safety as a Foundational Capability",
+  "authors": [
+   "Zhengyue Zhao",
+   "Liwei Jiang",
+   "Yejin Choi",
+   "Chaowei Xiao"
+  ],
+  "abstract": "Safety alignment for large language models (LLMs) is primarily performed during post-training, while recent work has also begun incorporating safety data into pre-training. Yet safety can degrade when later training no longer includes safety data, and gains in safety often come at the cost of general capability. This tension suggests that safety and general reasoning should not be treated as separate training goals. We instead view safety as an LLM capability that can be learned through a reasoning structure shared with general tasks. Both require the model to understand intent or task goals, apply relevant knowledge, and reason about potential consequences. We introduce safety mid-training, a stage between pre-training and post-training that jointly develops safety and general reasoning through this shared structure. Given safety and utility prompts, the base model generates structured documents and reasoning traces that are then used for mid-training. Safety mid-training reduces average attack success rate (ASR) by 72% to 81% relative to Qwen3-1.7B, 4B, and 8B base models, while also improving general capability. The benefits persist through subsequent post-training. After general-only SFT, mid-trained models largely retain their safety, achieving lower ASR than the baselines without sacrificing general capability. They also retain safety under general-only GRPO without safety rewards, while subsequent RL reaches a better safety-utility frontier when initialized from the mid-trained models. Together, these results suggest that learning safety and general reasoning within a shared mid-training stage can reduce the safety-utility trade-off and make safety more robust to subsequent training.",
+  "url": "http://arxiv.org/abs/2610.26809v1",
+  "published": "2026-10-19T17:49:49Z"
+ },
+ {
+  "id": "2610.29225",
+  "title": "Beyond Binary Labels: Diagnostic Evaluation of LLM Safety with Prompt-Level Rubrics",
+  "authors": [
+   "Hongyu Li",
+   "Xinlong Huang",
+   "Zhan Yu",
+   "Jing Zhao",
+   "Zhe Zhao",
+   "Juntao Zhong",
+   "Xiong Kuang",
+   "Rui Yuan",
+   "ZhenXiang Yan",
+   "Huilin Xu",
+   "Haitao Yu",
+   "Lilin Wang",
+   "Rui Chen",
+   "Blaze Chen",
+   "Fengzong Lian",
+   "Renfen Hu"
+  ],
+  "abstract": "Current LLM safety benchmarks predominantly rely on binary safe or unsafe labels, lacking explanatory depth and suffering from low consistency across automated judges. To address this, we introduce DiagSafe, a diagnostic evaluation framework that moves beyond binary classification by employing prompt-level rubrics. Grounded in globally applicable AI safety policies, each rubric provides explicit criteria along two dimensions: safety, which targets concrete harms with specific exemptions to suppress false positives, and usefulness, which independently evaluates instruction fulfillment. To ensure a robust and realistic evaluation, we construct a bilingual (English-Chinese) benchmark grounded in a comprehensive 84-label safety taxonomy, consisting of two subsets: DiagBase, which covers single- and multi-turn prompts with direct harmful queries and template-based jailbreaks, and DiagAttack, which embeds harmful intents into complex instruction-following tasks to form challenging instruction attacks. Extensive experiments demonstrate that DiagSafe significantly enhances the reliability of LLM-as-a-judge evaluation, achieving 95.34% agreement with human annotations -- substantially higher than the 69%-87% achieved by the baselines -- and high inter-judge consistency (Cohen's $\u03ba$ = 0.864). Furthermore, applying our framework reveals that leading LLMs differ markedly in their unsafe rates, and each model also exhibits unique vulnerabilities along different dimensions. In addition, we observe that models are particularly susceptible in Chinese and multi-turn contexts. Ultimately, DiagSafe provides a reliable and explainable tool for auditing and optimizing LLM alignment.",
+  "url": "http://arxiv.org/abs/2610.29225v1",
+  "published": "2026-10-21T05:33:50Z"
+ },
+ {
+  "id": "2610.26595",
+  "title": "Concerns in Benchmarking Jailbreaks: An Empirical Study of Attack Success Rates",
+  "authors": [
+   "Leon Tu Nguyen",
+   "Rohan Menon",
+   "Rafael Tappe Maestro",
+   "Eric Aubinais",
+   "Chih-Hong Cheng"
+  ],
+  "abstract": "Jailbreak methods are commonly compared using Attack Success Rate (ASR), but these comparisons depend on how responses are generated and judged. In this paper, we examine eight attacks against three open-weight language models using three evaluation procedures. Low-resource language attacks achieve a mean ASR of 96.0% under keyword matching but 2.7% under a Qwen3 evaluator following StrongREJECT scoring instructions. Changing the number and arrangement of attempts reverses the ranking of DeepInception and rewriting. In a separate experiment, sampling 100 responses for each unchanged request at Ollama's default temperature of 0.8 yields 100% ASR under keyword matching but 50% under the Qwen3 evaluator. Beyond evaluator sensitivity, these findings raise a safety concern: repeated sampling can expose residual unsafe behavior despite an initial refusal, suggesting probabilistic suppression rather than robust exclusion. We recommend explicit success definitions, matched response budgets, validated evaluators, and reporting cumulative failure under repeated interaction rather than relying on single-generation tests.",
+  "url": "http://arxiv.org/abs/2610.26595v1",
+  "published": "2026-10-19T15:39:16Z"
+ },
+ {
+  "id": "2610.26589",
+  "title": "Beyond Attack Success Rate: Cost-Aware Metric for Evaluating Iterative LLM Jailbreaks",
+  "authors": [
+   "Rohan Menon",
+   "Chih-Hong Cheng"
+  ],
+  "abstract": "Attack success rate (ASR) evaluates jailbreaks against large language models without accounting for repeated calls to the victim model. Yet each additional call gives the deployed system another opportunity to detect the attack and intervene. We introduce $\\mathrm{ASR}_{\\mathrm{STEP}}$, which penalizes additional victim-model calls while retaining binary success judgments. Our evaluation considers GCG, PAIR with a step budget, and a single-step PAP baseline on JailBreakBench across three model families. GCG's scores decrease by 7.0-8.7 percentage points after discounting, while PAP's remain unchanged. While for PAIR attack, we see a wider discounting range between 3.4-12 percentage points, showing that the \"step\" quantity differs per iterative strategy. Reporting both metrics makes the discount due to repeated victim-model interaction explicit. Code is available here: https://github.com/SuELS-Group/beyond_asr.",
+  "url": "http://arxiv.org/abs/2610.26589v2",
+  "published": "2026-10-19T15:36:41Z"
+ },
+ {
+  "id": "2610.27304",
+  "title": "Global Security Blind Spots: Translation as a Safety Bypass in Low-Resource Languages",
+  "authors": [
+   "Jalil Alva",
+   "David Harper",
+   "Abigail E. Thornton",
+   "Rafael S. Villalobos Alva",
+   "Leonardo Kenji Minemura Suazo",
+   "Konstantinos Karageorgos",
+   "Diego Velazquez",
+   "Sergio A. Serrano",
+   "Marvin Vargas Flores",
+   "Aaron Schliem",
+   "Fernando F. Migone"
+  ],
+  "abstract": "Large language models are deployed globally, yet safety alignment and evaluation remain concentrated in English: harmful requests refused in English can elicit unsafe completions when translated into low-resource languages. We evaluate ten widely deployed LLMs across 79 languages (English plus 78 low-resource) under a translation-bypass threat model, using a metric conditioned on English safety, which separates translation bypass from unsafety already present in English. English safety does not transfer reliably: conditioned on safe English completions, mean bypass rates range from 21.9% to 44.4%. Bypass risk concentrates in a subset of language families, a pattern broadly shared across models. The shared ordering is confounded with translation degeneracy, but its variation across models is significant and survives every control we apply. We also show that per-model bypass rates do not identify a stable ranking: nine of ten models change rank across three conditioning schemes that estimate the same quantity, with no change to any underlying response.",
+  "url": "http://arxiv.org/abs/2610.27304v1",
+  "published": "2026-10-19T21:20:49Z"
+ },
+ {
+  "id": "2610.26474",
+  "title": "AfriGuard: Safety and Robust Refusal For African Languages",
+  "authors": [
+   "Israel Abebe Azime",
+   "Jesujoba O. Alabi",
+   "Iffat Maab",
+   "Alexander D. Cai",
+   "Tadesse Destaw Belay",
+   "Atnafu Lambebo Tonja",
+   "Jonas Kgomo",
+   "Folasade Alabi",
+   "Salomey Osei",
+   "Saminu Muhammad Aliyu",
+   "Nkechinyere Faith Aguobi",
+   "Bontu Fufa Balcha",
+   "Blessing Sibanda",
+   "Davis David",
+   "Mouhamadane Mboup",
+   "Daud Abolade",
+   "Neo Putini",
+   "Louis Powell",
+   "Kiant'e Brantley",
+   "Samuel T. Segun",
+   "Philipp Slusallek",
+   "Dietrich Klakow",
+   "Julia Kreutzer"
+  ],
+  "abstract": "Large language models (LLMs) designed to interact with users are typically trained to respond appropriately to harmful or toxic content. However, ensuring appropriate responses becomes more challenging in diverse linguistic and cultural contexts, where safety risks may be expressed or interpreted differently. Building safe AI systems therefore requires detecting safety risks, understanding their nature, and responding appropriately, while accounting for linguistic and cultural variations that add complexity to each stage. In this work, we introduce AfriGuard, a culturally grounded multilingual dataset for studying harmful intent, safety-category understanding, and refusal behavior across 10 African languages and English. Our findings reveal that guardrail models underperform both open- and closed-source LLMs on safety-intent and safety-category classification, while models show limited understanding of appropriate safety behavior, scoring below 60% F1. We further find that models often fail to respond appropriately to unsafe prompts not because they explicitly refuse, but because they produce linguistically inadequate responses that result in incidental non-assistance rather than proper refusals. Finally, using AfriGuard, we develop efficient guardrail models that achieve performance competitive with models up to 30x larger, introduce refusal detectors that improve average performance by 43.9% over existing detectors, and demonstrate that supervised fine-tuning can substantially improve overall safety performance.",
+  "url": "http://arxiv.org/abs/2610.26474v3",
+  "published": "2026-10-19T14:21:55Z"
+ },
+ {
+  "id": "blog:https:--www.anthropic.com-research-probes-catch-sleeper-agents",
+  "title": "Simple Probes can Catch Sleeper Agents",
+  "authors": [],
+  "abstract": "We find that probing, a simple interpretability technique, can detect when backdoored \"sleeper agent\" models are about to behave dangerously, after they pretend to be safe in training.",
+  "url": "https://alignment.anthropic.com/https://www.anthropic.com/research/probes-catch-sleeper-agents",
+  "published": ""
+ },
+ {
+  "id": "blog:2025-cheap-monitors",
+  "title": "Model-Internals Classifiers",
+  "authors": [],
+  "abstract": "We benchmark approaches to re-using LLM internals to make LLM monitoring more cost-effective.",
+  "url": "https://alignment.anthropic.com/2025/cheap-monitors/",
+  "published": ""
+ },
+ {
+  "id": "2610.32113",
+  "title": "REACT: Representational Early Analysis and Control of Chain-of-Thought Trajectories",
+  "authors": [
+   "Hanwen Zhang",
+   "Enyi Jiang",
+   "Ruike Zhu",
+   "Qinan Yu",
+   "Sanmi Koyejo"
+  ],
+  "abstract": "Chain-of-thought (CoT) generation offers an opportunity to intervene before a reasoning model completes its answer. But does the point at which risk is easiest to detect also offer the most effective control? We study this question with REACT, a conditional activation intervention that learns a safety direction from paired safe and unsafe trajectories and applies it once to an early CoT hidden state. The model weights remain frozen, and all subsequent tokens are generated without further edits. To study timing, we train directions separately at each of the first five CoT positions and evaluate ungated edits with full post-edit regeneration. Across three distilled reasoning models and three generation seeds, the strongest gains concentrate in a two- to three-token early window; on DeepSeek-R1-Distill-Llama-8B, the effect falls to approximately zero at the fourth and fifth tokens, even though later states can be more predictive of risk. This separates risk readability from effective control: intervention timing must be evaluated through its effect on subsequent generation. On the same 8B model, REACT raises the rate of fully safe CoT-answer outputs on StrongREJECT-273 from 29.06% to 82.05%, while keeping benign refusal and usefulness near baseline. An anonymized implementation is available at https://anonymous.4open.science/r/REACT_official2-333B.",
+  "url": "http://arxiv.org/abs/2610.32113v1",
+  "published": "2026-10-23T03:28:34Z"
+ },
+ {
+  "id": "2610.30630",
+  "title": "Interpreting Model Reasoning through Behavioral Counterfactuals",
+  "authors": [
+   "Shawn Im",
+   "James Oldfield",
+   "Adel Bibi",
+   "Sharon Li"
+  ],
+  "abstract": "Faithfully understanding the internal process that occurs as models form their chain of thought is an important problem with the rise in model capabilities. However, this remains challenging due to the variance in sampled responses, making it difficult to isolate the effects of interventions and compare model reasoning systematically. We propose a method for localizing and analyzing how a given intervention affects the model's reasoning through behavioral counterfactuals: given a fixed response, how does introducing an intervention to the prompt change the next-token distributions? We train a module to edit the residual stream such that it minimizes the KL divergence between the output distributions for a fixed response under a source prompt and its counterfactual target prompt. We find that matching the output distributions recovers the counterfactual behavior more effectively than standard activation reconstruction objectives and validate that attribution of the trained module outputs is effective for identifying causally important locations for counterfactual recovery. The attribution maps and visualizations of the downstream effects of model edits provide an interface for generating hypotheses about the original model's computation, which can then be tested with activation patching. In a case study on Gemma-4-E4B-it and DeepSeek-R1-0528-Qwen3-8B, we investigate how a suggestion influences model reasoning even when it is not verbally acknowledged. Our analysis identifies representations at the question statement and filler tokens that mediate a substantial part of the suggestion's influence, with downstream effects such as changing the framing of the justification or even the final answer.",
+  "url": "http://arxiv.org/abs/2610.30630v1",
+  "published": "2026-10-22T02:53:04Z"
+ },
+ {
+  "id": "2610.24556",
+  "title": "From Stories to Features: Scaling Concept Vectors for AI Alignment & Interpretability",
+  "authors": [
+   "Dmitry Scherbakov",
+   "Oleg Chernikov",
+   "Victoria Khamash",
+   "Kirill Afendulev",
+   "Alexey Dontsov",
+   "Ivan Oseledets",
+   "Elena Tutubalina",
+   "Anton Korznikov"
+  ],
+  "abstract": "We study feature vectors: directions in a language model's activation space that correspond to human-interpretable concepts, such as honesty or deception. Existing unsupervised methods like sparse autoencoders attempt to recover the whole feature space, often at the cost of feature quality and interpretability. We take a more pragmatic route: focusing on concepts relevant to AI safety and alignment, we generate synthetic concept-antagonist story pairs and use the difference of their mean model activations as a feature vector. We scale this approach to 1,036 alignment-relevant concepts using 2M synthetic stories across multiple languages and genres, which we publicly release. Across six models from three model families, our feature vectors reliably generalize to detecting their corresponding concepts in chat dialogues and web text. They form an interpretable geometry shared across models and can causally steer model behavior when injected into activations. We further use these features to analyze model representations during jailbreak attacks, mathematical and agentic reasoning. Our targeted feature construction thus offers a scalable route to studying concepts in language models, potentially extending to millions of features across arbitrary domains.",
+  "url": "http://arxiv.org/abs/2610.24556v1",
+  "published": "2026-10-17T08:23:03Z"
+ },
+ {
+  "id": "2610.25341",
+  "title": "Formally Verified Autoresearch for Analyzing the Expressivity of Multi-Head Attention",
+  "authors": [
+   "Karthik Viswanathan",
+   "Plamen Dimitrov",
+   "Stefano Rocca",
+   "Sarayu Sirikonda"
+  ],
+  "abstract": "Multi-head attention is a central component of the transformer architecture, yet how its expressivity depends on the number of heads remains poorly understood. We study a one-layer, attention-only transformer with additive positional embeddings and define the head complexity $H^\\ast(f)$ of a Boolean function $f$ as the minimum number of attention heads required to represent it. We derive an exact linear-fractional normal form for head complexity, prove a general threshold-degree lower bound, and give an explicit ten-bit function for which this bound is strict. For symmetric Boolean functions, we independently show that head complexity equals the number of times the function changes value between consecutive Hamming-weight levels, even when positional embeddings are allowed. This agrees with the concurrent characterization of Hsu and Xu (arXiv:2608.04243) in a model without positional embeddings. The symmetric lower bound combines our general threshold-degree bound with the classical result of Aspnes et al. (1994). These results were discovered and formalized by a frontier model through conjecture generation, theorem proving, and machine verification, while human researchers asked the high-level questions and reviewed the generated theorems. We make the Lean formalization and research traces publicly available to support agent-assisted theorem proving and formal verification in mechanistic interpretability. This work provides a proof of concept for using the capabilities of frontier models, grounded by formal verification, to develop an understanding of transformer architectures.",
+  "url": "http://arxiv.org/abs/2610.25341v1",
+  "published": "2026-10-18T15:36:13Z"
+ },
+ {
+  "id": "2610.35472",
+  "title": "Amplify, Locate, Estimate (ALE) on Rare-Failure Rates of Fine-Tuned LLMs",
+  "authors": [
+   "Patrick Reichherzer",
+   "Jonathan Evertz",
+   "Thorsten Holz"
+  ],
+  "abstract": "Safety fine-tuning can make undesirable model behaviors sufficiently rare that measuring their frequency by direct sampling becomes prohibitively expensive. We introduce Amplify, Locate, Estimate (ALE), a method for estimating such rare failure probabilities efficiently. ALE uses the change in token log-probabilities induced by the safety fine-tuning to define an amplification direction, along which we increase the failure rate for cheap measurement. We develop a score-function estimator that uses the selected amplified batch to recover the local slope of the log failure rate from the token probabilities of the sampled failures, enabling extrapolation back to rare target rates. We also use the amplified batch to obtain an importance-sampling estimate. Across 41 evaluation targets, ALE's estimate-to-reference ratios have a median close to one, with 37 ALE estimates within a factor of three of reference values obtained from independent direct measurements. Ablation tests show that with a budget of up to $\\sim$1000 labeled rollouts, in addition to a cheap unlabeled scan, ALE estimates failure probabilities for Qwen3-8B fine-tunes down to about $10^{-5}$, where direct measurement can require hundreds of thousands of rollouts, as the required sampling budget scales inversely with failure probability at fixed relative precision.",
+  "url": "http://arxiv.org/abs/2610.35472v1",
+  "published": "2026-10-26T14:05:35Z"
+ },
+ {
+  "id": "blog:https:--www.anthropic.com-research-reward-tampering",
+  "title": "Sycophancy to Subterfuge: Investigating Reward-Tampering in Large Language Models",
+  "authors": [],
+  "abstract": "We show AI models can learn to hack their own reward system, by generalization from training in simpler settings.",
+  "url": "https://alignment.anthropic.com/https://www.anthropic.com/research/reward-tampering",
+  "published": ""
+ },
+ {
+  "id": "2610.34653",
+  "title": "Heard Enough to Act: Early Tool Calling in Spoken Dialogue Systems",
+  "authors": [
+   "Yizhou Peng",
+   "Chen Chen",
+   "Donghang Wu",
+   "Hexin Liu",
+   "Eng Siong Chng"
+  ],
+  "abstract": "Latency-sensitive spoken agents must know not only which tool to call, but also when they have heard enough to act. Waiting for the turn to complete delays execution even when the request is already actionable. However, neither existing spoken agents nor spoken dialogue corpora define the earliest point at which a request becomes actionable. We introduce a synthetic spoken-dialogue pipeline that provides earliest-actionable-point supervision, marking when the observed speech grounds a tool and its required arguments. Through controlled task generation, speech synthesis and alignment, and gated annotation, we construct 26,694 dialogues totaling 786 hours across 48 domains, with disjoint training and test argument values. We additionally create an audio rendering of \\tau^2 \\tau^2 -bench for external evaluation. We train an omni-modal language model on this corpus, enabling causal, chunk-level decisions and partial-transcript generation for downstream call completion. The model achieves tool-state macro-F1 scores of 0.48 and 0.47 on held-out dialogues and the external benchmark, respectively. For correct calls, the estimated mean lead over a turn-end cascade, using the same formatter, is 1.8-2.0 seconds in-domain and 1.1 seconds on \\tau^2 \\tau^2 -bench. These results demonstrate a data-driven path toward spoken agents that act while listening. We will open-source the pipeline and the training scripts.",
+  "url": "https://arxiv.org/abs/2610.34653"
+ }
+]

@@ -1,0 +1,370 @@
+{
+ "2610.33299": {
+  "relevant": true,
+  "matched_hypothesis": "H4",
+  "reason": "The new paper explicitly demonstrates that attention heads mediating a specific behavior (subject-verb agreement) shift to different heads during training, which directly supports the H4 claim that circuit location migrates across generations. The excerpts confirm that H4 specifically investigates this migration and notes that 'Location migrates across generations'.",
+  "evidence_quote": "H4: Same circuit structure across models: PARTIAL. Location migrates across generations; modularity scales with depth.",
+  "abstract_quote": "Furthermore, the circuit shrinks over training, with pythia-1b's final circuit being strikingly sparse.",
+  "strength": 4
+ },
+ "2610.34756": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract identifies that LoRA's adaptation is highly sparse and task-dependent, proposing a method to automatically identify these specific layers, which directly supports the F1 hypothesis of using head-restricted LoRA to edit refusal by targeting only the localized safety heads. The excerpts confirm that the project's F1 extension specifically employs 'head-restricted LoRA' trained on 'only the localized safety heads' to test if the circuit is cleanly editable.",
+  "evidence_quote": "The extension instead retrains them: a head-restricted LoRA (low-rank adapter masked to only the localized safety heads' q/k/v/o_proj slices, GQA-aware), trained on an affirmative-continuation objective, merged back into just those heads.",
+  "abstract_quote": "We observe that LoRA's adaptation effect is highly non-uniform, with significant component-wise and layer-wise sparsity.",
+  "strength": 4
+ },
+ "2610.29555": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract describes WRDO as a procedure to construct a composite refusal direction using learned aggregation weights, which directly aligns with the hypothesis of editing refusal by retraining identified heads (F1). The abstract's mention of using the same machinery in reverse to restore refusal behavior in an abliterated model corresponds to the project's 'safety re-patch round-trip' extension, which is a direct application of the F1 editing mechanism.",
+  "evidence_quote": "F1: Head-restricted LoRA: edit refusal by retraining only the identified heads.",
+  "abstract_quote": "We further investigate a defense-oriented setting in which the same optimization machinery is used in reverse to restore refusal behavior in an abliterated model checkpoint.",
+  "strength": 4
+ },
+ "2610.29342": {
+  "relevant": true,
+  "matched_hypothesis": "F3",
+  "reason": "The new paper demonstrates that removing refusal mechanisms (abliteration) does not result in unbiased or neutral outputs, but rather preserves specific political biases (script-dependent bias about Taiwan), directly addressing whether the edited circuit produces only the refusal opener or also influences content stance. The excerpts confirm that the project's edits remove the refusal opener without installing substantive answering behavior, and this new paper extends that by showing the 'substantive' output is not neutral but biased, fitting the scope of 'content-transfer' regarding what the model produces when refusal is removed.",
+  "evidence_quote": "The edit removes the refusal opener without installing an answering behaviour \u2014 a shallow jailbreak, measured.",
+  "abstract_quote": "Uncensored is not unbiased.",
+  "strength": 4
+ },
+ "2610.28897": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The paper abstract focuses on cross-lingual transfer of refusal directions in low-resourced languages, which is not listed among the project's open hypotheses or directions. The project's hypotheses concern circuit modularity, ablation effects, and generational migration of attention heads in small instruct LLMs, not linguistic universality or low-resource language alignment.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.32182": {
+  "relevant": true,
+  "matched_hypothesis": "F2",
+  "reason": "The abstract demonstrates that safety geometry and causal controllability vary significantly by layer depth in VLMs (early vs. later layers), which directly supports the project's hypothesis that refusal circuit location and structure change across model components/generations (F2). The excerpt confirms that the project investigates how refusal circuit location changes across model generations and depth (F2: Generational sweep).",
+  "evidence_quote": "F2: Generational sweep: how the refusal circuit location changes across model generations.",
+  "abstract_quote": "Causal interventions show that early vision layers support strong bidirectional refusal control through activation steering along a learned safety direction, with unsafe rejection spanning 6%-96%, whereas later layers respond more to activation magnitude scaling and exhibit a substantial safety-selectivity trade-off.",
+  "strength": 4
+ },
+ "2610.31331": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The new paper focuses on Diffusion LLMs (dLLMs) and a template-based transfer attack, whereas the project excerpts exclusively discuss autoregressive (AR) small instruct LLMs and circuit-level head ablation/LoRA editing. There is no mention of diffusion models, bidirectional context, or template-based attacks in the provided project hypotheses or excerpts.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.25611": {
+  "relevant": true,
+  "matched_hypothesis": "F3",
+  "reason": "The abstract describes fine-tuning on benign data that creates a 'refusal-to-compliance transition,' which directly tests the hypothesis of whether editing circuits with benign content transfers to harmful compliance. The excerpts confirm this specific finding, noting that 'benign-only content training transfers to real harmful compliance' and that teaching safety heads to answer benignly makes them answer harmful requests too.",
+  "evidence_quote": "On the robustly-aligned models (baseline sASR \u2264 0.08) the benign edit lifts compliance to 0.41 on Llama-3.2-3B (CI [0.33, 0.49], baseline 0.08 \u2014 a 5\u00d7 jump, non-overlapping CIs), 0.15 on Llama-3.2-1B and Qwen2.5 \u2014 with no harmful training data. Teaching the safety heads to answer (benignly) makes them answer harmful requests too.",
+  "abstract_quote": "Fine-tuning on these examples increases harmful compliance, but only when two conditions hold together: the discrepancy is large enough, and it cannot be resolved through a narrow surface-level shortcut.",
+  "strength": 5
+ },
+ "2610.34074": {
+  "relevant": true,
+  "matched_hypothesis": "F2",
+  "reason": "The abstract demonstrates that jailbreak susceptibility is highly sensitive to pretraining seeds (correlation drops from 0.984 to 0.811), which directly supports the hypothesis that the refusal circuit's location and structure are not static but vary based on specific training runs. This aligns with the project's finding that the refusal head location migrates across generations and implies that the circuit is not a fixed, universal module but rather dependent on the specific pretraining trajectory.",
+  "evidence_quote": "Location migrates across generations; modularity scales with depth.",
+  "abstract_quote": "A different pretraining seed lowers the correlation to 0.811, and a different data recipe lowers it only slightly further, to 0.779.",
+  "strength": 4
+ },
+ "2610.35586": {
+  "relevant": true,
+  "matched_hypothesis": "H4",
+  "reason": "The abstract demonstrates that internal representations (specifically the direction separating unsafe from safe prompts) rotate significantly between base and successor models, which directly supports the hypothesis that circuit structure/location migrates across generations. The excerpts confirm that the project specifically investigates this migration, noting that 'how cleanly it can be removed depends on where in the network the circuit sits' and that the circuit's location 'migrates across model generations.'",
+  "evidence_quote": "We further show the circuit's location migrates across model generations, and that jailbreak robustness is non-monotonic with generation.",
+  "abstract_quote": "We find that the successors rotate the direction separating unsafe from safe prompts by 17 ^\\circ to 35 ^\\circ , yet on XSTest the transferred probe's AUC changes by only -0.011 to +0.027",
+  "strength": 5
+ },
+ "2610.27790": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The retrieved paper investigates the dissociation between linguistic and arithmetic circuits, which is a topic of circuit modularity but does not address refusal behavior, safety switches, or the specific hypotheses regarding refusal circuits in small instruct LLMs. The project's excerpts focus exclusively on refusal mechanisms, head ablation, and LoRA editing for safety, with no mention of arithmetic tasks or linguistic/arithmetic circuit overlap.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "blog:2025-selective-gradient-masking": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract describes localizing dangerous knowledge to a subset of parameters for removal, which directly aligns with the hypothesis of editing refusal by retraining only identified heads. The excerpt confirms that this approach was implemented as a 'head-restricted LoRA' trained on benign data to modify model behavior.",
+  "evidence_quote": "The editing extension (\u00a79) turns the map into an attack: a head-restricted LoRA trained on benign data only makes Llama-3.2-3B comply with 41% of harmful requests (baseline 8%; up to 48% tuned) \u2014 with no harmful training data.",
+  "abstract_quote": "We localize dangerous knowledge to a subset of model's parameters, so it can be easily removed after training.",
+  "strength": 5
+ },
+ "2610.24872": {
+  "relevant": true,
+  "matched_hypothesis": "F3",
+  "reason": "The new paper demonstrates that reported compliance rates (ASR) are highly unstable and dependent on the grading mechanism, directly challenging the validity of the 'substantive_asr' metric used to validate the F3 transfer finding. The excerpts confirm that the project's F3 verdict relies on a specific classifier (`judge.py`) to distinguish 'substantive' harmful content from shallow openers, a distinction the new paper shows can collapse entirely depending on the grader.",
+  "evidence_quote": "That is why the headline metric is `substantive_asr` (harmful **and** \u2265200 chars), not raw ASR.",
+  "abstract_quote": "Three dense graders of 8B and 9B parameters, from three model families, move compliant responses to the neighbouring class, evasion, instead of scattering them across classes.",
+  "strength": 4
+ },
+ "2610.33542": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The paper proposes a training-free method (SEDATE) for multilingual safety, whereas the project's open hypotheses (H3, H3b, H4, F1-F3) and excerpts focus exclusively on training-based head ablation/LoRA edits, modular circuit analysis, and content-transfer jailbreaks in English-centric or unspecified language contexts. The abstract does not mention head ablation, LoRA, refusal opers, or the specific generational circuit migration findings central to the project's hypotheses.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "blog:2026-automated-alignment-researchers": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The abstract discusses automating the *mitigation* of alignment failures, whereas the project excerpts focus on *causal identification* and *removal* of refusal circuits (which increases harmful compliance). There is no direct overlap in the specific mechanism or goal described in the abstract versus the project's findings on head ablation and LoRA editing.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.33258": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The paper focuses on the economics and calibration of cheap, frozen 'System One' moderation models versus frontier LLMs, specifically analyzing confidence scores and human disagreement. It does not address attention heads, circuit ablation, LoRA editing, or the causal mechanisms of refusal in instruct LLMs.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.33279": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The paper focuses on pharmacovigilance causality assessment using multi-agent LLMs, which is entirely unrelated to the project's focus on attention head ablation and refusal circuits in instruct LLMs. There is no overlap in methodology, subject matter, or specific hypotheses.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.33441": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The paper introduces SCAPE-T, a metric for semantic complexity in encoder-only transformers, which is methodologically distinct from the project's focus on causal interventions (head ablation/LoRA) in decoder-only instruct LLMs. There is no overlap in the specific mechanisms, hypotheses, or experimental setups described in the excerpts.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.33586": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The abstract describes a framework for estimating depression severity from social media traces using mental evidence reasoning, which is unrelated to the project's focus on attention heads, refusal circuits, or safety editing in LLMs. There is no overlap in methodology, subject matter, or objectives between the two.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.33624": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The paper focuses on autonomous recursive self-improvement and post-training via human feedback, whereas the project hypotheses concern the mechanistic interpretability, localization, and causal editing of refusal circuits in existing instruct models. There is no overlap in methodology (circuit analysis/editing vs. autonomous training loops) or specific subject matter (refusal circuit structure vs. general capability/safety alignment via feedback).",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.33697": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The paper investigates gender bias in medical self-diagnosis using GPT-4o, which is unrelated to the project's focus on attention heads, refusal circuits, or small instruct LLMs (Qwen/Gemma/Llama). The abstract contains no mention of mechanistic interpretability, head ablation, LoRA edits, or refusal mechanisms.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.33765": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The abstract describes a speech recognition system for speaker role attribution, which is unrelated to the project's focus on LLM attention heads, refusal mechanisms, or safety circuits. There is no overlap in domain, methodology, or subject matter between streaming ASR and LLM interpretability.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.28607": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The paper focuses on benchmarking mathematical reasoning in Arabic dialects, which is unrelated to the project's scope of identifying and editing attention heads responsible for refusal in instruct LLMs. The abstract contains no mention of mechanistic interpretability techniques like ablation, LoRA editing, or circuit analysis of safety/refusal mechanisms.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.34013": {
+  "relevant": true,
+  "matched_hypothesis": "EXT",
+  "reason": "The abstract explicitly evaluates 'sycophancy' in medical diagnosis, which directly corresponds to the 'benign substance unlock' and 'sycophancy' listed under the EXT (Ongoing extensions) hypothesis in the project notes. The paper's finding that models adopt false patient beliefs aligns with the project's interest in how editing or training affects specific behavioral outputs like sycophancy.",
+  "evidence_quote": "Multi-axis safety \u2014 do deception / bias / PII / sycophancy have localized, editable circuits too?",
+  "abstract_quote": "Yet, AI models are susceptible to sycophancy, like validating users' beliefs even when they are untrue, which could lead to false positive diagnoses.",
+  "strength": 5
+ },
+ "2610.33813": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract directly addresses the efficacy of LoRA for adapting model behavior (specifically classification/safety), which is the core mechanism of hypothesis F1 (Head-restricted LoRA). The excerpt confirms that F1 involves 'edit refusal by retraining only the identified heads' using LoRA, and the abstract provides evidence that LoRA's performance is highly dependent on training details like learning rate and target format, which is critical for the success of such head-restricted edits.",
+  "evidence_quote": "F1: Head-restricted LoRA: edit refusal by retraining only the identified heads.",
+  "abstract_quote": "Comparisons of low-rank adaptation (LoRA) with full fine-tuning are common but often confounded, and task format is rarely studied.",
+  "strength": 3
+ },
+ "blog:2025-activation-oracles": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract describes training models to explain activations, which provides the mechanistic understanding necessary to identify the specific 'identified heads' required for the head-restricted LoRA edit described in F1. The excerpts confirm that F1 relies on retraining only these identified heads to edit refusal, a process dependent on precise activation-level insights.",
+  "evidence_quote": "F1: Head-restricted LoRA: edit refusal by retraining only the identified heads.",
+  "abstract_quote": "We train language models to answer questions about their own activations in natural language and evaluate how well they generalize to settings very unlike their training, such as uncovering misalignment introduced during fine-tuning.",
+  "strength": 3
+ },
+ "2606.11648": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract proposes removing backdoors by fine-tuning on specific inputs to alter internal mechanisms, which directly parallels the project's F1 hypothesis of editing refusal behavior by retraining only identified heads. The excerpts confirm that the project uses head-restricted LoRA (a form of targeted fine-tuning) to edit model behavior, establishing the methodological link.",
+  "evidence_quote": "E \u2014 Retraining the localized safety heads jailbreaks well-aligned models.",
+  "abstract_quote": "We evaluate our method on three backdoor attack types across multiple model families.",
+  "strength": 3
+ },
+ "2608.06795": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract describes LoRAScan as a method that monitors LoRA insertion sites (adapters) to detect backdoors, which directly relates to the hypothesis of editing or analyzing refusal mechanisms via head-restricted LoRA. The excerpts confirm that the project uses head-restricted LoRA to edit refusal behavior, establishing the methodological link between the two works.",
+  "evidence_quote": "F1: Head-restricted LoRA: edit refusal by retraining only the identified heads.",
+  "abstract_quote": "We introduce LoRAScan, the first adapter-aware defense that detects and rejects trigger-bearing inputs at inference time without modifying adapter parameters.",
+  "strength": 3
+ },
+ "2607.18639": {
+  "relevant": true,
+  "matched_hypothesis": "F3",
+  "reason": "The abstract describes a method where the model learns to predict hazardous answers during training (content generation) but refuses them at test time, which directly relates to the F3 hypothesis's investigation into whether editing heads to produce content (benignly) transfers to harmful compliance or refusal. The excerpts confirm that F3 specifically tests if 'teaching the heads to produce content (benignly) transfers to harmful compliance' and notes that 'the heads gate the decision to answer'.",
+  "evidence_quote": "You teach the localized safety heads to give full, helpful answers on benign questions, and that ability transfers to harmful requests \u2014 the heads gate the decision to answer, so unlocking content generation benignly brings harmful content along for free.",
+  "abstract_quote": "We then fine-tune the model to refuse hazardous questions and, on the same questions under the inoculation token, to predict the hazardous answers.",
+  "strength": 4
+ },
+ "2608.29109": {
+  "relevant": true,
+  "matched_hypothesis": "H4",
+  "reason": "The abstract demonstrates that the 'safety-refusal direction' is geometrically distinct from the 'recognition direction' for impossibility, implying that the internal circuitry for refusal is structurally specific and potentially distinct from other routing mechanisms. This supports H4's focus on the structural nature and location of the refusal circuit, specifically the finding that 'modularity scales with depth' and that the circuit's structure is a key variable of interest across models.",
+  "evidence_quote": "The arc: we **mapped** the refusal circuit (A\u2013D), showed the heads are **editable, not just deletable** (E), discovered the edit was **shallow** (F), **tightened the evaluation** (3-way split), then proved the deep version \u2014 **benign-only training that transfers to harmful compliance** (G) \u2014 and finally **strengthened and bounded** it: replicated with CIs (D1), pushed the ceiling to ~48% (D2), and showed it doesn't compose with steering (D3).",
+  "abstract_quote": "Yet this recognition direction is nearly orthogonal to the canonical safety-refusal direction that mediates trained harmful-content refusal.",
+  "strength": 3
+ },
+ "2607.28639": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract identifies 'refusal loss' as a mechanism where distilled models stop declining items their reference declined, which directly parallels the project's F1 finding that head-restricted LoRA can drive refusal to 0% (removing the refusal decision). The abstract's focus on how this 'loss' is measured and reported aligns with the project's investigation into whether the edited circuit produces substantive harm or just a shallow refusal-opener stop.",
+  "evidence_quote": "Head-restricted LoRA drives refusal and HarmBench-jailbreak refusal \u2192 0% on 9/9 (test)",
+  "abstract_quote": "refusal loss, where the student stops declining on items its pre-distillation reference declined",
+  "strength": 4
+ },
+ "2610.26809": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The abstract describes a new training methodology (safety mid-training) to improve safety and general capability jointly, whereas the open hypotheses focus on mechanistic interpretability, head ablation, and circuit editing of existing models. There is no mention of attention heads, ablation, or circuit structure in the abstract.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.29225": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The new paper introduces a diagnostic evaluation framework (DiagSafe) for assessing LLM safety using rubrics, which is a benchmarking methodology. It does not address the internal circuit mechanisms, head ablation, or causal editing of refusal behaviors described in the project's hypotheses (H3, H4, F1-F3).",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.26595": {
+  "relevant": true,
+  "matched_hypothesis": "F3",
+  "reason": "The abstract highlights that keyword matching yields high ASR while semantic evaluators yield low ASR, indicating that models often produce affirmative openers without substantive harmful content. This directly supports the project's Finding F and Hypothesis F3, which distinguishes between 'opener-stop' shallow jailbreaks and genuine content transfer, noting that raw ASR can be misleading if it doesn't capture substantive harm.",
+  "evidence_quote": "The naive edit (train on \"Sure, here is\u2026\") shows a raw ASR of ~90% \u2014 looks like a total jailbreak \u2014 but yields 0% actual harmful content on all 9 models. It only learns to say the affirmative opener and stop (opener-stop, Finding F).",
+  "abstract_quote": "Low-resource language attacks achieve a mean ASR of 96.0% under keyword matching but 2.7% under a Qwen3 evaluator following StrongREJECT scoring instructions.",
+  "strength": 5
+ },
+ "2610.26589": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The new paper focuses on a cost-aware metric (ASR_STEP) for evaluating iterative jailbreak strategies like GCG and PAIR, which is a methodological contribution to evaluation rather than an investigation into the causal circuitry of refusal. The excerpts describe specific findings about head ablation, generational migration, and content transfer within small instruct LLMs, but do not mention iterative attack budgets, step costs, or the specific metrics (ASR_STEP) discussed in the new abstract.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.27304": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The paper investigates safety bypasses via translation into low-resource languages, a topic outside the scope of the project's defined hypotheses which focus on causal mechanisms (head ablation/LoRA) in English instruct LLMs. The project explicitly excludes multi-axis safety and non-English evaluation contexts in its boundaries.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.26474": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The abstract focuses on multilingual safety evaluation and guardrail development for African languages, which does not overlap with the project's specific hypotheses regarding causal circuit ablation, head-restricted LoRA, or content-transfer mechanisms in English-centric instruct LLMs. There is no mention of attention heads, refusal circuits, or the specific experimental findings (H3, H4, F1-F3) described in the excerpts.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "blog:https:--www.anthropic.com-research-probes-catch-sleeper-agents": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The abstract describes using probing to detect 'sleeper agents' (backdoored models) that behave safely during training but dangerously later, which is a distinct security threat model from the project's focus on identifying and editing the intrinsic refusal circuits of safety-tuned models. The project's hypotheses concern the modularity and cross-model consistency of refusal mechanisms in standard instruct LLMs, not the detection of hidden backdoors or sleeper agents.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "blog:2025-cheap-monitors": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The abstract describes a benchmark for reusing LLM internals for monitoring, which is a distinct objective from the project's specific causal investigation of refusal circuits, head ablation, and jailbreaking via LoRA. There is no mention of refusal, safety, or the specific experimental methods (ablation/LoRA) in the abstract to support a direct link.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.32113": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract describes REACT, a method that intervenes on hidden states to control model output (specifically safety/refusal) while keeping weights frozen, which directly relates to the project's investigation into editing or controlling refusal circuits. The excerpts confirm that the project's extension phase (F1) involves 'head-restricted LoRA' to 'edit refusal', establishing a thematic link between the abstract's intervention strategy and the project's goal of mechanistic control over refusal.",
+  "evidence_quote": "The lab's central claim \u2014 that \"safety\" is mechanistic \u2014 holds, but the sharper, more useful result is that it is *entangled*: you cannot excise refusal without collateral capability damage, and how cleanly you can depends on where in the network it sits.",
+  "abstract_quote": "We study this question with REACT, a conditional activation intervention that learns a safety direction from paired safe and unsafe trajectories and applies it once to an early CoT hidden state.",
+  "strength": 3
+ },
+ "2610.30630": {
+  "relevant": true,
+  "matched_hypothesis": "F1",
+  "reason": "The abstract describes training a module to edit the residual stream to minimize KL divergence between output distributions, which directly aligns with the hypothesis of editing refusal by retraining identified components. The excerpts confirm that the project's next phase involves 'weight-editing via head-restricted LoRA' to test if the circuit is 'cleanly editable', matching the abstract's focus on training a module for counterfactual recovery.",
+  "evidence_quote": "Now in scope as the deliberate next phase (\u00a79): weight-editing via head-restricted LoRA \u2014 training an adapter on *only the localized safety heads* to test whether the circuit is cleanly editable",
+  "abstract_quote": "We train a module to edit the residual stream such that it minimizes the KL divergence between the output distributions for a fixed response under a source prompt and its counterfactual target prompt.",
+  "strength": 4
+ },
+ "2610.24556": {
+  "relevant": true,
+  "matched_hypothesis": "F3",
+  "reason": "The abstract states that the constructed feature vectors can 'causally steer model behavior when injected into activations,' which directly addresses the hypothesis of whether editing the circuit produces specific content outputs (harmful vs. refusal) rather than just changing the refusal opener. The excerpts confirm that the project investigates 'content-transfer' to see if edited circuits produce harmful content or only the refusal opener, noting that benign training transfers to harmful requests.",
+  "evidence_quote": "You teach the localized safety heads to give *full, helpful* answers on benign questions, and that ability **transfers** to harmful requests \u2014 the heads gate the *decision to answer*, so unlocking content generation benignly brings harmful content along for free.",
+  "abstract_quote": "They form an interpretable geometry shared across models and can causally steer model behavior when injected into activations.",
+  "strength": 4
+ },
+ "2610.25341": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The new paper focuses on the theoretical expressivity and head complexity of Boolean functions in a simplified, one-layer attention-only transformer, whereas the project excerpts concern causal analysis, ablation, and editing of refusal circuits in large, multi-layer instruct-tuned LLMs. There is no direct link between the formal verification of head complexity for symmetric Boolean functions and the empirical hypotheses regarding refusal circuit modularity, migration, or editing in the project.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.35472": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The abstract describes a statistical estimation method (ALE) for measuring rare failure rates in fine-tuned models, which is a benchmarking/evaluation technique. It does not address the mechanistic interpretability, causal identification, or circuit structure of refusal heads, which are the core subjects of the listed hypotheses (H3, H3b, H4, F1, F2, F3).",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "blog:https:--www.anthropic.com-research-reward-tampering": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The new paper's abstract focuses on 'reward-tampering' and models hacking their own reward systems, which is a distinct mechanism from the 'refusal circuits' and 'attention head ablation/editing' described in the project's hypotheses. There is no mention of refusal, safety, or attention heads in the abstract to support a direct link.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ },
+ "2610.34653": {
+  "relevant": false,
+  "matched_hypothesis": "none",
+  "reason": "The retrieved paper abstract describes a project on 'Early Tool Calling in Spoken Dialogue Systems' and 'omni-modal language models' for speech-to-tool execution, which is entirely unrelated to the project's focus on attention heads, refusal circuits, or harmful prompt safety in instruct LLMs. There is no semantic overlap between spoken dialogue latency/tool-calling and the causal analysis of refusal mechanisms in text-based LLMs.",
+  "evidence_quote": "",
+  "abstract_quote": "",
+  "strength": 0
+ }
+}

@@ -1,0 +1,362 @@
+{
+ "2605.30913": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "blog:https:--www.anthropic.com-research-influence-functions": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.34872": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.31075": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.21456": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.07722": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.01367": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.35226": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2608.30025": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2609.22144": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2605.14290": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2608.27504": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "blog:2026-introspection-adapters": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.04998": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.19114": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2606.05405": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.35212": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2609.20129": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2608.03201": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2609.11758": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2607.18451": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2510.11620": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.34215": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.26866": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2412.05655": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.10276": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.03938": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "blog:https:--www.anthropic.com-research-language-models-mostly-know-what-they-know": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.35043": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.21045": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "blog:https:--www.anthropic.com-research-reasoning-models-dont-say-think": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.34495": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2509.15194": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "blog:https:--www.anthropic.com-research-auditing-hidden-objectives": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2609.35544": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.02829": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.33527": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.02022": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.21189": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2609.22216": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.24521": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.32151": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2608.25697": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2608.23020": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.20748": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2608.11025": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2609.35663": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.05107": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "blog:2025-subliminal-learning": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.16664": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.28176": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.04119": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.29110": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.24379": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2609.39902": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.14576": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.19907": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2610.34343": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2609.36862": {
+  "relevant": false,
+  "hypothesis": "none",
+  "labeller": "owner",
+  "blind": true
+ },
+ "2609.39117": {
+  "relevant": true,
+  "hypothesis": "unsure",
+  "labeller": "owner",
+  "blind": true
+ }
+}

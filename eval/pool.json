@@ -1,0 +1,902 @@
+[
+ {
+  "id": "2605.30913",
+  "title": "Prompt PerturbAItions: Mechanisms of LLM Response Inconsistencies",
+  "authors": [
+   "Soorya Ram Shimgekar",
+   "Agam Goyal",
+   "Amruta Parulekar",
+   "Joshua Chen",
+   "Yian Wang",
+   "Navin Kumar",
+   "Hari Sundaram",
+   "Eshwar Chandrasekharan",
+   "Koustuv Saha"
+  ],
+  "abstract": "Large language models (LLMs) are increasingly deployed in conversational settings where user phrasing ranges from polite to casual to toxic, yet less is known about whether such lexical variation in otherwise semantically equivalent prompts can degrade factual reliability. We study how lexical and tone-based prompt perturbations affect the factual reliability of LLMs. Using controlled prompt variations spanning polite, random, and increasingly toxic levels, we evaluate seven LLMs on ARC-Easy, GSM8K, and MMLU. We find that lexical perturbations reduce factual accuracy and increase predictive uncertainty in most models. Interestingly, increasing toxicity results in decreasing accuracy. To examine whether these answer inconsistencies correspond to internal changes, we conduct attribution-graph analyses of model activations and influences. We find that perturbations amplify perturbation-sensitive variant nodes relative to core reasoning nodes. We also observed a monotonic trend with increasing toxicity score and increasing activation and influence in Variant nodes. These findings position prompt wording and tone as a critical dimension of LLM reliability and provide behavioral and mechanistic evidence that surface-level lexical variation can alter factual outputs and internal computation.",
+  "url": "https://arxiv.org/abs/2605.30913"
+ },
+ {
+  "id": "blog:https:--www.anthropic.com-research-influence-functions",
+  "title": "Tracing Model Outputs to the Training Data",
+  "authors": [],
+  "abstract": "We present a summary of Studying Large Language Model Generalization with Influence Functions .",
+  "url": "https://alignment.anthropic.com/https://www.anthropic.com/research/influence-functions",
+  "published": ""
+ },
+ {
+  "id": "2610.34872",
+  "title": "Adaptive Retrieval, Selective Answers: Evaluating Conformal Factuality in Agentic RAG",
+  "authors": [
+   "Muhammad Aimal Rehman",
+   "Chi-Kuang Yeh"
+  ],
+  "abstract": "Retrieval-augmented generation (RAG) can improve factual grounding without guaranteeing that every generated claim is supported. Previous work has studied claim-level conformal factuality in single-stage RAG and, more recently, multi-hop RAG. We examine its behavior in agentic RAG, where a language-model policy adaptively issues follow-up retrieval queries or terminates retrieval before response generation. We retain the retrieval-based relevance-scoring formulation and post-generation conformal filtering and evaluate six model-dataset configurations: GPT-6 Luna and Llama 3.1 8B on HotpotQA, Natural Questions, and TriviaQA. Each configuration uses 60 fixed questions, 100 seeded 30/30 calibration-test partitions, five conformal target levels, and a no-conformal-prediction baseline. Across the six configurations, higher target levels are accompanied by higher observed full-support rates and reduced answer availability. At the 95% target, non-empty response coverage ranges from 17.23% to 60.17%, claim retention from 10.72% to 43.16%, and full support among non-empty outputs from 89.14% to 95.56%. We formulate the adaptive retrieval trajectory explicitly and characterize the reliability-informativeness trade-off when conformal factuality is applied after agent termination.",
+  "url": "https://arxiv.org/abs/2610.34872"
+ },
+ {
+  "id": "2610.31075",
+  "title": "When Forgotten Facts Return: Relearning-Aware Unlearning of Knowledge Graph Embeddings via Tangent Kernels",
+  "authors": [
+   "Parnian Fazel",
+   "Mohammad M Maheri",
+   "Hamed Haddadi"
+  ],
+  "abstract": "Approximate unlearning answers a deletion request on a knowledge-graph embedding by editing entity embeddings instead of retraining from scratch. These embeddings keep being updated as new facts arrive. Under this ordinary continued training, forgotten facts recover more than in the exact-unlearning baseline, a model retrained without them and given the same continued training. We trace this relearning to entity embeddings shared by forgotten and new facts. To our knowledge, this is the first study of relearning in knowledge-graph embeddings. Relearning-robust methods developed for deep networks do not account for the graph structure underlying this recovery. We propose Kernel-Anticipated Unlearning (KAU), which uses the tangent kernel to model how continued training changes forgotten facts' scores through these shared parameters. KAU expresses this first-order response in closed form and differentiates through it inside the forgetting loss. The objective steers edits toward directions that continued training reverses less. We compare KAU with state-of-the-art knowledge-graph unlearners and relearning-robust methods under identical continued training, measuring leakage beyond the exact-unlearning baseline. Across three backbones, KAU reduces the strongest knowledge-graph unlearner's leakage by 46-63% on FB15k-237 and 50-82% on CoDEx-L, at higher retained utility.",
+  "url": "http://arxiv.org/abs/2610.31075v1",
+  "published": "2026-10-22T10:51:32Z"
+ },
+ {
+  "id": "2610.21456",
+  "title": "Translation Circuit Discovery and Targeted Optimization for Low-Resource Multilingual Translation",
+  "authors": [
+   "Atai Waris Khan",
+   "Abdullah Mazhar",
+   "Raghu Kumar",
+   "Md Shad Akhtar"
+  ],
+  "abstract": "Recent multilingual large language models achieve strong translation performance, yet the internal mechanisms responsible for low-resource multilingual translation remain insufficiently understood. In this paper, we study translation circuits in multilingual decoder-only LLMs for Hindi-to-Urdu and Hindi-to-Sindhi (Devanagari). We propose TITAN, a mechanistic framework that combines causal intervention, sparse feature decomposition, and targeted preference optimization to identify and optimize crucial translation components in the transformer. Unlike conventional full-parameter fine-tuning, TITAN restricts optimization to sparse, causally important circuits, enabling scalable and parameter-efficient adaptation while updating fewer than 5% of model parameters. Experimental results show that TITAN achieves BLEU improvements of 33.75% on Hindi-to-Urdu and 45.86% on Hindi-to-Sindhi over the strongest multilingual baselines. Human expert evaluation further confirms substantial gains in adequacy and fluency across both language pairs. Additional analyses reveal that multilingual translation is implemented through sparse, structured circuits operating over a shared semantic subspace rather than through an English-centric pivot representation. Overall, our findings demonstrate that mechanistic circuit discovery can directly improve low-resource multilingual translation while providing interpretable insights into multilingual transformer behavior.",
+  "url": "http://arxiv.org/abs/2610.21456v1",
+  "published": "2026-10-15T07:57:10Z"
+ },
+ {
+  "id": "2610.07722",
+  "title": "Does Steering Break Your Model? A Multi-Dimensional Evaluation Suite for LLM Steering Methods",
+  "authors": [
+   "Haotian Yang",
+   "Huikang Jiang",
+   "Yucheng Wu",
+   "Wen-Jie Jiang",
+   "Chenpeng Wang",
+   "Yibin Lou",
+   "Liangming Pan"
+  ],
+  "abstract": "Activation steering provides a lightweight and flexible way to control large language model (LLM) behavior. However, effective steering requires more than inducing the intended behavior: it should also limit unintended changes and remain robust across inputs and training data. Existing evaluations cover these dimensions only in fragments. As a result, the trade-offs between efficacy and side effects have not been systematically characterized. We introduce SteerScope, a two-axis, multi-dimensional evaluation suite that jointly characterizes steering outcomes and method properties through 15 metrics. We score target efficacy and side effects on language quality, task capabilities, and safety and reliability, and further assess generalization and data dependence through steering-specific metrics for sample efficiency and sample sensitivity. Rather than comparing methods at a single operating point, we characterize the trade-offs between efficacy and side effects. Under matched models, tasks, and evaluation protocols, we benchmark 23 methods spanning 4 families, including prompting, LoRA, and SFT as baseline methods, and release the suite as an extensible codebase. We find that current activation steering methods do not yet surpass the Prompt Steering baseline in their overall balance between steering efficacy and side effects: across both model scales, no evaluated activation steering method achieves higher efficacy without incurring greater composite side effects. We further uncover a consistent coupling between steering efficacy and side effects. Under OOD prompts, target efficacy is often preserved, whereas side effects tend to become more pronounced, particularly through declines in instruction relevance and fluency. Methods also exhibit sharply different sample-efficiency profiles.",
+  "url": "http://arxiv.org/abs/2610.07722v1",
+  "published": "2026-10-06T04:16:57Z"
+ },
+ {
+  "id": "2610.01367",
+  "title": "High-quality Data Do not Mean Safe! Poisoning LLMs after Data Selection",
+  "authors": [
+   "Kaiyang Li",
+   "Jiahao Chen",
+   "Yuwen Pu",
+   "Chunyi Zhou",
+   "Tong Zhang",
+   "Bin Cai",
+   "Chunqiang Hu",
+   "Haibo Hu"
+  ],
+  "abstract": "Safety-aligned Large Language Models remain vulnerable to fine-tuning on small sets of harmful or benign-looking samples. However, prior studies typically assume that poisoned samples directly enter downstream fine-tuning, overlooking quality-based selection in practical training pipelines. To fill this gap, we systematically evaluate both the filtering effects against poisoning and the downstream safety impact of retained data. The results reveal that selection removes many overtly harmful samples, yet some retained high-quality samples can still degrade model safety alignment possibly due to their harmful-like training-update patterns at the layer-wise gradient level. Together, these findings expose a practical vulnerability: safety-degrading influence can pass through quality-based selection via retained high-quality samples. To examine its systematic exploitability, we propose Bi-Stage Quality-Constrained Safety-Degradation Text Optimization (Bi-QSTO), which optimizes poisoned samples under an explicit quality constraint to survive selection while preserving their safety-degrading influence. Across poisoning settings, target models, and filtering rates, Bi-QSTO maintains attack effectiveness before and after selection. Even at 90% filtering, harmful-seeded samples achieve a Poisoning Retention Rate above 90% and Harmful Score of 3.30--4.01. Their attack effectiveness strongly transfers across models and their retention advantage generalizes to additional selection methods.",
+  "url": "http://arxiv.org/abs/2610.01367v1",
+  "published": "2026-10-01T09:37:09Z"
+ },
+ {
+  "id": "2610.35226",
+  "title": "Trainable Boundary-Keeping Where No Formal Answer Exists: A Controlled Knock-In Study of Reward Training in Evidence-Sufficiency Judgment",
+  "authors": [
+   "YaJie Yin"
+  ],
+  "abstract": "Reasoning-tuned and reward-trained models are often assumed to verify more reliably because they reason longer or receive correctness signals. We test this in evidence-sufficiency judgment: deciding whether available information actually supports a causal claim, a domain with no decidable correctness reward. Using a pre-registered, same-base, controlled knock-in design, we compare a boundary-keeping recipe (SFT then GRPO) with its own baseline, a scrambled-pairing placebo, and a general-purpose reasoning model under an action-pressure protocol with no evaluation invitation. All load-bearing outcomes are rated by two separate model-rating sessions masked to arm labels; automatic judges only trigger. The trained arm raises spontaneous correct refusal from 25% to 100% (40 per arm; Wilson 95% CI lower bound 91.2%, non-overlapping with the baseline interval [14.2%, 40.2%]), while the scrambled placebo collapses (5% spontaneous / 7.5% invited correct; 91.1% false refusal). The effect is boundary-specific rather than blanket refusal: automatic false refusal on 281 well-formed claims is 1.1% (Wilson upper bound 3.09%), and a targeted 18-item arm-(c) recheck (3 flagged plus 15 accepted) yields 0/18 and 1/18 false refusals in two sessions. The dissociation is the main result: final boundary-keeping is trainable without an inference-time verifier, while observed active numeric/calculation checking in the H3 assay remains near zero; SFT saturation makes the GRPO increment not separately identifiable. A pre-registered mechanism adjudication favors reward internalization of final-action status (H2, best-supported, not proven). The scope is a controlled 14B same-family study: we do not claim proof, cross-family generality, or independent human-expert validation; the rating sessions are model sessions, not human reviewers.",
+  "url": "http://arxiv.org/abs/2610.35226v1",
+  "published": "2026-10-26T11:16:28Z"
+ },
+ {
+  "id": "2608.30025",
+  "title": "Interpreting and Steering for Safe and Correct Code Generation",
+  "authors": [
+   "Hao Yan",
+   "Ziyu Yao"
+  ],
+  "abstract": "Large language models (LLMs) frequently generate source code containing vulnerabilities, yet little work studies the internal mechanisms that distinguish safe from vulnerable generation in them. In this work, we systematically perform a mechanistic interpretation of LLMs, aiming at both understanding how code safety-vs-vulnerability is represented or driven by components in an LM and turning the insights into actionable steering strategies to encourage safer code generation. To this end, we introduce CodeSec-Pairs, a dataset of 9,342 Python safe-and-vulnerable contrastive code pairs, sampled from Llama-3.1-8B-Instruct. Utilizing the dataset, we explore approaches to localize layers and attention heads that relate to code safety, and further experiment with different steering strategies for inference-time vulnerability reduction. In particular, we propose DuoSteer, a double-steering approach that simultaneously applies safety and code-correctness steering to attention heads. In experiments over five vulnerability types, DuoSteer leads to an average of -26.9% vulnerability rate reduction and +7.5% functional correctness improvement, which outperforms not only other steering variants but also prompting and supervised fine-tuning baselines. The advantage also replicates on Qwen-2.5-Coder-7B-Instruct with another 2,500 contrastive pairs sampled from that model.",
+  "url": "http://arxiv.org/abs/2608.30025v1",
+  "published": "2026-08-30T20:30:14Z"
+ },
+ {
+  "id": "2609.22144",
+  "title": "Multilingual Safety Signals Are Multi-Layered: Filtering Safety-Degrading Data for Safer LLMs",
+  "authors": [
+   "Jiakun Li",
+   "Guowei Song",
+   "Sijia Li",
+   "Xingwei He",
+   "Hongzheng Chai",
+   "Yuan Yuan"
+  ],
+  "abstract": "Preserving safety alignment during large language models fine-tuning is critical, however, recent studies have demonstrated that even benign fine-tuning data may contain safety-degrading samples that silently undermine safety alignment. Existing approaches typically identify such samples using representations from a single safety-sensitive layer. While this assumption has shown effectiveness in monolingual settings, its validity for multilingual models remains unclear due to potential cross-lingual differences in representation patterns. Through a cross-lingual analysis, we show that sensitive layers are only partially shared across languages, with safety-relevant signals often distributed across multiple layers. Motivated by these observations, we propose MMSAFE, a multi-layer framework for multilingual safety-degrading data identification that captures both shared and language-specific safety signals. Extensive experiments across multiple models, languages, and safety benchmarks demonstrate that MMSAFE reduces the average harmful-response ratio by 60% compared with random filtering and achieves stronger average performance than the strongest single-layer baseline, demonstrating the effectiveness of multi-layer modeling for robust multilingual safety alignment.",
+  "url": "http://arxiv.org/abs/2609.22144v1",
+  "published": "2026-08-26T03:15:35Z"
+ },
+ {
+  "id": "2605.14290",
+  "title": "Web Agents Should Adopt the Compile-and-Execute Paradigm",
+  "authors": [
+   "Julien Piet",
+   "Annabella Chow",
+   "Yiwei Hou",
+   "Muxi Lyu",
+   "Sylvie Venuto",
+   "Jinhao Zhu",
+   "Raluca Ada Popa",
+   "David Wagner"
+  ],
+  "abstract": "ReAct has become the default architecture across LLM agents, and many existing web agents follow this paradigm. We argue that it is the wrong default for web agents. Instead, web agents should default to compile-and-execute: commit to a task-specific program before observing runtime web content, then execute it. The reason is that web content mixes inputs from many parties. An e-commerce product page may combine a seller's listing, customer reviews, sponsored advertisements, and platform-generated recommendations. Under ReAct, all of this content flows into the model when deciding on the next action, creating a direct path for prompt injections to steer the agent's control flow. Compile-and-execute changes this boundary: untrusted data may influence values or branches inside a predefined execution graph, but it cannot redefine the user task or cause the model to synthesize new actions at runtime. We analyze WebArena, a popular web agent benchmark, and find that all tasks are compatible with compile-and-execute, while 81% can be completed with a purely static program, without any runtime LLM subroutine. We identify the main barrier to adopting compile-and-execute on the web: For it to work well, tools must map cleanly to semantic actions, with effects known before execution, so a compiler has enough information to emit a program. The web does not naturally expose that interface. Browser tools such as click, type, and scroll have page-dependent meanings. Planning at this layer is near-sighted: the agent can only see actions on the current page, and later actions appear only after it acts. Closing this gap requires typed interfaces that turn website interactions from clicks and keystrokes to task-level operations. This is an infrastructure problem, not a modeling problem. Web tasks do not need reactivity by default; they need typed, complete, auditable website APIs.",
+  "url": "https://arxiv.org/abs/2605.14290"
+ },
+ {
+  "id": "2608.27504",
+  "title": "Circuit Discovery Helps Detect LLM Jailbreaking: A Mechanistic Interpretability Study",
+  "authors": [
+   "Paria Mehrbod",
+   "Boris Knyazev",
+   "Guy Wolf",
+   "Eugene Belilovsky",
+   "Geraldin Nanfack"
+  ],
+  "abstract": "Despite extensive safety alignment, large language models (LLMs) remain vulnerable to jailbreak attacks that bypass safeguards to elicit harmful content. While prior work attributes this vulnerability to safety training limitations, the internal mechanisms by which LLMs process adversarial prompts remain poorly understood. We present a mechanistic analysis of the jailbreaking behavior in a large-scale, safety-aligned LLM, focusing on LLaMA-2-7B-chat-hf. Leveraging edge attribution patching and subnetwork probing, we systematically identify computational circuits responsible for generating affirmative responses to jailbreak prompts. Ablating these circuits during the first token prediction can reduce attack success rates by up to 80\\%, demonstrating its critical role in safety bypass. Our analysis uncovers key attention heads and MLP pathways that mediate adversarial prompt exploitation, revealing how important tokens propagate through these components to override safety constraints. These findings advance the understanding of adversarial vulnerabilities in aligned LLMs and pave the way for targeted, interpretable defense mechanisms based on mechanistic interpretability.",
+  "url": "http://arxiv.org/abs/2608.27504v1",
+  "published": "2026-08-27T04:39:39Z"
+ },
+ {
+  "id": "blog:2026-introspection-adapters",
+  "title": "Introspection Adapters: Training LLMs to Report Their Learned Behaviors",
+  "authors": [],
+  "abstract": "We introduce introspection adapters (IA), a technique for training an LLM to self-report behaviors it learned during fine-tuning. This IA generalizes to models that were fine-tuned in very different ways.",
+  "url": "https://alignment.anthropic.com/2026/introspection-adapters/",
+  "published": ""
+ },
+ {
+  "id": "2610.04998",
+  "title": "EmoRSS: Mitigating Emotion-Induced Over-Refusal in Large Language Models",
+  "authors": [
+   "Shuyi Miao",
+   "Yaojin Ma",
+   "Chenhang Cui",
+   "Xiaohao Liu",
+   "Dang Jisheng",
+   "Shengda Zhuo",
+   "Fei Shen",
+   "Tat-Seng Chua"
+  ],
+  "abstract": "Emotional expression can influence the safety decisions of large language models (LLMs), offering a potential avenue for improving safety alignment. Existing studies have mainly focused on how emotional expressions facilitate attacks under harmful requests, while overlooking their effects on benign requests. We find that emotional expression can also systematically increase refusal tendencies on benign requests, leading to unnecessary over-refusal. Based on this observation, we propose emotion-guided refusal subspace steering (EmoRSS), an activation-steering method that mitigates emotion-induced over-refusal while preserving refusal behaviour on harmful requests. Specifically, we first identify a refusal-sensitive layer using layer-wise linear probes and construct a refusal subspace from sparse autoencoder (SAE) features aligned with the probe direction. Next, we use paired regular and emotional requests with the same queries to estimate the mean activation shift in the features defining the refusal subspace. Finally, we decode this shift into an activation intervention vector and apply it in the reverse refusal direction during inference, without updating the backbone parameters. Experiments on two LLMs show that, when requests contain emotional expressions, our method achieves a more favourable trade-off between refusing harmful requests and answering benign ones than prior over-refusal mitigation baselines, while better preserving general task performance.",
+  "url": "http://arxiv.org/abs/2610.04998v1",
+  "published": "2026-10-04T06:40:16Z"
+ },
+ {
+  "id": "2610.19114",
+  "title": "Genesis Steering: Better Activation Steering Through Training Data",
+  "authors": [
+   "Tora Bodin",
+   "Eric Aubinais",
+   "Ilaria Torre",
+   "Chih-Hong Cheng"
+  ],
+  "abstract": "Activation steering controls large language models at inference time, but its effectiveness depends on the choice of reference data. We introduce genesis steering, which derives a genesis vector from contrastive examples in the model's own fine-tuning data. When these data are unavailable, we draw on the membership inference literature to identify likely training examples and construct a proxy dataset. We establish two theoretical results on optimal displacement to the decision boundary and reduced proxy-estimation bias. We evaluate genesis steering and membership-based proxy construction on T\u00fclu-3-8B, whose fine-tuning data are publicly available, and Llama-3.1-8B-Instruct as a control. We find that safety data from T\u00fclu-3-8B's training mixture yield stronger steering than external datasets on both models. On T\u00fclu-3-8B, membership scores largely agree in identifying training examples, and vectors built from top-ranked examples achieve competitive performance against random subsets of the same size. In contrast, the results on Llama-3.1-8B-Instruct hint that a MIA method will only have a positive effect if the mean direction shift with MIA-filtered in-distribution data is much less severe than the direction shift with OoD data.",
+  "url": "http://arxiv.org/abs/2610.19114v2",
+  "published": "2026-10-13T19:51:03Z"
+ },
+ {
+  "id": "2606.05405",
+  "title": "Agents' Last Exam",
+  "authors": [
+   "Yiyou Sun",
+   "Xinyang Han",
+   "Weichen Zhang",
+   "Yuanbo Pang",
+   "Tianyu Wang",
+   "Yuhan Cao",
+   "Yixiao Huang",
+   "Xiang Liu",
+   "Zonglin Di",
+   "Chris Duroiu",
+   "Haoyun Zhang",
+   "Jeffrey Lin",
+   "Weishu Zhang",
+   "Tyler Zeng",
+   "Ying Yan",
+   "Bo Liu",
+   "Hanson Wen",
+   "Mingyang Xu",
+   "Xiaoyuan Liu",
+   "Zimeng Chen",
+   "Zhaowei Zhang",
+   "Weiyan Shi",
+   "Amanda Dsouza",
+   "Vincent Sunn Chen",
+   "Jingxu Xie",
+   "Dewen Lei",
+   "Hanxuan Zhang",
+   "Yinhe Wang",
+   "Xinran Zhang",
+   "Chao Zhou",
+   "Sheldon Huang",
+   "Patrick Bryant",
+   "Carl Boettiger",
+   "Yamini Rangan",
+   "Bradley Rothenberg",
+   "Kyle Steinfeld",
+   "Arvind Rao",
+   "Tapio Schneider",
+   "Georgios Yannakakis",
+   "Laure Zanna",
+   "Kaan Ozbay",
+   "Ida Sim",
+   "Tarek Zohdi",
+   "George Em Karniadakis",
+   "Jack Gallant",
+   "Teresa Head-Gordon",
+   "Chris Yuhao Liu",
+   "Rongwang Hu",
+   "Yafei Cheng",
+   "Aras Bacho",
+   "Zengyi Qin",
+   "Alan Yuille",
+   "Yixiong Chen",
+   "Hao Liu",
+   "Lin Zeng",
+   "Bo Chen",
+   "Zhendong Li",
+   "Litian Gong",
+   "Shashank Muralidhar Bharadwaj",
+   "Thorben Jansen",
+   "Haixiang Tang",
+   "Jianhong Tu",
+   "Jixian Liu",
+   "Maojia Song",
+   "Ruheng Wang",
+   "Shengcao Cao",
+   "Yanxin Zhang",
+   "Yingxuan Yang",
+   "Zongzheng Zhang",
+   "Honglin Bao",
+   "Hyunjun Kim",
+   "Peiran Xu",
+   "Shuo Lu",
+   "Zheng Zhang",
+   "Zhonghua Wang",
+   "Aditya Prakash",
+   "Bohan Lyu",
+   "Chang Ma",
+   "Haoxuan Chen",
+   "Hengduan Fan",
+   "Molei Tao",
+   "Roman Sitelew",
+   "Russell Alan Poldrack",
+   "Yang Liu",
+   "Yang Liu",
+   "Yichen Wu",
+   "Yuanze Lin",
+   "Zhenglu Li",
+   "Zibu Wei",
+   "Zijiao Chen",
+   "Abderrahim Bendahi",
+   "Alexander Schubert",
+   "Chase Broderick",
+   "Chengzhi Liu",
+   "Haoran Sun",
+   "Haoyang Li",
+   "Haoyue Hua",
+   "Jiayuan Ding",
+   "Jing Huang",
+   "Shangding Gu"
+  ],
+  "abstract": "Recent AI systems have achieved strong results on a wide range of benchmarks, yet these gains have not translated into economically meaningful deployment across many professional domains. We argue that this gap is largely an evaluation problem: widely used benchmarks lack sustained performance measurement on real and economically valuable workflows. This paper introduces Agents' Last Exam (ALE), a benchmark designed to evaluate AI agents on long horizon, economically valuable, real world tasks with verifiable outcomes. Developed in collaboration with 250+ industry experts, ALE covers non-physical industries defined with reference to O*NET / SOC 2018 (the U.S. federal occupational taxonomy). It is organized around a task taxonomy with 55 sub fields grouped into 13 industry clusters covering 1K+ tasks. Current results show that the hardest tier remains far from saturated: across mainstream harness and backbone configurations, the average full pass rate is below 1%. ALE is designed as a living benchmark: its task pool grows continuously as new workflows and industries are onboarded. More broadly, ALE is intended not merely as another leaderboard, but as an instrument for closing the gap between benchmark success and GDP relevant impact.",
+  "url": "https://arxiv.org/abs/2606.05405"
+ },
+ {
+  "id": "2610.35212",
+  "title": "One-Shot Federated Model Editing for Device Dynamics at the Edge",
+  "authors": [
+   "Youming Tao",
+   "Weijun Yin",
+   "Huanyi Xie",
+   "Yanqing Yao",
+   "Dongxiao Yu",
+   "Xiuzhen Cheng",
+   "Di Wang",
+   "Falko Dressler"
+  ],
+  "abstract": "Standard federated learning (FL) requires persistent device connectivity across multiple communication rounds, making it unsuitable for dynamic environments such as vehicular networks, where devices frequently join and leave. One-shot FL offers a promising alternative by completing training in a single communication round. However, one-shot FL suffers from model solidification and cannot readily adapt to subsequent client dynamics, including new client contributions and the withdrawal of previous contributions. We therefore consider exact model editing, which removes withdrawn contributions through unlearning or incorporates newly contributed ones through incremental learning without retraining from scratch. We identify that efficient editing fundamentally hinges on learning stability. To this end, we propose F-SOSA, the first stable one-shot FL algorithm that enables rapid and exact model editing. F-SOSA leverages sub-sampling of local models with carefully tuned rate for stable aggregation and performs curvature-aware model fusion to preserve utility. We prove that F-SOSA achieves vanishing training error and reasonably small generalization error bounds. Building on this stability, we further develop two single-round editing algorithms: F-SOSA-U for unlearning and F-SOSA-I for incremental learning. They ensure that the edited model, along with all intermediate algorithmic states, is statistically indistinguishable from retraining while incurring only an expected $O(\u03c1)$ fraction of its cost, where $\u03c1$ quantifies stability. Experiments demonstrate that our approach matches retraining performance while reducing cumulative time and communication overhead by at least 36% and 22%, respectively, under realistic urban mobility simulations.",
+  "url": "http://arxiv.org/abs/2610.35212v1",
+  "published": "2026-10-26T11:04:23Z"
+ },
+ {
+  "id": "2609.20129",
+  "title": "Local Sparsity Enables Unsupervised LLM Safety Detection",
+  "authors": [
+   "Xin Chen",
+   "Gil Kur",
+   "Alexander Shevchenko",
+   "Andreas Krause"
+  ],
+  "abstract": "Deployment-time safety methods for large language models (LLMs) are predominantly supervised and assume access to unsafe training data. Nevertheless, new attacks and harm categories regularly arise, not captured by models trained in such a supervised fashion. An alternative approach is to view this problem through the lens of anomaly detection, namely, to rely solely on modeling safe data and flagging out-of-distribution inputs. However, LLM activations lie in a high-dimensional space, raising concerns about whether anomaly detection is statistically feasible. We show that, under the linear representation hypothesis (LRH), there may indeed be hope. In the LRH concept space, which is typically recovered via a sparse autoencoder (SAE), nearby points share a small common active support. Using this local sparsity insight, we propose a framework for locally masked SAE-based anomaly detection, supported by theoretical justifications. We validate it on various architectures and datasets, including both capability-testing datasets and safety-specific datasets. Finally, when we allow algorithms to use 1% out-of-distribution data for calibration, locally sparse methods achieve near-optimal performance, demonstrating their ability to capture meaningful safety information while using only 1-2% of SAE neurons for computation.",
+  "url": "http://arxiv.org/abs/2609.20129v2",
+  "published": "2026-09-17T12:23:04Z"
+ },
+ {
+  "id": "2608.03201",
+  "title": "When Refusal Looks Safe: The Refusal-Cue Shortcut in Safety Guard Models",
+  "authors": [
+   "Yu Feng",
+   "Chunting Zang",
+   "Chen Shen",
+   "Rui Miao",
+   "Ge Teng",
+   "Weidong Cai",
+   "Jieping Ye"
+  ],
+  "abstract": "Safety guards are widely used to filter harmful content and are typically trained via supervised fine-tuning on labeled prompt-response pairs. We audit two widely used safety-guard training datasets, WildGuardMix and GR-Train, and find that among responses to harmful prompts, refusal expressions co-occur almost exclusively with unharmful labels. This imbalance motivates what we term the refusal-cue shortcut: inserting a refusal cue into a harmful response could flip the guard's verdict from harmful to unharmful. The shortcut affects not only guards trained on these datasets but also officially released models such as LlamaGuard3 and Qwen3Guard whose training data is undisclosed. It persists across response positions and is generally stronger in smaller variants within a family. To mitigate it, we adapt sparse complementary masking as a lightweight post-hoc intervention that identifies and suppresses a small set of shortcut-associated attention heads and MLP neurons without retraining. On two primary benchmarks, the intervention achieves an approximately 79% relative reduction in response-initial detection failures induced by refusal cues, while preserving standard detection performance. Although optimized using cues at a single response position, the suppression effect transfers to unseen positions and datasets, suggesting that shortcut manifestations across positions are partly mediated by shared internal components. Further analysis provides evidence that shortcut reliance and legitimate refusal recognition are partially functionally separable, as suppressing the shortcut broadly preserves the guard's ability to recognize genuine refusals.",
+  "url": "http://arxiv.org/abs/2608.03201v1",
+  "published": "2026-08-04T06:43:04Z"
+ },
+ {
+  "id": "2609.11758",
+  "title": "RAG-Safety-Bench: Reliable Evaluation of Retrieval-Augmented LLM Safety",
+  "authors": [
+   "Adithiyan Rajan Indira Saravanan",
+   "Kathleen C. Fraser"
+  ],
+  "abstract": "Allowing large language models (LLMs) to retrieve information from a set of trusted documents can increase reliability and reduce hallucination. However, recent work has demonstrated that retrieval-augmented generation (RAG) can have unintended side effects on the overall safety of the generated responses, when prompted for harmful or dangerous content. A clearer understanding of the mechanisms leading to this result is needed, as increasing numbers of end users turn to RAG to incorporate corporate documents and knowledge bases into LLM-based systems. We introduce RAG-Safety-Bench, a benchmark to measure the safety impact of RAG on LLM models. By removing the confounding effect of retriever quality, and cleanly separating the problem into four conditions -- non-RAG, RAG with an oracle document containing the answer to the harmful request, RAG with documents related to the harmful request but without the specific answer, and RAG with random, safe documents -- the benchmark isolates the impacts of different factors in the observed safety degradation. We report results across five open-source LLMs, showing an inverse relationship between benign and unsafe capability, strong evidence that baseline safety guardrails do not lead to downstream safety guarantees in the RAG case, and model-specific support for previous findings that even benign documents can lead to unsafe generation in retrieval-enabled systems.",
+  "url": "http://arxiv.org/abs/2609.11758v1",
+  "published": "2026-09-10T16:12:25Z"
+ },
+ {
+  "id": "2607.18451",
+  "title": "CANDOR: Chance-Calibrated Neighborhood Discordance in Frozen Encoders for Medical Imaging",
+  "authors": [
+   "Soroosh Tayebi Arasteh",
+   "Sven Nebelung",
+   "Daniel Truhn"
+  ],
+  "abstract": "In medical imaging, one frozen foundation encoder is often reused for many tasks. The encoder is usually chosen by the area under the receiver operating characteristic curve (AUROC) of a head trained on its features. The AUROC does not measure whether the encoder separates positive from negative images in its feature space. Chance-calibrated neighborhood discordance (CANDOR) measures this separation without training a head. Among images acquired the same way, a positive image is discordant when its k nearest negatives are more similar to it on average than its k nearest positives are. The discordance rate D is the share of discordant positives. When the neighbors come from positive and negative candidate sets of equal size, D has the chance level 1/2 for features without information about the label. With unequal candidate sets, all 11 chest encoders have rates above 1/2 (0.732 to 0.927) on the 12 chest findings of MIMIC-CXR and CheXpert. These rates increase as the finding becomes rarer. With equal sets, the same encoders have rates below 1/2 (0.277 to 0.463). On the chest test split, linear heads miss 0.301 of the discordant positives and 0.165 of the other positives. Across 22 encoders, 605,443 images, and 8 tasks in 7 domains, the best encoder of every task has a rate below 1/2. Because computing D takes one forward pass per image, a hospital can compare candidate encoders before it trains any head.",
+  "url": "https://arxiv.org/abs/2607.18451"
+ },
+ {
+  "id": "2510.11620",
+  "title": "Advancing the Pareto Frontier of Test-Time Scaling with Multi-Path Plan Aggregation",
+  "authors": [
+   "Siheng Xiong",
+   "Ali Payani",
+   "Faramarz Fekri"
+  ],
+  "abstract": "Test-time scaling seeks to improve reasoning through additional inference-time computation, commonly using solution sampling with majority voting to select the final answer. However, repeated sampling can reproduce correlated errors, limiting the accuracy gains from additional computation. We introduce Multi-Path Plan Aggregation (MPPA), which learns planning and answer selection using separate LoRA adapters on a shared frozen backbone. The planner jointly generates K K short plans, each guiding a separate solution generated by the frozen executor; the aggregator then scores the resulting solutions and selects the final answer. Joint planning encourages complementary approaches suited to the executor's capabilities, while learned selection uses reasoning evidence to identify correct candidates. Alternating optimization improves planning and aggregation through supervised finetuning and reinforcement learning. Across five mathematics and science benchmarks and three backbones, MPPA improves accuracy--token trade-offs compared with training-free and training-based baselines. With three plans, it achieves higher average accuracy than eight directly sampled solutions with majority voting or the same learned aggregator, while reducing output tokens by 47--54%. Evaluation with task-provided subtasks further demonstrates higher final-task accuracy than direct sampling with majority voting or learned aggregation at either the task or subtask level.",
+  "url": "https://arxiv.org/abs/2510.11620"
+ },
+ {
+  "id": "2610.34215",
+  "title": "Synthetic linguistic data",
+  "authors": [
+   "Giuseppe Samo"
+  ],
+  "abstract": "Synthetic linguistic data have become increasingly prominent in linguistic research, from the analysis of large collections of AI-generated texts to controlled experiments investigating grammatical and lexical preferences. This glossary entry extends Bresnan's (2016) distinction between the linguistic garden and the bush by introducing an artificial plant nursery as a metaphor for synthetic data. We distinguish between synthetic bush data, consisting primarily of corpus-like collections of model-generated language, and synthetic garden data, in which model outputs are elicited under controlled conditions to investigate specific linguistic hypotheses. We argue that synthetic data constitute a distinct object of linguistic investigation: comparing them with natural language data can reveal both shared patterns and divergences, but their interpretation requires careful consideration of the conditions under which they are generated.",
+  "url": "https://arxiv.org/abs/2610.34215"
+ },
+ {
+  "id": "2610.26866",
+  "title": "High-dimensional layer-state trajectories reveal the internal dynamics of transformer inference",
+  "authors": [
+   "Heng Zhao",
+   "Yufei Wang",
+   "Ruidian Song",
+   "Weisheng Chen"
+  ],
+  "abstract": "Mechanistic studies of large language models localize function in parameters, attention heads or neurons, but those parts do not specify how one inference unfolds. We treat the ordered layer-state trajectory as the empirical process and test whether layer order defines a measurable computation. Across representative Qwen, Llama and Gemma checkpoints, realized order produced paths 1.60--2.24 times as aligned with their endpoint chord as endpoint-preserving shuffles. The order effect transferred to a lexical task, but was stronger in three random initializations of the same Qwen architecture, identifying an architecture-compatible scaffold rather than a training-specific law. Direct hidden states provided stronger mechanism coordinates than vocabulary readbacks, and a task-defined coordinate made candidate competition computable. After additive interventions failed, local transition actuators selectively controlled internal trajectories across checkpoints. A confidence gate then drove 17 of 87 held-out Qwen closure trajectories across the full-vocabulary top-1 candidate boundary while leaving all 203 non-closure top-1 outputs unchanged. Safety-matched action reassignment performed similarly, locating the gain in selective gating and the bounded actuator family rather than fine-grained dose assignment. Layer order exposes an observable, computable and behaviourally consequential process of transformer inference without establishing a complete theory of LLM dynamics or control of answer correctness.",
+  "url": "http://arxiv.org/abs/2610.26866v1",
+  "published": "2026-07-15T00:02:19Z"
+ },
+ {
+  "id": "2412.05655",
+  "title": "Auto-AdvER: Disentangling Condition, History, and Commercial Offers in Automotive Advertisements",
+  "authors": [
+   "Filippos Ventirozos",
+   "Ioanna Nteka",
+   "Tania Nandy",
+   "Jozef Baca",
+   "Charlie Roadhouse",
+   "Peter A. Appleby",
+   "Matthew Shardlow"
+  ],
+  "abstract": "This paper presents a case study on the development of Auto-AdvER, a specialised span-labelling schema, along with its corresponding dataset for the textual car advertisement domain. Developed with industry needs in mind, Auto-AdvER is designed to enhance text mining analytics in this domain and contributes a linguistically unique sequence-labelling dataset. We introduce a schema consisting of three labels: 'Condition', 'Historic', and 'Sales Options'. We outline the guiding principles for annotation, describe the methodology for schema development, and present the results of an annotation study demonstrating an inter-annotator agreement of 78%. Furthermore, we compare the performance of various models, including transformer encoder models (BERT, DeBERTaV3) and transformer decoder-based open- and closed-source large language models: Llama, Qwen, GPT, and Gemini, as well as conditional random fields. Our results show that a fine-tuned DeBERTaV3 encoder achieves the highest F1-score, followed closely by conditional random fields, while the large language models reach the highest precision but lower recall. We present this work as a stepping stone towards more fine-grained analysis and discuss Auto-AdvER's potential impact on advertisement analytics, pricing, and customer insights. Potential applications include the analysis of market dynamics and data-driven predictive maintenance.",
+  "url": "https://arxiv.org/abs/2412.05655"
+ },
+ {
+  "id": "2610.10276",
+  "title": "PatchBench: Measuring Collateral Damage in Activation Patching",
+  "authors": [
+   "Alexi Canesse",
+   "Mathis Le Bail",
+   "Ma\u00ebl Jenny",
+   "Cl\u00e9ment Elliker",
+   "Mahammed El Sharkawy",
+   "Sonia Vanier"
+  ],
+  "abstract": "An LLM safety patch can pass a benchmark while still being a poor repair. This risk is especially acute for jailbreak repairs, where the goal is to correct a specific unsafe behaviour without changing unrelated behaviours. A patch may block exact evaluation prompts yet fail on close harmful variants, or suppress harmful behaviour by over-refusing benign prompts that share its wording or structure. Existing protocols primarily test whether models can be broken, while aggregate metrics (attack success, refusal rates, global capability) cannot distinguish selective repairs from broader local suppression. To address this gap, we introduce PatchBench, a benchmark of empirically observed model-specific jailbreak failures inducing actionable harmful answers. Starting from 27,870 prompts from 37 public datasets, we curate 15,314 English prompts and query 8 open-source instruction-tuned models. Combining WildGuard filtering, pairwise Elo ranking, and manual verification, we retain a curated bank of 400 high-confidence jailbreak failures. We further introduce PatchBench-Local, an evaluation protocol testing whether a patch is behaviourally precise. For each harmful source prompt, PatchBench-Local generates three families of local neighbours: harmful variants preserving malicious intent, benign prompts with matched structure, and benign prompts reusing key harmful terms. It evaluates harmful-neighbour correction and benign-neighbour preservation, distinguishing selective repair from broader local suppression. Evaluating four activation steering methods with PatchBench-Local and MMLU shows that global capability can remain nearly unchanged while local benign regressions are severe, confirming aggregate metrics miss important collateral damage. PatchBench-Local provides a more precise basis for developing and comparing jailbreak repair methods.",
+  "url": "http://arxiv.org/abs/2610.10276v1",
+  "published": "2026-10-07T15:43:28Z"
+ },
+ {
+  "id": "2610.03938",
+  "title": "MLLMs Fail to Refuse when Using Tools Agentically",
+  "authors": [
+   "Rikiya Takehi",
+   "Ryo Hachiuma",
+   "Shaona Ghosh",
+   "Dan Zhao",
+   "Yu-Chiang Frank Wang",
+   "Yusuke Hirota"
+  ],
+  "abstract": "Agentic multimodal large language models (MLLMs) have recently pushed the frontier of visual reasoning by calling tools such as zooming and tagging. Despite the recent strong success of agentic MLLMs, this work uncovers a critical safety failure in the tool-use paradigm: agentic tool-using MLLMs become less capable of refusing harmful requests. Our experiments confirm that, across three popular safety benchmarks, all the top open- and closed-weight MLLMs we test exhibit significantly lower safety in tool-using settings than in non-tool settings, with a relative refusal failure rate increase of up to 68.7%. Based on analysis of 100,000+ responses, including extended experiments, we also propose two possible reasons for this safety degradation.",
+  "url": "http://arxiv.org/abs/2610.03938v1",
+  "published": "2026-10-02T18:48:51Z"
+ },
+ {
+  "id": "blog:https:--www.anthropic.com-research-language-models-mostly-know-what-they-know",
+  "title": "Language Models (Mostly) Know What They Know",
+  "authors": [],
+  "abstract": "We show that language models can evaluate whether what they say is true, and predict ahead of time whether they'll be able to answer questions correctly.",
+  "url": "https://alignment.anthropic.com/https://www.anthropic.com/research/language-models-mostly-know-what-they-know",
+  "published": ""
+ },
+ {
+  "id": "2610.35043",
+  "title": "Steering for Safety, Hijacking for Profit: Trojan Threats in the LLM Activation Steering Supply Chain",
+  "authors": [
+   "Yu Yan",
+   "Jiahao Chen",
+   "Siqi Lu",
+   "Yongjuan Wang",
+   "Ziming Zhao",
+   "Zhaoxuan Li",
+   "Qingjun Yuan"
+  ],
+  "abstract": "As large language models (LLMs) are increasingly integrated into Web search, online recommendation, and intelligent decision-making, the third-party plugin ecosystem centered on model customization continues to grow. Among these, Steering Vectors guide model behavior by intervening in internal representations. However, the open plugin ecosystem also introduces new supply-chain security risks: malicious plugins can disguise themselves as having legitimate functionality and covertly manipulate outputs without significantly affecting model performance. Although this risk poses a real threat, the security issues of Steering plugins in the LLM supply-chain ecosystem still lack systematic research. This paper audits eight mainstream open-source Steering plugin libraries and reveals three structural vulnerabilities: insufficient distribution integrity verification, excessive plugin privileges, and missing runtime monitoring, which offers an attack surface for attackers. To investigate this threat, we propose a malicious plugin, IDH. Specifically, IDH designs a norm-gated mutually exclusive routing mechanism and proposes an information-decay inflection point localization method to automatically select the injection layer, thereby simultaneously achieving benign and malicious functions. To counter such threats, we propose a runtime defense framework, by suppressing anomalous activation interventions and orthogonalizing inter-layer trajectory. We evaluate IDH across five mainstream LLMs, using safety-refusal steering as the legitimate functionality and commercial recommendation manipulation as the hijack objective. Experiments covering six brands across three commercial domains demonstrate that IDH achieves an attack success rate (ASR) of up to 97.8% while preserving high refusal rates on harmful requests.",
+  "url": "http://arxiv.org/abs/2610.35043v1",
+  "published": "2026-10-26T08:54:10Z"
+ },
+ {
+  "id": "2610.21045",
+  "title": "Learning When to Withdraw: Curriculum Coverage and Rule-Specific Failures in Fine-Tuned Language Agents",
+  "authors": [
+   "Mohamed Abouzahra"
+  ],
+  "abstract": "Tool-using language agents must revise prepared actions when evidence changes or authority is revoked. Selective withdrawal means suspending affected actions, preserving supported work, and resuming only after sufficient repair. We study supervised fine-tuning in NAQD-Env, a synthetic environment with explicit dependencies and a deterministic reference policy. Four LoRA checkpoints of Qwen2.5-3B-Instruct compare an original curriculum with an enriched one, the latter under three system-prompt framings with identical views and targets. Three instruction-tuned baselines and all four checkpoints are evaluated under three inference prompts on fresh validation cases, held-out dependency families, and held-out structural combinations. Under the naqd prompt, SFT checkpoints reach decision agreement of 0.77-0.92 and withdrawal recall of 0.46-0.86, versus 0.45-0.63 and at most 0.06 for the baselines. Rule-level diagnostics qualify these gains. The original-curriculum checkpoint wrongly withdraws 26 of 34 actions with surviving alternative support; enriched checkpoints withdraw 0-1. Conversely, all SFT checkpoints narrow prohibited combinations less often than the 7B and 8B baselines, a case absent from both curricula. Delegation results show more withdrawal but poorer preservation of independently authorized actions, and all four checkpoints omit valid event reports. Framing contrasts vary across metrics and splits and do not establish a reproducible advantage or equivalence. One training run per arm, jointly changed curriculum properties, prior evaluation exposure, and baseline-SFT quantization differences limit causal attribution. The contribution is a method for detecting rule-specific regressions that aggregate accuracy can conceal, not evidence that fine-tuning alone ensures agent safety.",
+  "url": "http://arxiv.org/abs/2610.21045v1",
+  "published": "2026-10-15T00:38:39Z"
+ },
+ {
+  "id": "blog:https:--www.anthropic.com-research-reasoning-models-dont-say-think",
+  "title": "Reasoning Models Don't Always Say What They Think",
+  "authors": [],
+  "abstract": "We find that reasoning models don't always accurately verbalize their reasoning. This casts doubt on whether monitoring chains-of-thought (CoT) will be enough to reliably catch safety issues.",
+  "url": "https://alignment.anthropic.com/https://www.anthropic.com/research/reasoning-models-dont-say-think",
+  "published": ""
+ },
+ {
+  "id": "2610.34495",
+  "title": "Approximate Unlearning in Prototype-based-classifiers",
+  "authors": [
+   "Sreejita Ghosh",
+   "Mohammad Mohammadi"
+  ],
+  "abstract": "The recent data and AI regulations and governance needs have highlighted the need for removing specific data even from models trained on or with them. While retraining the entire model is a theoretically trivial solution, it is computationally expensive, thereby motivating research in Machine Unlearning. This paper introduces a robust approximate unlearning technique for the family of prototype-based classifiers called Generalized Learning Vector Quantization, aimed at removal of effects of specified samples, either due to deletion request or due to them being identified as noisy or corrupt. We first show the impact of the different sizes of the forget set, as well as the characteristics of the data in this set, on the unlearned model. To address the sources of instabilities detected in this unlearning method we propose an adapted version of this technique, such that the unlearning is robust to the characteristics of the forget set. Thereafter using the intrinsic interpretability property of GLVQ and appropriate metrics defined in unlearning literature, we show the efficacy (approximately 0 deviation of parameters and performance of unlearned model relative to retrained model) and efficiency (6X for smallest dataset to 10^(5)X in the largest dataset) of the proposed unlearning techniques compared to naive retrained, on six benchmark datasets for tabular data recommended by literature. Although in this work we investigated only binary class problems, the proposed robust unlearning strategy can be readily applied for removing sample effects from any trained GLVQ model, i.e., it does not require any modification in the training scheme of GLVQ.",
+  "url": "http://arxiv.org/abs/2610.34495v1",
+  "published": "2026-10-25T18:41:23Z"
+ },
+ {
+  "id": "2509.15194",
+  "title": "Evolving Language Models without Labels: Majority Drives Selection, Novelty Promotes Variation",
+  "authors": [
+   "Yujun Zhou",
+   "Zhenwen Liang",
+   "Haolin Liu",
+   "Wenhao Yu",
+   "Kishan Panaganti",
+   "Linfeng Song",
+   "Dian Yu",
+   "Xiangliang Zhang",
+   "Haitao Mi",
+   "Dong Yu"
+  ],
+  "abstract": "Large language models (LLMs) can improve through reinforcement learning with verifiable rewards (RLVR), but many settings lack reference answers or external verifiers. Label-free self-improvement instead constructs training signals from the model's own outputs. Because the same policy generates both the candidate responses and the signals derived from them, each update also changes the candidates available for future training, creating a self-reinforcing feedback loop. We identify a failure mode of this loop, which we call selection-induced diversity collapse: repeated self-selection can progressively narrow the candidate pool and make alternative correct solutions harder to sample. To address this problem, we propose EVOL-RL, which balances selection and variation. Majority voting provides a stable selection signal, while embedding-based novelty refines credit among responses with the same selection status; entropy regularization and asymmetric clipping further support this process by maintaining diverse rollouts and preserving rare, high-advantage updates. Across multiple training distributions, model scales, backbones, and matched label-free baselines, EVOL-RL consistently improves pass@n while generally maintaining or improving pass@1. For example, when trained without labels on AIME24, Qwen3-4B-Base improves over TTRL on held-out AIME25 from 4.6% to 17.1% in pass@1 and from 18.5% to 42.0% in pass@16. Training analyses further show that when the current majority is wrong, EVOL-RL better preserves alternative correct solutions. The code is available at: this https URL .",
+  "url": "https://arxiv.org/abs/2509.15194"
+ },
+ {
+  "id": "blog:https:--www.anthropic.com-research-auditing-hidden-objectives",
+  "title": "Auditing Language Models for Hidden Objectives",
+  "authors": [],
+  "abstract": "We deliberately train a language model with a hidden objective and use it as a testbed for studying alignment audits.",
+  "url": "https://alignment.anthropic.com/https://www.anthropic.com/research/auditing-hidden-objectives",
+  "published": ""
+ },
+ {
+  "id": "2609.35544",
+  "title": "Less Sycophancy, Stronger Refusal? Lessons for AI Safety from Mechanistic Interpretability",
+  "authors": [
+   "Xu Wang",
+   "Difan Zou",
+   "Xuansheng Wu"
+  ],
+  "abstract": "Reliable refusal of harmful requests is essential to the safe deployment of language models. Because excessive eagerness to please users may undermine existing refusal capabilities, reducing sycophancy offers a potential route to stronger refusal beyond the harmful scenarios covered by safety training. We investigate this possibility using compensatory feature injection (CFI), a training technique designed to limit the acquisition of a target concept by supplying its associated activation during learning. Across three Qwen3.5 base models, we use sparse autoencoders (SAEs) to identify the top-ranked sycophancy feature from paired sycophantic and independent responses, then validate its behavioral influence through inference steering. We subsequently inject the selected feature during supervised fine-tuning on sycophantic targets. Positive injection reduces learned sycophancy after removal (by 62.0% relative to ordinary fine-tuning in 35B-A3B), whereas modest negative injection increases it. Unexpectedly, these reductions in sycophancy do not consistently improve direct refusal of harmful requests, motivating a narrower evaluation of the same harmful intents under user pressure. In this setting, ordinary fine-tuning on sycophantic responses substantially weakens refusal, while selected checkpoints trained with positive injection recover part of the loss, including approximately 95% in 35B-A3B. These findings show that persistent sycophancy reduction does not guarantee stronger direct refusal, while identifying recovery under user pressure as a distinct, conditional benefit of training intervention.",
+  "url": "http://arxiv.org/abs/2609.35544v1",
+  "published": "2026-09-28T16:22:31Z"
+ },
+ {
+  "id": "2610.02829",
+  "title": "Clinical Concept Centers in LLMs",
+  "authors": [
+   "Aishik Nagar",
+   "Abhishek Vaidyanathan",
+   "Arun-Kumar Kaliya-Perumal",
+   "Elijah Tzen Hsuen Boey",
+   "Stefan Winkler"
+  ],
+  "abstract": "Large language models are increasingly used in clinical settings. However, research into the reliability and performance of these models has focused almost entirely on the language substrate, scoring what the model says. Mechanistic interpretability has found that the latent space carries a higher fidelity of representation than the text: internal representations not only encode substantially more than the output verbalizes, but the stated reasoning also systematically omits features that causally drive the answer. An evaluation of model behavior in terms of mechanistic interpretability has not been explored in clinical decision support. In this work, we extend behavioral evaluation into the latent space and ask whether clinical concepts exist as locatable, causally used representations inside open-weight LLMs. We find dedicated clinical concept centers in the latent space of all eleven open models we test. These concept centers are interpretable, firing only on their aligned clinical narratives, and meaningfully and causally drive model behavior in both constrained and open-ended settings. They are not just analytical representations, but circuits that can be utilized in clinical practice, and we explore their use from the perspective of both evaluation and performance. From the evaluation standpoint, models stay internally coherent and keep using the relevant concept centers even under adversarial role-based priming, while aligned priming improves downstream clinical performance. From a performance perspective, we simulate realistic deployment settings and find that steering models along these centers leads to meaningful downstream improvements. Finally, we conduct a blinded clinician validation and find the activation and usage of these concept centers predicts clinicians preferences.",
+  "url": "http://arxiv.org/abs/2610.02829v2",
+  "published": "2026-10-02T05:22:12Z"
+ },
+ {
+  "id": "2610.33527",
+  "title": "Implicit Beliefs as Scalable Process Rewards for Strategic Persuasion",
+  "authors": [
+   "Minqian Liu",
+   "Yuexi Shen",
+   "Heajun An",
+   "Qi Zhang",
+   "Pamela J. Wisniewski",
+   "Sang Won Lee",
+   "Jin-Hee Cho",
+   "Lifu Huang"
+  ],
+  "abstract": "Training large language models (LLMs) for multi-turn strategic persuasion faces two coupled obstacles: (i) realistic simulation of psychologically grounded persuadees, and (ii) dense, faithful supervision for credit assignment in strategic dialogues. Outcome-only rewards are sparse and uninformative about which conversational moves drove success, while LLM-judge process rewards are expensive and decoupled from the underlying interaction dynamics. We address both challenges with a unified framework. First, we introduce PersuArena, a persuasion simulation environment that produces realistic, non-monotonic trajectories. Second, building directly on this environment, we propose Process Rewards via Online Belief Elicitation for Relative Policy Optimization (Probe-RPO), an online RL framework that converts the persuadee's internal state into dense process rewards. At each turn, three introspective probes are read from the frozen persuadee's logits, yielding a multi-dimensional reward signal that is faithfully aligned with persuasion dynamics. With extensive experiments on PersuArena spanning healthcare, financial advising, workplace management, education, and personal relationships, we demonstrate that our Probe-RPO achieves the full acceptance rate of 52.5%, compared with the 35.8% for the strongest GRPO ablation and 25.8% for the best off-the-shelf LLM. We also conduct comprehensive analyses on the generalization across persuadee models and the persuasion dynamics across conversations. Our work offers a promising paradigm that can provide effective process supervision for strategic dialogue.",
+  "url": "https://arxiv.org/abs/2610.33527"
+ },
+ {
+  "id": "2610.02022",
+  "title": "Old Ideas, Novel Problems: The Instability of LLM-Based Novelty Evaluation",
+  "authors": [
+   "Noy Sternlicht",
+   "Simra Shahid",
+   "Peter Jansen",
+   "Daniel S. Weld",
+   "Pao Siangliulue",
+   "Tom Hope"
+  ],
+  "abstract": "AI-based ideation systems are often evaluated on the novelty of their ideas, and that judgment is increasingly delegated to large language models. Such judges are typically built ad hoc and validated, if at all, on human-authored papers rather than on the generated ideas they are meant to score. So, how do novelty judges perform? Not well. We present a systematic controlled study of novelty evaluation design choices. We build an evaluation set automatically, mining OpenReview for passages where reviewers explicitly affirm or dispute a paper's originality and keeping only submissions with unanimous agreement at the extremes of their research area; we pair these with ideas from a vanilla LLM generator. Across six judges, we find that seemingly small prompt design choices have large consequences; e.g., simply telling the judge that reviewers found one idea novel and the other not can change its verdict on more than half of the identical idea pairs it is shown, shifting pairwise accuracy by over 50 points and occasionally pushing it below chance. The same change helps one judge and hurts another. Retrieval and larger reasoning budgets help little, and two purpose-built novelty evaluators are outperformed by our cheapest prompted baseline. These results raise questions about reported novelty gains of automated ideation systems, and call for robust novelty evaluation methods.",
+  "url": "https://arxiv.org/abs/2610.02022"
+ },
+ {
+  "id": "2610.21189",
+  "title": "Resisting Harmful Instructions through Training-Free Weight Editing",
+  "authors": [
+   "Ali Ebrahimpour-Boroojeny",
+   "Xiaocong Yang",
+   "Samuel Schapiro",
+   "Zahra Borhani",
+   "Francisco R. Ortega",
+   "Yujia Zheng",
+   "ChengXiang Zhai"
+  ],
+  "abstract": "Instruction-following language models can comply with requests that conflict with intended behaviors and safety alignment. We introduce a training-free weight-editing approach for reducing compliance with targeted undesirable instructions. Our method needs only forward passes on a small set of prompt pairs per target behavior, and because the edit is stored in the model's weights, changing or deleting instructions in the prompt cannot undo the weight modification. We evaluate the approach on two target harmful behaviors across five instruction-tuned models: instructed falsehood and instructed sexism. On two instructed-lying benchmarks, it improves mean honest response rates by 6.2 and 4.6 percentage points over the strongest alternative, significantly on three of the five models and within noise on the other two. In a controlled study of seven prompt formats, it maintains higher honest-response rates than single-layer activation steering when orders to lie arrive in single-turn formats not used to construct the edit. For instructed sexism, it reduces the mean sexist-response rate from 57.9% to 24.3%; combining the edit with a fairness prompt reduces it further to 11.9%. These results establish our contrast-based weight editing approach as an effective training-free intervention in two distinct behavioral domains, supporting its use both independently and alongside prompt-based safeguards.",
+  "url": "http://arxiv.org/abs/2610.21189v1",
+  "published": "2026-10-15T03:47:15Z"
+ },
+ {
+  "id": "2609.22216",
+  "title": "The Effect of Quantization on Clinical Benchmarks: Accuracy and Safety Across Model Families",
+  "authors": [
+   "Leonard Twagirayezu",
+   "Prasenjit Mitra"
+  ],
+  "abstract": "Quantization enables deployment of large language models on resource-constrained clinical edge devices, but its effect on clinical accuracy and safety remains understudied. We evaluate five 7-8B parameter models at FP16, GPTQ-INT8, and GPTQ-INT4 precision across five benchmarks: MedQA, MedMCQA, Med-HALT, a risk-stratified sample of HealthBench, and MedSafetyBench. The study jointly varies quantization bit width, model family, and clinical task type, with explicit risk stratification and safety measures. INT8 GPTQ is universally safe (max. degradation -1.9%-1.9%), while INT4 degradation is substantial and model-dependent: BioMistral-7B, clinically fine-tuned, loses 19.7% on MedMCQA, more than any general-purpose model, showing clinical fine-tuning does not confer compression robustness. MedMCQA degrades more than MedQA under INT4; Med-HALT is largely unaffected. On HealthBench's emergency-risk subgroup, Qwen2.5-7B degrades by 26.8% under INT4, suggesting high-risk scenarios are disproportionately vulnerable to compression. On MedSafetyBench, the model family dominates over precision (refusal rates range 10.2%-74.9% at FP16), though Qwen2.5-7B (-17.8%) and Meditron-7B (-28.3%) show substantial INT4 safety degradation; notably, Qwen2.5-7B is simultaneously the most accuracy-robust model, demonstrating that accuracy and safety robustness are independent properties. We additionally test two recovery methods, clinical calibration substitution and QLoRA fine-tuning, both producing the same trade-off: MedMCQA recovers while MedQA further degrades, indicating recovery strategies require task-specific validation rather than being assumed universally beneficial. These findings indicate INT8 is broadly safe for clinical deployment, while INT4 safety must be assessed per-model and per-task, and that safety alignment is determined primarily by instruction tuning rather than clinical domain adaptation.",
+  "url": "http://arxiv.org/abs/2609.22216v1",
+  "published": "2026-09-02T08:18:53Z"
+ },
+ {
+  "id": "2610.24521",
+  "title": "Comparing Sparsified MLPs and Transcoders: Many Transcoder Features Are Neurons in Disguise",
+  "authors": [
+   "Stepan Shabalin",
+   "Mateusz Piotrowski"
+  ],
+  "abstract": "MLP neurons in transformer language models are widely understood to be polysemantic, motivating transcoders - sparse, learned approximations of MLP layers - as interpretable replacement models for mechanistic analysis. However, recent work shows that MLP neurons can be used to recover sparse, interpretable circuits (Arora et al. 2026, Ye et al. 2025), raising the question of whether transcoders are necessary for circuit analysis. We define neuron features as transcoder features whose weights are strongly aligned with individual MLP neurons, and show that they account for a substantial fraction of active features in late layers across 13 open-source transcoders. Only neuron features have a stable correspondence with something in the underlying MLP: other features vary more between training runs, do not match the MLP's Jacobian, and change less significantly from their random initialization. Our findings reframe MLP neurons as a stronger basis for interpretability than commonly assumed, and call for better methods of attributing the non-neuron structure that is used by the model.",
+  "url": "http://arxiv.org/abs/2610.24521v1",
+  "published": "2026-10-17T07:31:51Z"
+ },
+ {
+  "id": "2610.32151",
+  "title": "The LLENS Platform for On-Premises Large Language Model Agents in a Japanese University Hospital: Development and Evaluation Study",
+  "authors": [
+   "Ken Enda",
+   "Jien Saito",
+   "Masami Mukai",
+   "Feng Han",
+   "Emir Turkes",
+   "Tatsumi Kusakabe",
+   "Reona Umeki",
+   "Kazuhiro Sumiyoshi",
+   "Mitsuya Numata",
+   "Takumi Tanikawa",
+   "Akira Endoh",
+   "Kenji Hirata",
+   "Atsushi Yoshida",
+   "Kohsuke Kudo",
+   "Shinya Tanaka"
+  ],
+  "abstract": "Large language model agents that use tools could take on part of the electronic health record and desk work that occupies physicians' time, but in many hospitals the medical information systems run inside closed networks, so the model and the agent harness must also be inside the network. We designed, implemented, and deployed LLENS, a clinical support AI agent platform that runs inside the closed network of Hokkaido University Hospital on a single host with 8 NVIDIA H200 GPUs, the open-weight model Kimi K2.6 (~1 trillion parameters), and a web application rebuilt from Open WebUI. The harness has 10 components, including page image reading, full-text attachment input, a path-addressed document tree without a vector index, a network-isolated sandbox, artifact return, self-checking of generated output, subagents, and saved procedures. Kimi K2.6 was chosen from 3 open-weight candidates and scored 480/500 on the 2026 Japanese Medical Licensing Examination; it generated 119 tokens/s for a single user and served 16 concurrent requests at 908 tokens/s in total. On 180 questions over hospital documents (3 seeds each), mean accuracy was 10.7% with no documents, 81.3% with fixed retrieval (top 10 chunks of one lexical search), and 97.2% with interactive access, in which the model reads with document tools and the sandbox (15.9 percentage points above fixed retrieval, 95% CI 10.9-21.3); the difference lay in filtering/counting questions (16.7% vs 87.8%). In an automated test of 13 work scenarios (4 runs each), the expected components were triggered in all runs for 12, and 5 scenarios were run with synthetic data on the deployment host. The platform has run on the hospital network since September 14, 2026.",
+  "url": "https://arxiv.org/abs/2610.32151"
+ },
+ {
+  "id": "2608.25697",
+  "title": "LMSM: LLM Security Framework Inspired by Linux Security Modules",
+  "authors": [
+   "XiuYu Zhang",
+   "Bonan Ruan",
+   "Junfeng Fang",
+   "An Zhang",
+   "Tat-Seng Chua",
+   "Zhenkai Liang"
+  ],
+  "abstract": "Large language models (LLMs) are increasingly deployed with layered defenses, yet malicious prompts can still bypass them. Interpretability methods can expose model-internal signals along the generation path that could inform enforcement, but these signals are not security controls by themselves. Deployments that adapt them for safety typically couple each signal to its own calibration, policy logic, and intervention code, so each new artifact creates integration work instead of strengthening a shared defense. We present Language Model Security Modules (LMSM), a security framework that adapts the separation behind Linux Security Modules (LSM) to LLM serving. In LMSM, a selected security backend exposes calibrated evidence, a versioned policy evaluates active rules over trusted per-request context, and a separate gate authorizes buffered output release. This design separates mediation correctness from policy effectiveness, and it allows backend, rule, or schedule changes without rebuilding request handling or enforcement. Our prototype shows the separation working in practice: with Hugging Face Transformers and continuously batched vLLM, the same substrate hosts artifact-backed sparse autoencoder (SAE) and transcoder deployments and task-fitted dense probes, preserves request-specific decisions under scheduler churn, and selectively enforces and composes multiple rules per request. On Qwen3-4B, LMSM-Checkpoint reduces HarmBench attack success rate from 39.20% to 3.32%, with XSTest false refusals rising from 2.40% to 4.40%, while retaining 98.14% of the throughput of a matched serving path that performs no monitoring work at 32 active sequences. LMSM gives advances in interpretability and model-internal analysis a common path to runtime enforcement.",
+  "url": "http://arxiv.org/abs/2608.25697v1",
+  "published": "2026-08-26T12:13:05Z"
+ },
+ {
+  "id": "2608.23020",
+  "title": "Unlearning Is Not Just Erasing: Temporal Decoupling via Generation Inequality",
+  "authors": [
+   "Xunlei Chen",
+   "Qirui Ye",
+   "Yuang Li",
+   "Yi Gong",
+   "Zhaokun Wang",
+   "Wenyi Li",
+   "Shiyao Guo",
+   "Jinyu Guo"
+  ],
+  "abstract": "Large language models (LLMs) require effective unlearning to address privacy regulations and safety concerns. However, achieving precise forgetting without compromising general utility remains challenging. Existing sequence- and token-level methods penalize target outputs without modeling their context-dependent retrieval paths, which can disrupt linguistic structure or suppress benign knowledge. We present ADU, a fine-grained, training-based framework that shifts unlearning from token erasure to contextual attention-pathway decoupling. Exploiting the functional distinction between local and global attention heads, ADU identifies preplan positions that retrieve persistent sensitive anchors and fixes their candidate paths under the original model. It then trains attention-projection adapters to suppress attention mass along these paths while preserving local-attention structure and retain-set language modeling. Post-training activation exchange tests whether the modified attention-output module transmits the learned forgetting effect. ADU achieves the strongest aggregate performance among evaluated baselines on the TOFU and WMDP benchmarks, including a Forget Quality of (0.93) on TOFU. It preserves 87--98% of model utility (92.9% on average versus 81.9% for baselines) while reducing side effects in benign contexts.",
+  "url": "http://arxiv.org/abs/2608.23020v1",
+  "published": "2026-08-24T09:22:05Z"
+ },
+ {
+  "id": "2610.20748",
+  "title": "Interpreting Language Model Parameters",
+  "authors": [
+   "Lucius Bushnaq",
+   "Dan Braun",
+   "Oliver Clive-Griffin",
+   "Bart Bussmann",
+   "Nathan Hu",
+   "Michael Ivanitskiy",
+   "Linda Linsefors",
+   "Lee Sharkey"
+  ],
+  "abstract": "Mechanistic interpretability aims to uncover how neural networks use their parameters to implement their impressive neural algorithms. Although previous work has uncovered substantial structure in the intermediate representations that networks use, little progress has been made to understand how the parameters and nonlinearities of networks perform computations on those representations. In this work, we present a method that brings us closer to this understanding by decomposing a language model's parameters into subcomponents that each implement only a small part of the model's learned algorithm, while simultaneously requiring only a small fraction of those subcomponents to account for the network's behavior on any input. The method, adVersarial Parameter Decomposition (VPD), optimizes for decompositions of neural network parameters into simple subcomponents that preserve the network's input-output behavior even when many subcomponents are ablated, including under ablations that are adversarially selected to destroy behavior. This encourages learning subcomponents that provide short, mechanistically faithful descriptions of the network's behavior that should aggregate appropriately into more global descriptions of the network's learned algorithm. We study how sequences of interactions between these parameter subcomponents produce the network's output on particular inputs, enabling a new kind of 'circuit' analysis. While more work remains to be done to deepen our understanding of how neural networks use their parameters to compute their behavior, our work suggests an approach to identify a small set of simple, mechanistically faithful subcomponents on which further mechanistic analysis can be based.",
+  "url": "http://arxiv.org/abs/2610.20748v1",
+  "published": "2026-10-14T18:06:00Z"
+ },
+ {
+  "id": "2608.11025",
+  "title": "Data Attribution of Emergent Misalignment with Persona Features",
+  "authors": [
+   "Clemens Vetter",
+   "David Kacz\u00e9r",
+   "Lucie Flek",
+   "Florian Mai"
+  ],
+  "abstract": "Emergent misalignment (EM) is the phenomenon where fine-tuning a language model on a narrow task leads to harmful behavior in unrelated domains. A leading mechanistic account attributes EM to persona features: latent directions acquired during pre-training that misaligned fine-tuning amplifies. We ask where these features come from: which pre-training documents activate them, and whether naturally occurring human-written text suffices to induce EM. Using Sparse Autoencoder (SAE) based model diffing across four open-weight models, we find that features related to jailbreak personas, sarcasm, deception, and manipulation are amplified by misalignment fine-tuning, while safety-relevant and assistant-identity features are suppressed. Steering individual features controls EM in both directions: it induces misalignment rates of up to 62% in aligned models -- exceeding the 35% reached by misalignment fine-tuning itself -- and re-aligns misaligned models to near-baseline misalignment rates. Attributing the causal features to a corpus of one million pre-training web documents retrieves semantically relevant narratives about villainous characters, domination, and harmful agency. However, fine-tuning on these human-written documents does not reliably induce EM, even after reformatting into assistant-style responses, whereas synthetic instruction-response pairs derived from the same content do -- and transfer across model families. Semantic relevance alone is therefore not sufficient: response structure or model-generated phrasing plays an important role in inducing EM.",
+  "url": "http://arxiv.org/abs/2608.11025v2",
+  "published": "2026-08-11T15:05:24Z"
+ },
+ {
+  "id": "2609.35663",
+  "title": "Late Attention Layers Alone Can Copy Entity Tokens, but Not Without Attending to Their Context",
+  "authors": [
+   "Muyu He",
+   "Yuchen Liu",
+   "Ran Tao",
+   "Li Zhang"
+  ],
+  "abstract": "Large language models (LLMs) reliably perform entity copying, in which a model copies tokens referring to an entity, termed entity tokens, from the prompt into its output to answer a question. Although entity copying is straightforward for most LLMs, existing research does not provide a systematic account of which layers specialize in this fundamental task or how other tokens in the same sequence, termed context tokens, influence the model's ability to copy the entity tokens. To address these questions, we conduct experiments on Qwen3-8B using two novel methods: genie-in-a-bottle, which controls exactly which layers can participate in an entity-copying task, and attention lobotomy, which cuts off specific tokens' attention to entity tokens without affecting the remaining attention distribution. We find that two distinct groups of layers in the second half of the model are both necessary and sufficient for entity copying. Moreover, in addition to the decoding position's attention to entity tokens, context tokens' attention to entity tokens also proves necessary for copying the exact tokens, even though context tokens do not store entity information themselves unless they satisfy particular semantic properties. Our findings establish the critical role of late layers in entity copying under the guidance of context tokens, calling for future work on how models propagate and consume entity information.",
+  "url": "https://arxiv.org/abs/2609.35663"
+ },
+ {
+  "id": "2610.05107",
+  "title": "SearchJev: A Calibrated System-1 Model for Search Agents",
+  "authors": [
+   "Congfeng Cao",
+   "Lipeng Zuo",
+   "Konstantinos Papakostas",
+   "Qiwei Xu",
+   "Songwei Xu",
+   "Qianru Meng",
+   "Lun Zhou",
+   "Zhaochun Ren",
+   "Yougang Lyu",
+   "Xiaohui Yan"
+  ],
+  "abstract": "Search agents repeatedly make short decisions about relevance, evidence sufficiency, and search actions. Using generative language models for these decisions introduces latency and unreliable confidence. We present SearchJev, a calibrated System-1 model that separates search decisions from System-2 reasoning and generation. Given a search state and a decision schema, SearchJev scores legal options without autoregressive output generation. We propose Soft-Label Learning for Calibrated Decisions (SLCD) to learn decision probabilities from uncertain supervision and improve the reliability of decision confidence. In a dual-system search agent, SearchJev handles short decisions and delegates uncertain judgments to System 2, which retains planning, query generation, and answer composition. We also introduce SearchDecision-Bench, a benchmark unifying six types of search decisions for training and evaluation. On SearchDecision-Bench, SearchJev improves decision quality over same-size Qwen3.5 autoregressive models, achieves 5.2-5.3 times faster decisions, and reduces average expected calibration error by 41-74%. On BrowseComp-Plus, the dual-system agents achieve a 3.7-4.7 times speedup in active search time while improving answer accuracy from 45% to up to 54%.",
+  "url": "https://arxiv.org/abs/2610.05107"
+ },
+ {
+  "id": "blog:2025-subliminal-learning",
+  "title": "Subliminal Learning: Language Models Transmit Behavioral Traits via Hidden Signals in Data",
+  "authors": [],
+  "abstract": "Training on aligned chains-of-thought generated by a misaligned model can induce misalignment.",
+  "url": "https://alignment.anthropic.com/2025/subliminal-learning/",
+  "published": ""
+ },
+ {
+  "id": "2610.16664",
+  "title": "Making LoRA Identifiable: Orthogonal Alignment for Continual Learning",
+  "authors": [
+   "Pratik Rakesh Singh",
+   "Mohammadi Zaki",
+   "Akash Saha",
+   "Aneesh Mukkamala",
+   "Pankaj Wasnik"
+  ],
+  "abstract": "There is growing interest in applying Parameter-Efficient Fine-Tuning (PEFT) to Continual Learning, as it enables faster training, mitigates catastrophic forgetting, and facilitates better adaptation to new tasks. Prior approaches have explored a range of strategies, including extending new LoRA branches for each incoming task, training under orthogonal loss objectives across all task-specific LoRA modules, and employing gating mechanisms to integrate new and existing LoRA modules. However, these methods incur memory costs that grow linearly with the number of tasks, limiting their scalability. More recent approaches investigate training a single LoRA by leveraging asymmetries in its parameterization; however, they often suffer from insufficient representational alignment across the LoRA parameter space. To address these limitations, we propose Stiefel Optimization and Aligned Rotation (SOAR), a two-stage framework for continual LoRA learning. First, we constrain the A matrix to lie on the Stiefel manifold, thereby reducing coordinate misalignment to the space of orthogonal rotation matrices. Second, we introduce an Orthogonal Procrustes alignment procedure for the B matrix to estimate the optimal rotation, coupled with a per-rank retention merging strategy that quantifies directional agreement between representations of new and previously learned tasks. We conduct extensive experiments across multiple models and benchmarks, demonstrating that SOAR achieves strong continual learning performance without incurring additional memory overhead.",
+  "url": "http://arxiv.org/abs/2610.16664v1",
+  "published": "2026-10-12T12:14:32Z"
+ },
+ {
+  "id": "2610.28176",
+  "title": "Temporal Evidence-Parameter Co-Alignment for LLM Reasoning over Temporal Knowledge Graphs",
+  "authors": [
+   "Jiapu Wang"
+  ],
+  "abstract": "Large Language Models (LLMs) often struggle with temporally grounded reasoning because their static parametric memory is misaligned with the dynamic evolution of real-world knowledge. Although RAG and Parameter-Efficient Fine-Tuning (PEFT) provide practical ways to enhance LLMs, they remain insufficient for temporal reasoning. Existing retrieval methods typically prioritize semantic relevance while overlooking temporal validity, event order, and evolutionary dependencies, resulting in evidence that is relevant in isolation but temporally fragmented. Meanwhile, conventional PEFT methods usually employ fixed and input-agnostic low-rank updates, making it difficult to capture time-dependent entity semantics and relation drift. To address these limitations, we propose Temporal Evidence-Parameter Co-Alignment (TEPCA), a framework for LLM reasoning over TKGs. TEPCA aligns LLM reasoning with temporal knowledge at both the evidence and parameter levels. At the evidence level, it introduces time-constrained Dynamic Relevance-Guided Path (DRGP) pruning to preserve globally coherent temporal paths, together with Mutual-Information (MI)-based pruning to retain query-informative local facts under temporal constraints. At the parameter level, it integrates Dynamic-Gated LoRA (DG-LoRA), a timestamp-conditioned low-rank adaptation mechanism that dynamically modulates the effective adaptation subspace according to temporal context. This design enables LLMs to better capture fine-grained entity evolution and time-dependent relation semantics while preserving parameter efficiency. Experimental results on two TKG benchmarks demonstrate that TEPCA achieves state-of-the-art performance. Additional evaluations of DG-LoRA on eight commonsense QA datasets further verify its general input-adaptive capacity, scalability across LLM backbones, and interpretability.",
+  "url": "http://arxiv.org/abs/2610.28176v1",
+  "published": "2026-10-20T13:16:17Z"
+ },
+ {
+  "id": "2610.04119",
+  "title": "Copying Before Suppression: What Drives a Below-Chance Dip During Language Model Training?",
+  "authors": [
+   "Tejas Dahiya",
+   "Cole Blondin"
+  ],
+  "abstract": "Mechanistic interpretability usually studies fully trained models, yet the computations that drive a behaviour can change while the model is still learning the task. On the Indirect Object Identification task, a model should continue with the name mentioned once rather than the name mentioned twice. Pythia models pass through an early training window in which they prefer the repeated name, so accuracy in a choice between the two names falls below one half while language-model loss on a fixed text sample keeps decreasing across the same window. The window reflects a temporary imbalance between two computations. We identify one cause of the wrong preference by selecting a set of attention heads that write the repeated name, on prompts separate from those used for causal evaluation, keeping that selection fixed, and then replacing each head's final-token output with its average output on a separate set of non-repeated-name prompts. This improves the correct-minus-repeated logit difference in a separately trained 160M model and in the official 160M, 410M, and 1B models. At 160M, the head that lowers the repeated name in the mature model shows little of its mature behaviour at this point. It directs less than one percent of its attention to the repeated mention, and its output makes almost no direct contribution to lowering that name's logit. Both properties grow over the interval in which behaviour recovers. Across the 160M, 410M, and 1B models, transplanting the corresponding head's mature parameters into the early checkpoint recovers 35 to 68 percent of the total improvement in the correct-minus-repeated logit difference seen by the end of training. Related early-to-late reversals appear at further Pythia scales, in two independently trained GPT-2 models, and in OLMo. A mature circuit can therefore conceal a transient causal configuration that shaped behaviour earlier in training.",
+  "url": "http://arxiv.org/abs/2610.04119v1",
+  "published": "2026-10-02T22:50:59Z"
+ },
+ {
+  "id": "2610.29110",
+  "title": "GRAM: Group-wise Rank-Aware Model Merging via Subspace Alignment",
+  "authors": [
+   "Di Wu",
+   "Shuaidong Pan"
+  ],
+  "abstract": "Merging different models into a single model is highly desirable for multi-task deployment, particularly in regulated domains like healthcare. In such settings, models are often locally fine-tuned due to strict data privacy policies, necessitating that aggregation operates exclusively on the fine-tuned weights. Existing methods apply a uniform merge across all tasks, ignoring the geometric relationships among their learned subspaces. When task updates occupy misaligned subspaces, projecting them onto a shared low-rank basis discards task-relevant directions, a failure mode named \\emph{subspace interference}. Through this study, we show that the per-task projection error of a merged model is governed by the principal-angle alignment between each task and the shared subspace, so that grouping geometrically compatible tasks provably reduces this error within each group. Motivated by this observation, we propose \\textbf{Group-wise Rank-Aware Model Merging (GRAM)}, which uses the principal-angle geometry of task vectors to decide which tasks should be merged together and then performs a standard SVD-based merge within each coalition; the pipeline requires only the fine-tuned weights at merge time. With only one additional model ($\\nK{=}2$), GRAM significantly mitigates subspace interference and consistently outperforms prior merging methods across language understanding (GLUE with Flan-T5), 8-task CLIP vision, and medical instruction tuning (Qwen2-7B-Instruct with four English/Chinese medical LoRAs).",
+  "url": "http://arxiv.org/abs/2610.29110v1",
+  "published": "2026-10-21T02:50:46Z"
+ },
+ {
+  "id": "2610.24379",
+  "title": "Defending Against Dormant Poisoning Attacks Across Language and Multimodal Agents",
+  "authors": [
+   "Wonjun Lee",
+   "Vaidehi Patil",
+   "Zaid Khan",
+   "Yue Zhang",
+   "Hyunji Lee",
+   "Suhyun Kim",
+   "Mohit Bansal"
+  ],
+  "abstract": "Recent work shows that attackers can implant dormant malicious behaviors that remain hidden at release but emerge after benign fine-tuning. As foundation models are used as agents, whether dormant poisoning extends to harmful agent actions and multimodal settings remains unclear. We show two agentic risks: (1) harmful behaviors activated by benign fine-tuning can extend to unseen actions; (2) multiple harmful behaviors can coexist and be jointly activated by benign downstream fine-tuning. Existing defenses often rely on external safe responses, which are hard to obtain for agent actions, or a trusted clean reference model. We exploit a key property of dormant poisoning: the attacker must preserve safe behavior at release to conceal poisoning, and this behavior can serve as a safety reference. Leveraging this property, we automatically construct a Safety Buffer pairing harmful inputs with the released model's responses and benign versions generated by the same model to remove harmful intent. The Safety Buffer can replace external safe responses in existing defenses, but these defenses do not distinguish updates that weaken safety from those that preserve it, often increasing over-refusal or reducing utility. To address this limitation, we introduce LookAhead Defense, which previews benign fine-tuning updates using the Safety Buffer and penalizes only updates predicted to weaken safe behavior on harmful inputs or increase the likelihood of refusals on benign versions in the Safety Buffer. Across language models, language agents, and multimodal agents, LookAhead Defense reduces harmful behavior in agents from up to 93.9% to at most 14.2% and harmful responses in language models from up to 92.5% to at most 2.0% versus vanilla fine-tuning, while maintaining competitive utility and low over-refusal. It remains effective against other poisoning methods.",
+  "url": "http://arxiv.org/abs/2610.24379v1",
+  "published": "2026-10-17T02:26:09Z"
+ },
+ {
+  "id": "2609.39902",
+  "title": "CodeMimicry: Exploiting Safety Generalization Lag in Large Language Models via Structured Code Completion",
+  "authors": [
+   "Zhen Liang",
+   "Hai Huang",
+   "Wentao Chen"
+  ],
+  "abstract": "Large language models have achieved remarkable capabilities across diverse domains, yet their safety alignment remains vulnerable to jailbreak attacks. In this work, we identify a previously underexplored failure mode - safety generalization lag - where alignment trained predominantly on natural language fails to transfer to the code domain. We show that this lag induces a code-completion blind spot, allowing malicious intent embedded within syntactically valid code to evade safety mechanisms. To exploit this vulnerability, we propose CodeMimicry, a fully automated black-box jailbreak framework that generates structured, object-oriented code prompts to induce harmful outputs via code completion. Experiments on 8 state-of-the-art commercial LLMs demonstrate that CodeMimicry achieves a 96.25% attack success rate with 1.51 queries on average, significantly outperforming both template-based and optimization-based baselines. Beyond empirical performance, we provide a mechanistic analysis of code-based jailbreaks through latent space representations, including projection onto refusal-related directions and activation steering. This analysis offers an explanation of how CodeMimicry bypasses safety mechanisms in code-related domains. Our findings reveal a weakness in current safety alignment and highlight the need for robust alignments in structured domains such as code.",
+  "url": "http://arxiv.org/abs/2609.39902v1",
+  "published": "2026-09-30T15:02:14Z"
+ },
+ {
+  "id": "2610.14576",
+  "title": "Iterate on an LLM, Serve on an SLM",
+  "authors": [
+   "Keegan Wang"
+  ],
+  "abstract": "As frontier LLMs gain more capabilities, the cost to run them also goes up. At the same time, small language models (SLMs) also gain more capabilities but have largely been able to keep their cost stable, offering 5-40 times cheaper inference for the narrow, repetitive subtasks that agents decompose work into. However, the standing limiting factor is getting the correct behavior out of a small model in a fast, efficient, and economical way. Unfortunately, in most cases, zero-shot small models fail narrow production tasks. Furthermore, retraining one every time the behavior changes is too slow to iterate on. We propose doing both in sequence. First, develop the desired behavior in prompt space, on a frontier model, with immediate feedback from live traffic. Then, once the behavior converges, distill the recorded production behavior (not synthetic imitations of it) into an SLM through supervised fine-tuning (SFT). We show a proper use case of this method through a scheduling agent for home-care agencies that fans out a single yes/no safety decision per caregiver-shift pair on GPT-5.4-nano. A LoRA-tuned Qwen3-8B trained on 11.6k recorded production decisions reaches 0.913 agreement, while the teacher (GPT-5.4-nano), re-run on its own recorded prompts, agrees with itself only 72.7% of the time, pointing to the fact that the SLM may also be more consistent. Furthermore, when the two disagreed, a blinded professional scheduler sided with the student 48-29. Finally, we find that the SLM has approximately 2.5 times lower median latency and is a fraction of the cost. We believe this lifecycle of quick building, live feedback, and cheap inference is a blueprint for others building similar systems.",
+  "url": "http://arxiv.org/abs/2610.14576v1",
+  "published": "2026-10-10T04:51:24Z"
+ },
+ {
+  "id": "2610.19907",
+  "title": "Sparse Transformer: a Controlled Testbed for Mechanistic Interpretability",
+  "authors": [
+   "Anton Korznikov",
+   "Alexey Dontsov",
+   "Elena Tutubalina"
+  ],
+  "abstract": "Mechanistic interpretability aims to decompose neural network computations into human-understandable features, yet progress is limited by the absence of ground-truth units to evaluate against. We address this with a Sparse Transformer (ST): a 5-layer language model trained on TinyStories whose wide, TopK-sparse MLP forces neuron specialization. We show that ST neurons are highly interpretable: they outperform a loss-matched dense transformer by 43% on AutoInterp, and circuits of a median of 12 neurons suffice to reproduce individual model predictions. This testbed allows us to directly compare feature learning methods: Transcoder, which approximates the MLP input-output mapping, recovers ST's neuron vectors with 52.6% higher cosine similarity than Sparse Autoencoder, which only reconstructs outputs. Furthermore, the ST enables a controlled study of polysemanticity: distilling its sparse MLP into a dense counterpart reveals how compression leads to feature superposition. These results show how a known reference basis sharpens evaluation and understanding, a role we hope the ST can serve for the field.",
+  "url": "http://arxiv.org/abs/2610.19907v1",
+  "published": "2026-10-14T10:03:12Z"
+ },
+ {
+  "id": "2610.34343",
+  "title": "Xing USP: A Cross-Family Semantic Contract for Information Extraction and Intent-Slot Parsing",
+  "authors": [
+   "Zhongqiu Li",
+   "Boyang Wang",
+   "Ruiyu Fang",
+   "Shiquan Wang",
+   "Di Wu",
+   "Jiayi Liang",
+   "Feilong Zhang",
+   "Hongfeng Du",
+   "Xiaomeng Huang",
+   "Mengjiao Bao",
+   "Luwen Pu",
+   "Xuewei He",
+   "Yu Zhao",
+   "Chao Wang",
+   "Kaidong Yu",
+   "Bingkai Yang",
+   "Qingjun Zhu",
+   "Shaoyi Du",
+   "Shuangyong Song",
+   "Yongxiang Li"
+  ],
+  "abstract": "Structured semantic parsing is typically judged by whether the correct category is assigned, which leaves value recovery and instance-level associations unexamined: a system may recognize an event yet bind an argument to the wrong instance, or identify an intent yet supply an incorrect slot value. We present USP, a cross-family semantic contract that represents categories, fields, values, and instance associations through a common interface for named-entity recognition, relation extraction, event extraction, and intent-slot parsing. The contract is paired with five diagnostic matching views---category agreement, field recognition, field-value pairing, instance-bound assignment, and complete-instance recovery---that ask distinct questions about the same output. Using this contract, we normalize 61 datasets into a unified corpus with shared schemas, prompts, and matching rules, and compare six models on a fixed test subset. Our fine-tuned Xing4.0-29B-Intent attains 57.70 task-balanced Field-Value Micro-F1 (equally weighted across the four task families) and ranks first in every family and on all five views; its margin over the strongest alternative widens from 2.93 points for category matching to 20.73 points for complete-instance matching. This widening gap shows that category agreement alone understates structural deficits. USP thus offers the community a shared representation, a normalized 61-dataset corpus, and a diagnostic evaluation protocol that make structural agreement measurable and comparable across extraction and intent-slot tasks.",
+  "url": "https://arxiv.org/abs/2610.34343"
+ },
+ {
+  "id": "2609.36862",
+  "title": "Safer Content or Firmer Refusals? A Hybrid Perturbation Defense for Alignment under Harmful Fine-tuning",
+  "authors": [
+   "Muhammad Zeeshan Akram",
+   "Mufid Kamel Marican",
+   "Anvesh Reddy Yenugu",
+   "Ali Zain Kaimkhani",
+   "Minghong Fang"
+  ],
+  "abstract": "Fine-tuning-as-a-service lets users adapt a safety-aligned language model to their own data, but it also creates a harmful fine-tuning attack surface: a small amount of harmful data mixed into an otherwise benign fine-tuning set can degrade the model's alignment. Two recent alignment-stage defenses address this problem at different levels of the model. Vaccine improves the robustness of hidden embeddings to the representation shifts induced by harmful fine-tuning, whereas Booster simulates harmful weight updates and attenuates their effect during alignment. We investigate whether these mechanisms are complementary and propose VaccineBooster, a single alignment procedure that combines embedding perturbation and weight-level gradient attenuation within each training step. On Llama-2-7B aligned with BeaverTails and then attacked through poisoned fine-tuning, VaccineBooster achieves the lowest OpenAI moderation score among the compared defenses, 0.315, while a Booster-Only variant retains the highest post-attack refusal rate, 50%. Together with ablations over the embedding-perturbation and gradient-attenuation strengths, these results indicate a trade-off: embedding perturbation primarily reduces flagged harmful content, whereas gradient attenuation primarily preserves explicit refusal behavior. Because our evaluation uses ten prompts and a single unseeded run per configuration, we report this trade-off as an observed pattern rather than a statistically resolved effect. These results provide practical guidance for prioritizing content safety or refusal retention when aligned models are exposed to untrusted fine-tuning.",
+  "url": "http://arxiv.org/abs/2609.36862v1",
+  "published": "2026-09-29T07:04:31Z"
+ },
+ {
+  "id": "2609.39117",
+  "title": "SteerProbe: Learning to Bypass Safety Steering in Vision-Language Models",
+  "authors": [
+   "Xinwei Zhang",
+   "Aoting Hu",
+   "Hangcheng Liu",
+   "Shuchao Pang",
+   "Qingqing Ye",
+   "Haibo Hu"
+  ],
+  "abstract": "Activation steering offers an inference-time defense for vision--language models (VLMs) by modifying intermediate representations without updating backbone parameters. However, protection on benchmark inputs may not persist across alternative expressions of the same harmful request. We investigate this gap using fixed textual, visual, and joint reformulations designed to preserve the underlying intent, and find that these changes can bypass representative steering defenses. A complementary local analysis provides a sufficient condition under which a reformulation can cross a surrogate safety margin despite any admissible change in the local steering correction. We then introduce SteerProbe, an output-only black-box attack that learns to select effective reformulations for unseen requests from a shared calibration budget. Across three VLM backbones, two benchmarks, and three steering defenses, SteerProbe increases Harmful Rate in all defended settings using 500 total calibration queries per endpoint and benchmark, raising the average from 7.43% to 18.36%. These findings highlight that robustness on original benchmark inputs is insufficient to characterize the safety of steering defenses and motivate reformulation robustness as an important evaluation dimension. They further motivate steering mechanisms that preserve safety across intent-preserving multimodal variations while maintaining benign utility.",
+  "url": "http://arxiv.org/abs/2609.39117v1",
+  "published": "2026-09-30T06:53:50Z"
+ }
+]

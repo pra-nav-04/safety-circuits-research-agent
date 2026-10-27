@@ -1,0 +1,2 @@
+{"_note": "Ids the AI assistant labelled relevant in its FIRST draft of eval/labels.json (before the owner review); all other ids in eval/papers.json were first-pass negative. Used only to compute AI-vs-owner agreement.",
+ "positive": ["2610.33299","2610.34756","2610.29555","2610.29342","2610.28897","2610.32182","2610.31331","2610.25611","2610.34074","2610.35586","2610.27790","blog:2025-selective-gradient-masking","2610.24872","2610.33542"]}

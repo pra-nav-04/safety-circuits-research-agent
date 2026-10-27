@@ -1,0 +1,324 @@
+{
+ "2610.33299": {
+  "relevant": true,
+  "hypothesis": "H4",
+  "note": "heads mediating agreement shift during training, circuit sparsifies: location migration (non-safety, borderline)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.34756": {
+  "relevant": true,
+  "hypothesis": "F1",
+  "note": "path-patching view of LoRA layer sparsity; informs restricting LoRA to identified components",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.29555": {
+  "relevant": true,
+  "hypothesis": "EXT",
+  "note": "refusal-direction optimisation; relates to refusal-direction shift extension",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.29342": {
+  "relevant": true,
+  "hypothesis": "H3b",
+  "note": "abliteration removes refusal direction yet leaves bias: refusal removal is narrow, collateral/entanglement angle (borderline)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.28897": {
+  "relevant": true,
+  "hypothesis": "H4",
+  "note": "refusal direction transfer across languages: how general the refusal mechanism is (borderline: languages, not models)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.32182": {
+  "relevant": true,
+  "hypothesis": "H4",
+  "note": "layer-wise localisation of safety; modularity vs depth",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.31331": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "attack method (mask harmful response to jailbreak dLLMs); behavioural, no mechanism or editing of refusal",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.25611": {
+  "relevant": true,
+  "hypothesis": "F3",
+  "note": "benign fine-tuning misaligns models; matches our benign-only training transfer finding",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.34074": {
+  "relevant": true,
+  "hypothesis": "H4",
+  "note": "owner: jailbreak behaviour varies across pretraining seeds, bears on cross-model structure (H4)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.35586": {
+  "relevant": true,
+  "hypothesis": "H4",
+  "note": "linear probes transfer across base/distilled models; cross-model structure",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.27790": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "circuit overlap for linguistic vs arithmetic skills; no safety/refusal link, tangential",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "blog:2025-selective-gradient-masking": {
+  "relevant": true,
+  "hypothesis": "H3b",
+  "note": "knowledge localisation for capability removal; borderline removal vs collateral",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.24872": {
+  "relevant": true,
+  "hypothesis": "F3",
+  "note": "owner: grader/metric validity for ASR, same issue as our substantive_asr (F3)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.33542": {
+  "relevant": true,
+  "hypothesis": "EXT",
+  "note": "neuron-level safety editing across languages; borderline (multi-axis editing)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "blog:2026-automated-alignment-researchers": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "automated alignment researchers; no circuits/refusal",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.33258": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "content moderation uncertainty",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.33279": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "pharmacovigilance",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.33441": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "semantic complexity metric",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.33586": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "depression estimation",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.33624": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "recursive self-improvement",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.33697": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "ADHD gender bias",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.33765": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "speech recognition",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.28607": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "Arabic math benchmark",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.34013": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "behavioural sycophancy eval in medical diagnosis; no circuit/editing (this is NOTES #10 weak match)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.33813": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "prompt-safety classification with LoRA vs full FT; not refusal heads",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "blog:2025-activation-oracles": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "activation oracles; interpretability but not refusal/safety circuits",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2606.11648": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "backdoor removal via shared mechanisms; backdoors not refusal, conservative 0",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2608.06795": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "detecting backdoors in LoRA adapters; LoRA but not refusal",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2607.18639": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "new training method (token inoculation) for dual-use knowledge; not a mechanism study, conservative 0",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2608.29109": {
+  "relevant": true,
+  "hypothesis": "EXT",
+  "note": "linear recognition direction nearly orthogonal to refusal direction: mechanism of refusal/abstention routing (borderline, abstention not harm)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2607.28639": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "abstention option measurement",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.26809": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "training recipe for safety; no mechanism",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.29225": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "safety evaluation rubrics",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.26595": {
+  "relevant": true,
+  "hypothesis": "F3",
+  "note": "owner: judge-dependence of jailbreak ASR, same issue as our substantive_asr (F3)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.26589": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "cost-aware jailbreak metric",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.27304": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "translation as safety bypass; behaviour",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.26474": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "African-language guardrails",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "blog:https:--www.anthropic.com-research-probes-catch-sleeper-agents": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "probes for sleeper agents; borderline interpretability",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "blog:2025-cheap-monitors": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "model-internals classifiers for monitoring",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.32113": {
+  "relevant": true,
+  "hypothesis": "EXT",
+  "note": "learns and applies a safety direction by activation intervention with frozen weights; steering of safety behaviour (borderline)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.30630": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "reasoning interpretation via counterfactuals",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.24556": {
+  "relevant": true,
+  "hypothesis": "EXT",
+  "note": "concept vectors for honesty/deception etc.: multi-axis safety, localisable directions (borderline)",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.25341": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "formal verification of attention expressivity",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.35472": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "rare failure rate estimation",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "blog:https:--www.anthropic.com-research-reward-tampering": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "reward tampering",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ },
+ "2610.34653": {
+  "relevant": false,
+  "hypothesis": "none",
+  "note": "spoken dialogue tool calling",
+  "reviewed_by_owner": true,
+  "second_pass_ai": true
+ }
+}
