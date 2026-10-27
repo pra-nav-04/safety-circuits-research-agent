@@ -31,6 +31,7 @@ Abstract: {abstract}
 Decide if the paper bears directly on ONE open hypothesis. Rules:
 - relevant=true only if the abstract itself supports the link; do not guess.
 - matched_hypothesis is one key above, or "none" when relevant=false.
+- Only use the descriptions above; do not invent project plans (e.g. do not claim the project studies languages, topics or methods not listed).
 - reason: 1-2 sentences citing what in the abstract and what in the excerpts connect."""
 
 
@@ -50,4 +51,4 @@ def score_paper(paper: dict, chunks: list[dict], llm=None) -> dict:
             raise ValueError("relevant=true but matched_hypothesis=none")
         return s.model_dump()
     except (ValidationError, ValueError, Exception) as e:  # noqa: BLE001 - keep the run alive
-        return {"relevant": False, "matched_hypothesis": "none", "reason": f"scoring failed: {str(e)[:200]}"}
+        return {"relevant": False, "matched_hypothesis": "none", "reason": "scoring failed", "error": str(e)[:200]}

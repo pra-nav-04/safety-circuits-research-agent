@@ -1,10 +1,10 @@
 """Draft node: personalised outreach note. Writes text only; nothing is ever sent."""
-from agent.llm import get_llm
+from agent.llm import DRAFT_MODEL, get_llm
 from agent.rag import OPEN_HYPOTHESES
 
 PROMPT = """Write a short (90-130 words) friendly email DRAFT from Pranav Yadav (MSc student, University of Bonn)
 to the authors of a paper. Mention the paper by title, say specifically what in it relates to our
-project, and ask one concrete question. No flattery, no claims beyond what is given.
+project, and ask one concrete question. No flattery. Describe our project ONLY using the text above; never claim planned or ongoing work that is not stated there.
 
 Our project: finding the attention heads that causally produce refusal in small instruct LLMs
 (activation patching + ablation; LoRA editing of the circuit).
@@ -21,7 +21,7 @@ Output only the email body, starting with a greeting."""
 
 
 def draft_outreach(paper: dict, score: dict, chunks: list[dict], llm=None) -> str:
-    llm = llm or get_llm(0.5)
+    llm = llm or get_llm(0.5, DRAFT_MODEL)
     msg = llm.invoke(PROMPT.format(
         key=score["matched_hypothesis"], hyp=OPEN_HYPOTHESES[score["matched_hypothesis"]],
         reason=score["reason"], chunk=chunks[0]["text"][:800] if chunks else "",
