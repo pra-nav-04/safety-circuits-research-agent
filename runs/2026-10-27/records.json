@@ -1,5 +1,45 @@
 [
   {
+    "id": "blog:2026-red-teaming-auto-mode",
+    "title": "Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents",
+    "authors": [],
+    "abstract": "We red-team the blocking monitors in Claude Code and OpenAI's Codex with an adversarial agent, and strengthen Auto Mode against the attacks we find.",
+    "url": "https://alignment.anthropic.com/2026/red-teaming-auto-mode/",
+    "published": ""
+  },
+  {
+    "id": "blog:2026-training-alignment-auditors",
+    "title": "Training Alignment Auditors via Reinforcement Learning",
+    "authors": [],
+    "abstract": "We train LLMs to investigate target models with hidden behaviors planted in their system prompt. A trained Haiku 4.5 policy matches Opus 4.6 on held-out evaluations for auditing quality and generalizes to harder fine-tuned targets in a different scaffold.",
+    "url": "https://alignment.anthropic.com/2026/training-alignment-auditors/",
+    "published": ""
+  },
+  {
+    "id": "blog:2026-reward-seeker",
+    "title": "Training a Misaligned Reward Seeker",
+    "authors": [],
+    "abstract": "To better understand the impact of reward hacking on model behavior, we trained an Opus-class model with large-scale RL on many production environments vulnerable to reward hacks. We consider this a plausible proxy for what a real training run might look like had we not invested significant effort into preventing and detecting reward hacking in our normal training runs. Our results show that a high rate of reward hacking during RL can cause models to be willing to perform long sequences of harmful real-world actions in pursuit of task success.",
+    "url": "https://alignment.anthropic.com/2026/reward-seeker/",
+    "published": ""
+  },
+  {
+    "id": "blog:2026-automated-alignment-researchers",
+    "title": "Automated Researchers Can Mitigate Well-Characterized Alignment Failures",
+    "authors": [],
+    "abstract": "Across 10 common alignment failures, the strongest technique our automated alignment researchers discover significantly mitigates the targeted failures and generalizes out of distribution. Our findings suggest that automating measurable alignment research may already be practical, rather than years away.",
+    "url": "https://alignment.anthropic.com/2026/automated-alignment-researchers/",
+    "published": ""
+  },
+  {
+    "id": "blog:2026-taste",
+    "title": "TASTE: Can AI Models Judge AI Safety Research Proposals?",
+    "authors": [],
+    "abstract": "We introduce TASTE, a benchmark measuring how well models can judge AI safety research proposals against the preferences of experienced researchers.",
+    "url": "https://alignment.anthropic.com/2026/taste/",
+    "published": ""
+  },
+  {
     "id": "2610.33258",
     "title": "Two Uncertainties Are Not One: Disagreement versus Decision-Risk in Cheap Structured Content Moderation",
     "authors": [
@@ -138,77 +178,5 @@
     "abstract": "Streaming automatic speech recognition transcribes at low latency but produces an unattributed word stream, while real-time applications such as customer-service analytics need each word tied to a speaker role. Role attribution is usually a separate stage, either an offline or streaming speaker-diarization model aligned to the words or a text-based large language model applied to the transcript, and role labels for training are scarce. We present RoleHear, a semi-supervised pipeline that makes a single cache-aware streaming transducer emit roles inline through lightweight in-vocabulary role tokens: a fast turn-boundary marker followed by a per-role token a few words later. An offline transducer teacher, fine-tuned into a role-attributed recognizer, relabels unlabeled audio, and a multimodal large language model supplies silver role labels where gold annotations are unavailable. The streaming student is fine-tuned on the mixture in a single pass. Across customer-service calls with gold roles and earnings calls with silver roles, RoleHear attributes roles accurately while preserving transcription quality and narrowing the gap to the offline teacher.",
     "url": "http://arxiv.org/abs/2610.33765v1",
     "published": "2026-10-24T16:17:15Z"
-  },
-  {
-    "id": "2610.33813",
-    "title": "Task Format as a Factor in Adaptation: A Controlled Comparison of LoRA and Full Fine-Tuning for Prompt-Safety Classification",
-    "authors": [
-      "John Alderete",
-      "Srirakshith Betageri",
-      "Jennifer Flynn",
-      "Alex Greenhalgh",
-      "Josh Rubin",
-      "Yoshita Varma Annam"
-    ],
-    "abstract": "Fine-tuning a language model for classification involves many design decisions. Comparisons of low-rank adaptation (LoRA) with full fine-tuning are common but often confounded, and task format is rarely studied. We compare both regimes on prompt-safety classification with a matched 400M encoder-decoder pair (Ettin) across three task formats, with up to 15 seeds per cell and pre-specified analyses. At the pre-specified learning rates, full fine-tuning leads LoRA by 2-3 pp in every architecture and format trained on the label alone. On the encoder, the gap closes once both rates are chosen by the same search. Training LoRA to write a reason after its verdict adds 4.0 pp and closes the gap, but a content-free sentence of equal length does not. Trained models score above a prompted 8B in domain but fall behind it on two of three out-of-distribution corpora, trailing by 8-23 pp on adversarial jailbreaks and flagging 27-66% of benign but harmful-looking prompts as unsafe, against the 8B's 2-3%. Together, the results suggest that the adaptation regime matters less than how each model is trained, its learning rate, and training target, and that in-domain accuracy alone is an incomplete guide to robustness.",
-    "url": "http://arxiv.org/abs/2610.33813v1",
-    "published": "2026-10-24T17:24:54Z"
-  },
-  {
-    "id": "2610.33899",
-    "title": "When Personas Become Harmful: Guiding LLMs with Global Citizenship Values Alignment",
-    "authors": [
-      "Siqi Shen",
-      "Lajanugen Logeswaran",
-      "Moontae Lee",
-      "Honglak Lee",
-      "Rada Mihalcea"
-    ],
-    "abstract": "LLMs are increasingly being used by users from diverse demographics with pluralistic values and distinct backgrounds. Maintaining safety while respecting value-laden personas is uniquely challenging because persona-conditioned requests are often not overtly malicious, unlike those in existing safety benchmarks. Alignment methods aimed at adversarial requests therefore may miss the harm that emerges from persona use, leaving models to either refuse legitimate value expression or blindly follow unsafe personas. We construct a dataset of 11k controversial topics paired with value-based personas mapping to value dimensions from the Schwartz Value Survey. Through an agentic pipeline that iteratively refines the topic and persona, we surface and collect harmful responses from well-aligned commercial LLMs with a more than 47% success rate. We use UNESCO's global citizenship principles as a minimal common ground for distinguishing valid value expressions from harmful behaviors, and introduce a controllable alignment model that lets users balance persona adherence and safety at inference time. The resulting model is safer and more persona-adherent than baselines on most samples.",
-    "url": "http://arxiv.org/abs/2610.33899v1",
-    "published": "2026-10-24T20:18:51Z"
-  },
-  {
-    "id": "2610.33962",
-    "title": "Beyond Belief: Evaluating and Mitigating LLM Susceptibility to Misinformation",
-    "authors": [
-      "Emran Kanaan",
-      "Jiho Lee",
-      "Ibrahim Odat",
-      "Soroush Vosoughi",
-      "Weicheng Ma"
-    ],
-    "abstract": "Tool-using large language models (LLMs) must decide whether external information warrants action. We investigate whether their expressed credibility judgments reliably indicate behavioral resistance to misinformation. We evaluate five LLMs on 196 constructed false notices paired with legitimate counterparts and 204 archived attacks adapted to simulated tool use. When asked to act on the constructed notices, models issue harmful tool calls in 27%--99% of cases they have rated untrustworthy. Removing the preliminary rating step increases harmful execution by 15 percentage points on average, showing that credibility elicitation itself changes the behavior being evaluated. Interventions that improve credibility discrimination do not consistently yield safer actions. A simple forewarning significantly reduces harmful execution in four of five models, but neither tested generated-example prebunk outperforms it in the main evaluation. These reductions can also compromise legitimate task completion. Supervised fine-tuning on generated false notices reduces harmful execution on held-out archived attacks under the rating-first protocol, with model-dependent utility costs and weaker protection without rating elicitation. Our findings motivate evaluating misinformation defenses through both harmful actions and legitimate task completion, while accounting for the behavioral effects of the evaluation protocol.",
-    "url": "http://arxiv.org/abs/2610.33962v1",
-    "published": "2026-10-25T00:26:14Z"
-  },
-  {
-    "id": "2610.34013",
-    "title": "The Patient Is Always Right? Evaluating Sycophancy in Medical Diagnosis with Graded Patient Beliefs",
-    "authors": [
-      "Viswonathan Manoranjan",
-      "Andrea Mock",
-      "Myra Cheng",
-      "Lujain Ibrahim",
-      "Andrew Coyne",
-      "Junyi Jessy Li",
-      "Desmond C. Ong"
-    ],
-    "abstract": "More people are seeking out general-purpose AI models for medical advice, including diagnosis. Yet, AI models are susceptible to sycophancy, like validating users' beliefs even when they are untrue, which could lead to false positive diagnoses. Here, we evaluate how nine AI models change their diagnostic decision when a patient presents a belief that they have a specific (but incorrect) medical condition. We vary how close the user belief is to the clinical evidence presented. Models sycophantically adopt the patient's belief on average 23.2\\% of the time---sometimes even when the patient proposes a fictional, made-up condition. We also varied different personas, including a Rare Disease Claimer that got models to accept their belief 43.0\\% of the time. Additional analyses find that medical fine-tuning and model scale makes models less susceptible to changing their diagnoses. Sycophantic bias in medical diagnosis raises implications for safety, especially as more people are using AI for health support.",
-    "url": "http://arxiv.org/abs/2610.34013v1",
-    "published": "2026-10-25T02:54:42Z"
-  },
-  {
-    "id": "2610.34074",
-    "title": "Identically Trained Language Models Break on Different Jailbreaks",
-    "authors": [
-      "Chi-Wei Chang",
-      "Mu-Tien Kuo",
-      "Kuan-Wei Lee",
-      "Meng-Hsun Tsai"
-    ],
-    "abstract": "Jailbreak benchmarks test one checkpoint and treat which jailbreaks break it as a property of its pretraining data and safety training. We ask whether another pretraining run of the same data, given the same safety training, would break on the same jailbreaks. For each of 25 pretraining data recipes, we take 1B base models from 3 pretraining seeds and give each the same safety post-training with 2 post-training seeds, for 150 models in all. We then collect 20 responses from every model to a shared set of jailbreak prompts and correlate the per-prompt non-refusal rates between every pair of models. On average, two post-trained copies of the same pretraining run have per-prompt non-refusal rates that correlate at 0.984. A different pretraining seed lowers the correlation to 0.811, and a different data recipe lowers it only slightly further, to 0.779. These results indicate that which jailbreaks break a checkpoint depends much more on its pretraining run than on its data, a pattern that holds in all 25 data recipes and at 150M and 300M parameters. In practice, the best of 91 attack templates found on one checkpoint stays the best after a new pretraining seed in only 27% of model pairs, against 67% after a new post-training seed. Each pretraining run also leaves a fingerprint: across 3,211 prompts, a model's per-prompt non-refusal rates identify its pretraining run among all 75 runs every time, and a random subset of 50 prompts still does so 98% of the time.",
-    "url": "http://arxiv.org/abs/2610.34074v1",
-    "published": "2026-10-25T05:30:02Z"
   }
 ]

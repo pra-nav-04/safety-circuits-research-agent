@@ -36,3 +36,14 @@
     plan does mention sycophancy (RESEARCH_PLAN.md l.356, multi-axis safety), so the link is real but
     thin and the reason is sloppy. Not fixed: shows why a human reviews drafts before anything is sent, and
     where a validation node (check the reason's quotes against retrieved chunks) would go.
+12. **Validation node: first version rejected everything.** The scorer quoted the hypothesis list I put in the
+    prompt (`F2: Generational sweep: ...`) as its "evidence", not the retrieved excerpts, and markdown
+    (`**bold**`) made real quotes mismatch. Fixes: compare after stripping punctuation/markdown, and the prompt
+    says a quote from the hypothesis list is invalid. Last run: 15 papers -> 1 validated match, 2 rejected.
+13. **What the validation node does and does not do.** It stops invented evidence (the #6 failure) but one
+    rejection looks like a false negative (a real project sentence the model slightly recombined), and the one
+    validated match (an alignment-blog post vs F1 head-restricted LoRA) is still thin: quotes can be real and
+    the link still weak. #10's sycophancy paper no longer appears in the run, but only because the model changed
+    its verdict, not because the node caught it. Needs a labelled set to measure; no numbers claimed.
+14. **Blog records starved by the cap.** `max_papers` cut the list after arXiv items, so 0 blog posts reached
+    scoring. Fix: blog items go first (max 5).

@@ -1,4 +1,5 @@
 """Score node: match a paper to open hypotheses + pre-qualify, grounded in retrieved chunks."""
+import re
 from typing import Literal
 
 from pydantic import BaseModel, ValidationError
@@ -34,7 +35,7 @@ Decide if the paper bears directly on ONE open hypothesis. Rules:
 - relevant=true only if the abstract itself supports the link; do not guess.
 - matched_hypothesis is one key above, or "none" when relevant=false.
 - Only use the descriptions above; do not invent project plans (e.g. do not claim the project studies languages, topics or methods not listed).
-- evidence_quote: one sentence copied VERBATIM from the project excerpts above that supports the match.
+- evidence_quote: one sentence copied VERBATIM from the "Excerpts retrieved" section above that supports the match. A quote copied from the hypothesis list is INVALID and the verdict will be rejected; if no excerpt sentence supports the match, set relevant=false.
 - abstract_quote: one sentence copied VERBATIM from the paper abstract that supports the match.
   Both quotes must be empty when relevant=false.
 - reason: 1-2 sentences citing what in the abstract and what in the excerpts connect."""
@@ -60,7 +61,8 @@ def score_paper(paper: dict, chunks: list[dict], llm=None) -> dict:
 
 
 def _norm(t: str) -> str:
-    return " ".join(t.lower().split())
+    """Lowercase, drop markdown/punctuation so '**bold**' and plain quotes compare equal."""
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", t.lower()).split())
 
 
 def validate_score(paper: dict, chunks: list[dict], score: dict) -> dict:

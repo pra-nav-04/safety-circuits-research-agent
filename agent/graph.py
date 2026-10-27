@@ -21,7 +21,7 @@ class State(TypedDict, total=False):
 def scrape_node(state: State) -> dict:
     items = [p for p in scrape.scrape_listing() if scrape.looks_relevant(p)]
     blog = [p for p in scrape.scrape_blog() if scrape.looks_relevant(p)][:5]
-    return {"scraped": items + blog}
+    return {"scraped": blog + items}  # blog first so the max_papers cap cannot starve it
 
 
 def fetch_node(state: State) -> dict:

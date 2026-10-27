@@ -22,7 +22,7 @@ A committed sample is in `runs/2026-10-27/`.
 ```mermaid
 flowchart LR
   subgraph Scout
-    scrape[scrape<br/>Playwright: arXiv cs.CL/new] --> fetch[fetch<br/>arXiv API metadata] --> retrieve[retrieve<br/>Chroma top-k] --> score[score<br/>LLM + Pydantic]
+    scrape[scrape<br/>Playwright: arXiv cs.CL/new + alignment blog] --> fetch[fetch<br/>arXiv API metadata] --> retrieve[retrieve<br/>Chroma top-k] --> score[score<br/>LLM + Pydantic] --> validate[validate<br/>quotes must be real]
   end
   score -->|any relevant| draft
   score -->|none| END((end))
@@ -32,10 +32,11 @@ flowchart LR
   draft --> END
 ```
 
-- **scrape** (`agent/scrape.py`): Playwright loads the listing page; a pure `parse_listing` (tested on a saved HTML fixture) extracts entries; a keyword filter keeps likely candidates.
+- **scrape** (`agent/scrape.py`): Playwright loads two pages (arXiv `cs.CL/new` and the Anthropic alignment blog index); a pure `parse_listing` (tested on a saved HTML fixture) extracts entries; a keyword filter keeps likely candidates.
 - **fetch** (`agent/records.py`): arXiv API gives clean records for scraped ids plus a keyword search for recent safety papers; merged by id.
 - **retrieve** (`agent/rag.py`): paper + `FINDINGS.md` + `RESEARCH_PLAN.md` chunked into Chroma (default local embeddings); top-4 chunks per paper (title + abstract query).
 - **score** (`agent/score.py`): structured output `{relevant, matched_hypothesis, reason}`; hypothesis is a closed set (H3, H3b, H4, F1-F3, EXT); contradictory or unparsable output becomes a recorded error, not a crash.
+- **validate** (`agent/score.py: validate_score`, no LLM): a relevant verdict must carry a quote that really appears in the abstract and one that really appears in the retrieved project chunks, else it is rejected. Stops invented evidence; does not prove a link is strong.
 - **draft** (`agent/draft.py`): only for relevant papers; written to files.
 
 **Why LangGraph, not a script:** explicit typed state, conditional routing (no drafting when nothing is relevant), two agent roles as sub-graphs, and a validation node slots in between score and draft without touching the rest.
