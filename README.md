@@ -24,8 +24,8 @@ flowchart LR
   subgraph Scout
     scrape[scrape<br/>Playwright: arXiv cs.CL/new + alignment blog] --> fetch[fetch<br/>arXiv API metadata] --> retrieve[retrieve<br/>Chroma top-k] --> score[score<br/>LLM + Pydantic] --> validate[validate<br/>quotes must be real]
   end
-  score -->|any relevant| draft
-  score -->|none| END((end))
+  validate -->|any relevant| draft
+  validate -->|none| END((end))
   subgraph Outreach
     draft[draft<br/>personalised note]
   end
