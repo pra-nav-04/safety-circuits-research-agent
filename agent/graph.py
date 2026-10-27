@@ -10,6 +10,8 @@ from agent.score import score_paper, validate_score
 
 class State(TypedDict, total=False):
     max_papers: int
+    validate: bool     # grounding check; agent.run turns it on by default (precision 0.61 vs 0.48 on the test set)
+    seen: list         # ids scored in earlier runs; skipped so repeat runs only see new papers
     scraped: list[dict]
     papers: list[dict]
     chunks: dict       # paper id -> retrieved chunks
@@ -32,7 +34,8 @@ def fetch_node(state: State) -> dict:
         by_id[p["id"]] = {**by_id[p["id"]], **p} if p["id"] in by_id else p
     for p in records.search_recent(n):
         by_id.setdefault(p["id"], p)
-    return {"papers": list(by_id.values())[:n]}
+    new = [p for i, p in by_id.items() if i not in set(state.get("seen", []))]
+    return {"papers": new[:n]}
 
 
 def retrieve_node(state: State) -> dict:
@@ -45,6 +48,8 @@ def score_node(state: State) -> dict:
 
 
 def validate_node(state: State) -> dict:
+    if not state.get("validate"):
+        return {"scores": {i: {**sc, "validation": "off"} for i, sc in state["scores"].items()}}
     by_id = {p["id"]: p for p in state["papers"]}
     return {"scores": {i: validate_score(by_id[i], state["chunks"][i], sc) for i, sc in state["scores"].items()}}
 

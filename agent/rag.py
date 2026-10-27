@@ -52,4 +52,5 @@ def build_index(path: Path = DB):
 
 def retrieve(col, query: str, k: int = 4) -> list[dict]:
     res = col.query(query_texts=[query], n_results=k)
-    return [{"source": m["source"], "text": d} for d, m in zip(res["documents"][0], res["metadatas"][0])]
+    return [{"source": m["source"], "text": d, "distance": dist}
+            for d, m, dist in zip(res["documents"][0], res["metadatas"][0], res["distances"][0])]

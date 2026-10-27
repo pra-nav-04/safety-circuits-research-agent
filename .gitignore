@@ -7,3 +7,4 @@ __pycache__/
 BUILD_PROMPT.md
 BUILD_CONTRACT.md
 SETUP_PROMPT.md
+state/
